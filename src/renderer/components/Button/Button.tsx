@@ -3,7 +3,7 @@ import React, { PropsWithChildren } from 'react'
 import styles from './styles.module.sass'
 import { Button as BtnBootstrap } from 'react-bootstrap'
 
-type Variant = 'primary' | 'light' | 'link'
+type Variant = 'primary' | 'light' | 'link' | 'flat'
 
 type Button = {
   variant?: Variant
@@ -19,12 +19,13 @@ export function Button(P: Button) {
       className={'w-100 mb-2'}
       {...P}
     >
-      Olvidaste tu contrasena?
+      {P.children}
     </BtnBootstrap>
   )
 
+
   return (
-    <button type={P.type || "button"} className={combinedClassNames} {...P}>
+    <button {...P} type={P.type || "button"} className={combinedClassNames}>
       {P.children}
     </button>
   )
@@ -35,6 +36,9 @@ const getStyleVariant = (type: Variant | undefined): string => {
   switch (type) {
     case 'light':
       return styles.buttonLight
+
+    case 'flat':
+      return styles.buttonFlat
 
     default:
       return styles.button

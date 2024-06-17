@@ -3,6 +3,8 @@ import Col from 'react-bootstrap/Col';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import AuthForm from './views/AuthForm';
 import ForgotPass from './views/ForgotPass';
+import IngressCode from './views/IngressCode';
+import ChangePass from './views/ChangePass';
 
 
 
@@ -16,6 +18,8 @@ export default function LoginScreen() {
             <Routes>
                <Route path='' element={<AuthForm />} />
                <Route path='forgotPass' element={<ForgotPass />} />
+               <Route path='ingressCode' element={<IngressCode />} />
+               <Route path='changePass' element={<ChangePass />} />
             </Routes>
 
             {/* footer */}

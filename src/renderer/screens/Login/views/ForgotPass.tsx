@@ -4,6 +4,7 @@ import TextInput from 'renderer/components/TextInput/TextInput';
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { Button } from 'renderer/components';
 import { useNavigate } from 'react-router-dom';
+import LoginHeader from '../components/LoginHeader';
 
 export default function ForgotPass() {
    const navigate = useNavigate()
@@ -11,12 +12,10 @@ export default function ForgotPass() {
    return (
       <>
          {/* Logo */}
-         <div className='center-col mb-5' style={{ width: 300, textAlign: 'center' }}>
-            <img src={MyImage} alt="" width={100} height={100} />
-            <h2 style={{ fontWeight: 'bold' }}>¿Olvidaste tu contraseña?</h2>
-            <p>Ingrese tu dirección de email para recuperar tu contraseña</p>
-         </div>
-
+         <LoginHeader
+            title='¿Olvidaste tu contraseña?'
+            subtitle='Ingrese tu dirección de email para recuperar tu contraseña'
+         />
 
          {/* Login Form */}
          <Form onSubmit={() => null}>
@@ -30,7 +29,7 @@ export default function ForgotPass() {
 
 
             <div className='mb-2'>
-               <Button onClick={() => navigate('/home')}>
+               <Button onClick={() => navigate('/login/ingressCode')}>
                   Confirmar
                </Button>
             </div>

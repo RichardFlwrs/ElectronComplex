@@ -12,6 +12,9 @@ type TextInputProps = {
    onChange?: string
    icon?: IconDefinition
    wrapperClassName?: string
+   max?: number
+   maxLength?: number
+   inputstyle?: React.CSSProperties | undefined
 } & PropsWithChildren<React.HtmlHTMLAttributes<HTMLDivElement>>
 
 
@@ -25,6 +28,9 @@ export default function TextInput(P: TextInputProps) {
 
          <input
             tabIndex={P.tabIndex || 1}
+            max={P.max}
+            maxLength={P.maxLength}
+            style={P.inputstyle}
             className={styles.myInput}
             type={P.type || "text"}
             placeholder={P.placeholder}

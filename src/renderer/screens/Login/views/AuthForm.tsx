@@ -1,10 +1,10 @@
 import Form from 'react-bootstrap/Form';
-import MyImage from "resources/public/logo.png"
 import TextInput from 'renderer/components/TextInput/TextInput';
 import { faLock, faMapPin, faUser } from '@fortawesome/free-solid-svg-icons';
 import { Button } from 'renderer/components';
 import Select from 'renderer/components/Select/Select';
 import { useNavigate } from 'react-router-dom';
+import LoginHeader from '../components/LoginHeader';
 
 export default function AuthForm() {
    const navigate = useNavigate()
@@ -12,11 +12,10 @@ export default function AuthForm() {
    return (
       <>
          {/* Logo */}
-         <div className='center-col mb-5'>
-            <img src={MyImage} alt="" width={100} height={100} />
-            <h2 style={{ fontWeight: 'bold' }}>Bienvenido/a</h2>
-            <p>Ingrese sus datos</p>
-         </div>
+         <LoginHeader
+            title='Bienvenido/a'
+            subtitle='Ingrese sus datos'
+         />
 
 
          {/* Login Form */}
@@ -47,7 +46,7 @@ export default function AuthForm() {
             </div>
          </Form>
 
-         <div>
+         <div className='mt-3'>
             <Button onClick={() => navigate('/login/forgotPass')} variant="link">
                ¿Olvidaste tu contraseña?
             </Button>
