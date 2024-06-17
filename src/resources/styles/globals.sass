@@ -1,12 +1,13 @@
-@use 'animations' as *
 @use 'resets' as *
+@import 'animations'
+@import 'colors'
 
 body, html, app
   display: flex
   flex-direction: column
   width: 100vw
   height: 100vh
-  color: #965fa3
+  color: $darkGray
   // background-image: url('/illustration.svg')
   background-repeat: no-repeat
   background-size: cover
@@ -21,3 +22,9 @@ body, html, app
 .disabled
   filter: grayscale(40%)
   pointer-events: none
+
+.center-col
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center

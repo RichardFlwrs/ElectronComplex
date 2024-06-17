@@ -1,0 +1,26 @@
+@import "src/resources/styles/globals.sass"
+
+.selectWrapper
+   background: white
+   border-radius: 10px
+   padding: 3px
+   box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px
+   border: 1px solid transparent
+   width: 100%
+   @extend .transitionBorder
+   display: flex
+
+   &:hover, &:focus-within
+      border: 1px solid $darkGray
+
+   .myInputIcon
+      margin: 15px
+      color: $darkGray
+
+   .formSelect
+      border: 0
+      appearance: none
+      background: transparent
+
+   select:invalid
+      color: grey

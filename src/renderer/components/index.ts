@@ -1,3 +1,3 @@
-export * from './Container'
-export * from './Heading'
-export * from './Button'
+export * from './Container/Container'
+export * from './Heading/Heading'
+export * from './Button/Button'

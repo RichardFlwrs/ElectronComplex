@@ -1,23 +1,34 @@
+@import "src/resources/styles/globals.sass"
+
 .button
-  margin: 1rem 0
-  padding: 15px 35px
-  width: max-content
+  padding: 14px
+  width: 100%
   color: white
-  background-image: linear-gradient(to right, #DD5E89 0%, #F7BB97  51%, #DD5E89  100%)
-  background-size: 200% auto
-  border-color: #ffdacd
-  border: 2px groove
-  border-radius: 10px
-  box-shadow: 0 0 20px #eee
+  background: $darkGray
+  border-radius: 30px
   text-align: center
+  margin-bottom: 5px
+  @extend .transitionBackground
+  @extend .transitionBoxShadow
+  border: 1px solid transparent
   text-transform: uppercase
-  cursor: pointer
-  transition: 0.5s
+  font-size: 12px
+  font-weight: 700
+  letter-spacing: 1px
 
-  &:hover
-    color: #fff
-    background-position: right center
+  &:hover, &:focus
+    color: white
+    background: mix(white, $darkGray, 10%)
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 7px 25px -5px
 
-.button:nth-child(even)
-  background-image: linear-gradient(to right, #e3a7ff 0%, #8966f4 51%, #dd5eb7 100%)
-  border-color: #f2d5ff
+  &Light
+    @extend .button
+    background: white
+    color: $darkGray
+    border: 1px solid $darkGray
+    &:hover, &:focus
+      color: $darkGray
+      background: mix(white, $darkGray, 98%)
+
+// @mixin pill
+//   border
