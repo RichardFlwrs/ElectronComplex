@@ -19,9 +19,6 @@ export default function ChangePass() {
    }
    const handleShow = () => setShow(true);
 
-   const openModal = () => {
-
-   }
 
    return (
       <>
@@ -58,7 +55,7 @@ export default function ChangePass() {
 
          <Modal show={show} onHide={handleClose}>
             <Modal.Header>
-               <Button onClick={handleClose} variant='flat'>
+               <Button onClick={handleClose} variant='icon'>
                   <FontAwesomeIcon style={{ padding: 12 }} icon={faTimesCircle} />
                </Button>
             </Modal.Header>

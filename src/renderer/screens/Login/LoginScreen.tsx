@@ -12,7 +12,7 @@ export default function LoginScreen() {
    const navigate = useNavigate()
 
    return (
-      <Row style={{ height: '100%' }}>
+      <Row className='no-gutters' style={{ height: '100%', width: '100%' }}>
          <Col className='center-col'>
 
             <Routes>
@@ -31,13 +31,4 @@ export default function LoginScreen() {
          <Col style={{ background: 'cyan', height: '100%' }}></Col>
       </Row>
    )
-}
-
-const styles = {
-   footer: {
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center'
-   }
 }

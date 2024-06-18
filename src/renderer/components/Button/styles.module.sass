@@ -30,7 +30,7 @@
       color: $darkGray
       background: mix(white, $darkGray, 98%)
 
-  &Flat
+  &Icon
     @extend .button
     background: white
     color: $darkGray
@@ -40,6 +40,21 @@
     margin: 0
     padding: 0
     display: flex
+    &:hover, &:focus
+      color: $darkGray
+      background: white
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 25px -5px
+
+  &Flat
+    background: white
+    color: $darkGray
+    border: 1px solid transparent
+    width: 100%
+    border-radius: 7px
+    margin: 0
+    padding: 0
+    display: flex
+    box-shadow: none
     &:hover, &:focus
       color: $darkGray
       background: white

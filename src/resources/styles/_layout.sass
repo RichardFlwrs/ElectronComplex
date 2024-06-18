@@ -1,0 +1,77 @@
+@import 'colors'
+
+.layoutGrid
+   display: flex
+   width: 100%
+
+   .sideMenu
+      border-right: 1px solid $cardBorder
+      display: flex
+      flex-direction: column
+      // max-width: 264px
+      .status-section-width
+         width: 184px
+         text-align: left
+         padding-left: 7px
+         p:first-child
+            font-size: 14
+            color: $darkGray
+         p
+            font-size: 10
+            color: gray
+
+      .title-section
+         button
+            text-transform: uppercase
+            font-size: 0.77rem
+            font-weight: 500
+            letter-spacing: 1px
+
+      .menu-list
+         overflow: hidden
+         height: 300px
+         transition: height 300ms
+
+      .close
+         height: 0px
+
+      .menu-item
+         padding: 10px 10px
+         margin-bottom: 5px
+
+         &.active
+            background: #8e939f
+            border-radius: 7px
+            color: white
+
+      &>*
+         padding-left: 1rem
+         padding-right: 1rem
+
+      .logo-block
+         padding: 0 12px
+
+      nav
+         flex: 1
+
+      .menuFooter
+         font-size: 1rem
+         font-weight: 500
+         display: flex
+         align-items: center
+         margin: 0
+         padding: 1rem 3rem
+         border-top: 1px solid #e3e3e3
+         order: 1
+         line-height: 1
+         letter-spacing: 1px
+
+   .main-container
+      display: flex
+      flex-direction: column
+      flex: 1
+
+      .children-container
+         padding: 1rem
+         background-color: $bg
+         height: 100%

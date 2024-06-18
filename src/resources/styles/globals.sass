@@ -1,10 +1,10 @@
 @use 'resets' as *
 @import 'animations'
 @import 'colors'
+@import '_layout'
 
 body, html, app
   display: flex
-  flex-direction: column
   width: 100vw
   height: 100vh
   color: $darkGray
@@ -19,6 +19,9 @@ body, html, app
   -webkit-app-region: no-drag
   -webkit-font-smoothing: antialiased
 
+p
+  margin: 0
+
 .disabled
   filter: grayscale(40%)
   pointer-events: none
@@ -28,6 +31,17 @@ body, html, app
   flex-direction: column
   justify-content: center
   align-items: center
+
+.no-gutters
+  --bs-gutter-x: 0
+
+.v-center
+  display: flex
+  justify-content: center
+  align-items: center
+  &-between
+    @extend .v-center
+    justify-content: space-between
 
 .global-input
   background: white
@@ -50,3 +64,17 @@ body, html, app
   flex-direction: row-reverse
 .modal-footer
   border-top: unset
+
+.no-shadows
+  box-shadow: none
+  &:hover, &:focus
+    box-shadow: none !important
+
+.card-shadow
+  @extend .transitionBoxShadow
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+  border: 1px solid transparent
+  padding: 12px
+
+.hide
+  display: none
