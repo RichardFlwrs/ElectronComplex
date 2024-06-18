@@ -15,20 +15,20 @@ export const useClickAnimation = (element: React.MutableRefObject<any>, config: 
          element.current.classList.add("effect-container", effectName);
       };
 
-      const applyStyles = (e: any) => {
-         const { offsetX, offsetY } = e;
+      const applyStyles = (e: MouseEvent) => {
+         const { layerX, layerY } = e;
          const sizeOffset = size / 2;
          const { style } = element.current;
 
          style.setProperty("--effect-duration", `${duration}ms`);
-         style.setProperty("--effect-top", `${offsetY - sizeOffset}px`);
-         style.setProperty("--effect-left", `${offsetX - sizeOffset}px`);
+         style.setProperty("--effect-top", `${layerY - sizeOffset}px`);
+         style.setProperty("--effect-left", `${layerX - sizeOffset}px`);
          style.setProperty("--effect-height", `${size}px`);
          style.setProperty("--effect-width", `${size}px`);
          style.setProperty("--effect-color", color);
       };
 
-      const onClick = (e: any) => {
+      const onClick = (e: MouseEvent) => {
          element.current.classList.remove("active");
          applyStyles(e);
          element.current.classList.add("active");

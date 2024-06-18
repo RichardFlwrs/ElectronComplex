@@ -1,8 +1,9 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import LogoMenu from "./components/LogoMenu"
 import UserStatus from "./components/UserStatus"
 import { IMenuItem, MENU } from "renderer/store/menuList"
 import MenuItem from "./components/MenuItem"
+import { addSlideStyle, removeCloseStyle, removeSlideStyle } from "renderer/utils/SlideAnimation"
 
 const checkActiveItem = (array: IMenuItem[], selected: string) => {
    return array.map((_item) => {
@@ -12,17 +13,28 @@ const checkActiveItem = (array: IMenuItem[], selected: string) => {
    })
 }
 
+
 export default function SideMenu() {
    const [menuOpen, setmenuOpen] = useState(true)
+   const [menuActive, setmenuActive] = useState<IMenuItem[]>([])
 
    const toggleMenuOpen = () => {
       setmenuOpen(!menuOpen)
+      if (menuOpen) {
+         removeCloseStyle()
+         addSlideStyle('menu-separator')
+         document.getElementById('userStatus')?.classList.add('justify-content-between')
+      } else {
+         removeSlideStyle('menu-separator')
+      }
    }
 
-   const menuActive = checkActiveItem(MENU, 'Presencia')
+   useEffect(() => {
+      setmenuActive(checkActiveItem(MENU, 'Presencia'))
+   }, [])
 
    return (
-      <div className='sideMenu'>
+      <div id="main-side-menu" className='sideMenu'>
          {/* Logo */}
          <LogoMenu menuOpen={menuOpen} toggleMenuOpen={toggleMenuOpen} />
 

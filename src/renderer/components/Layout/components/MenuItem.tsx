@@ -1,39 +1,39 @@
-import { useEffect, useState } from "react"
+import { useRef, useState } from "react"
 import { Button } from "renderer/components/Button/Button"
-import { IMenuItem, MENU } from "renderer/store/menuList"
+import { IMenuItem } from "renderer/store/menuList"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
+import { useSildeAnimation } from "renderer/utils/SlideAnimation"
 
 type MenuItemProps = { menuItem: IMenuItem, menuOpen: boolean }
 
 export default function MenuItem({ menuItem, menuOpen }: MenuItemProps) {
    const subMenus = menuItem.subMenus || []
    const [optionOpen, setoptionOpen] = useState(true)
-   const [menuListStyle, setmenuListStyle] = useState('menu-list')
+   const slideRef = useRef<any>();
+   const onClickRef = useRef<any>();
 
    const openMenuItem = () => {
       setoptionOpen(!optionOpen)
    }
 
-   // toggles the 'close' style
-   useEffect(() => {
-      setmenuListStyle('menu-list'.concat(optionOpen ? '' : ' close'))
-      if (optionOpen) return
-
-      // setTimeout(() => {
-      //    setmenuListStyle('menu-list'.concat(optionOpen ? '' : ' close hide'))
-      // }, 250);
-   }, [optionOpen])
+   useSildeAnimation({
+      eToSlide: slideRef,
+      onClickRef: onClickRef,
+   });
 
    // set active style
-   const menuItemStyle = 'menu-item v-center justify-content-between'
+   const menuItemStyle = `menu-item v-center ${menuOpen ? 'justify-content-between' : ''}`
       .concat(menuItem.active ? ' active' : '')
 
 
    return (
       <div>
          {/* Title */}
-         {!menuItem.title || !menuOpen ? null : <div className="title-section">
+         {!menuItem.title ? null : <div
+            className={`title-section ${menuOpen ? '' : 'hide'}`}
+            ref={subMenus.length ? onClickRef : null}
+         >
             <Button
                onClick={openMenuItem}
                variant="flat"
@@ -46,7 +46,7 @@ export default function MenuItem({ menuItem, menuOpen }: MenuItemProps) {
          </div>}
 
          {/* Menu List */}
-         <div className={subMenus.length ? menuListStyle : ''}>
+         <div className='' ref={subMenus.length ? slideRef : null}>
             {subMenus.map((_item, index) => <MenuItem
                key={index}
                menuItem={_item}
@@ -56,7 +56,7 @@ export default function MenuItem({ menuItem, menuOpen }: MenuItemProps) {
             {/* Item */}
             {!menuItem.name ? null : <div className={menuItemStyle}>
                {/* icon */}
-               <div className="v-center" style={{ width: 30 }}>
+               <div className="v-center" style={{ width: 28, height: 28 }}>
                   {!menuItem.icon ? null : <FontAwesomeIcon
                      style={{ transform: 'scale(1.3)' }}
                      icon={menuItem.icon}
@@ -64,9 +64,9 @@ export default function MenuItem({ menuItem, menuOpen }: MenuItemProps) {
                </div>
 
                {/* name */}
-               {!menuOpen ? null : <div className="px-4" style={{ flex: 1 }}>
+               <div className={`px-4 ${menuOpen ? '' : 'hide'}`} style={{ flex: 1 }}>
                   <p>{menuItem.name}</p>
-               </div>}
+               </div>
             </div>}
          </div>
       </div>

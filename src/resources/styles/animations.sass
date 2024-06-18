@@ -26,7 +26,6 @@
   position: relative
   overflow: hidden
 
-  --effect-name: ripple
   --effect-duration: 500ms
   --effect-top: 0
   --effect-left: 0
@@ -55,3 +54,25 @@
   100%
     transform: scale(6)
     opacity: 0
+
+.slider-container
+  overflow: hidden
+
+  --slide-height: auto
+  --slide-width: auto
+  --slide-duration: 500ms
+
+  height: var(--slide-height)
+  width: var(--slide-width)
+
+  &.close
+    height: 0px
+
+  &.close-x
+    width: 0px
+
+.slide-y
+  transition: height var(--slide-duration)
+
+.slide-x
+  transition: width var(--slide-duration)

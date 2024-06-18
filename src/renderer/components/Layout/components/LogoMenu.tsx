@@ -5,7 +5,7 @@ import LineSeparator from "renderer/components/LineSeparator/LineSeparator"
 import MyImage from "resources/public/logo.png"
 
 
-export default function LogoMenu({ menuOpen, toggleMenuOpen }: any) {
+export default function LogoMenu({ menuOpen, toggleMenuOpen, ref }: any) {
    return (
       <div className="logo-block">
          <div className='v-center my-3'>
@@ -18,12 +18,14 @@ export default function LogoMenu({ menuOpen, toggleMenuOpen }: any) {
                />
             </div>
 
-            <Button onClick={toggleMenuOpen} variant='icon' className="no-shadows">
-               <FontAwesomeIcon
-                  style={{ padding: 12 }}
-                  icon={menuOpen ? faChevronLeft : faChevronRight}
-               />
-            </Button>
+            <div ref={ref}>
+               <Button onClick={toggleMenuOpen} variant='icon' className="no-shadows">
+                  <FontAwesomeIcon
+                     style={{ padding: 12 }}
+                     icon={menuOpen ? faChevronLeft : faChevronRight}
+                  />
+               </Button>
+            </div>
          </div>
 
          <LineSeparator />

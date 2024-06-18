@@ -17,7 +17,7 @@ export function Button(P: Button) {
 
   useClickAnimation(buttonRef, {
     color: "gray",
-    size: 50,
+    size: 15,
     duration: 600,
     effectName: "ripple"
   });

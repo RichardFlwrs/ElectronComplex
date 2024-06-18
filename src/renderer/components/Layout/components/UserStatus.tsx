@@ -13,7 +13,7 @@ export default function UserStatus({ menuOpen }: { menuOpen: boolean }) {
    }
    return (
       <div>
-         <Button variant='flat' className='card-shadow my-4 v-center justify-content-between'>
+         <Button variant='flat' id='userStatus' className={`card-shadow my-4 v-center`}>
             {/* User-Icon */}
             <div
                className='v-center'
