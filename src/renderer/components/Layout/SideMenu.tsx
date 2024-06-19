@@ -15,11 +15,22 @@ const checkActiveItem = (array: IMenuItem[], selected: string) => {
 
 
 export default function SideMenu() {
-   const [menuOpen, setmenuOpen] = useState(true)
+   const [menuOpen, setmenuOpen] = useState(false)
    const [menuActive, setmenuActive] = useState<IMenuItem[]>([])
 
    const toggleMenuOpen = () => {
       setmenuOpen(!menuOpen)
+      checkStyleOnElements()
+   }
+
+   useEffect(() => {
+      setTimeout(() => {
+         addSlideStyle('menu-separator')
+      }, 250);
+      setmenuActive(checkActiveItem(MENU, 'Presencia'))
+   }, [])
+
+   const checkStyleOnElements = () => {
       if (menuOpen) {
          removeCloseStyle()
          addSlideStyle('menu-separator')
@@ -28,10 +39,6 @@ export default function SideMenu() {
          removeSlideStyle('menu-separator')
       }
    }
-
-   useEffect(() => {
-      setmenuActive(checkActiveItem(MENU, 'Presencia'))
-   }, [])
 
    return (
       <div id="main-side-menu" className='sideMenu'>

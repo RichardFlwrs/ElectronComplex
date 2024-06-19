@@ -1,4 +1,4 @@
-import { faBookmark, faCalendar, faChevronDown, faSliders } from '@fortawesome/free-solid-svg-icons'
+import { faBookmark, faCalendar, faChevronDown, faCloud, faEllipsisV, faEye, faPhone, faPlusCircle, faSliders } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect } from 'react'
 import { Col, Form, Nav, Row, Tab, Table, Tabs } from 'react-bootstrap'
@@ -56,62 +56,104 @@ export default function Supervisor() {
 
          {/* Table */}
          <CardBox className='mb-4'>
-            <Tab.Container id="my-tab-id" defaultActiveKey="first">
+            <Tab.Container id="my-tab-id" defaultActiveKey="opens">
                <Row>
-                  <Nav variant="tabs" className="gap-2">
+                  <Nav variant="tabs" className="mb-4 gap-2">
                      <Nav.Item>
-                        <Nav.Link eventKey="first">Tab 1</Nav.Link>
+                        <Nav.Link eventKey="opens">
+                           Abiertas <div className='circle-number'>10</div>
+                        </Nav.Link>
                      </Nav.Item>
                      <Nav.Item>
-                        <Nav.Link eventKey="second">Tab 2</Nav.Link>
+                        <Nav.Link eventKey="pendings">
+                           Pendientes/En proceso <div className='circle-number'>4</div>
+                        </Nav.Link>
                      </Nav.Item>
+                     <Nav.Item>
+                        <Nav.Link eventKey="closed">
+                           Cerradas <div className='circle-number'>6</div>
+                        </Nav.Link>
+                     </Nav.Item>
+
+                     <div className='nav-left-section'>
+                        <Button onClick={() => null} variant="link" className='v-center'>
+                           <FontAwesomeIcon icon={faCloud} />
+                           Excel
+                        </Button>
+                        <Button onClick={() => null} variant="link" className='v-center'>
+                           <FontAwesomeIcon icon={faCloud} />
+                           PDF
+                        </Button>
+                        <Button onClick={() => null} variant="link" className='v-center'>
+                           <FontAwesomeIcon icon={faCloud} />
+                           CSV
+                        </Button>
+                     </div>
                   </Nav>
                </Row>
                <Tab.Content>
-                  <Tab.Pane eventKey="first">First tab content</Tab.Pane>
-                  <Tab.Pane eventKey="second">Second tab content</Tab.Pane>
+                  <Tab.Pane eventKey="opens"><DummyTble /></Tab.Pane>
+                  <Tab.Pane eventKey="pendings"><DummyTble /></Tab.Pane>
+                  <Tab.Pane eventKey="closed"><DummyTble /></Tab.Pane>
                </Tab.Content>
             </Tab.Container>
          </CardBox>
 
-         <h2>It's another screen! ✨</h2>
-
-         <Button onClick={() => navigate('/login')}>Go back to Login</Button>
       </div>
    )
 }
 
 
+
 const DummyTble = () => {
+   const headings: any = [
+      "P",
+      "ID",
+      "FECHA",
+      "HORA",
+      "AGENCIA",
+      "TIPO DE DELITO",
+      "RECURSOS",
+      "ANI",
+      "ESTADO",
+      "ACCION",
+      <FontAwesomeIcon icon={faEllipsisV} />
+   ]
    return (
       <Table responsive>
          <thead>
             <tr>
-               <th>#</th>
-               {Array.from({ length: 12 }).map((_, index) => (
-                  <th key={index}>Table heading</th>
+               {headings.map((title: any, index: number) => (
+                  <th key={index}>{title}</th>
                ))}
             </tr>
          </thead>
          <tbody>
-            <tr>
-               <td>1</td>
-               {Array.from({ length: 12 }).map((_, index) => (
-                  <td key={index}>Table cell {index}</td>
-               ))}
-            </tr>
-            <tr>
-               <td>2</td>
-               {Array.from({ length: 12 }).map((_, index) => (
-                  <td key={index}>Table cell {index}</td>
-               ))}
-            </tr>
-            <tr>
-               <td>3</td>
-               {Array.from({ length: 12 }).map((_, index) => (
-                  <td key={index}>Table cell {index}</td>
-               ))}
-            </tr>
+            {Array.from({ length: 5 }).map((_, index) => (<tr key={index}>
+               <td>
+                  <div className='circle-status m-auto'></div>
+               </td>
+               <td>30.245.592</td>
+               <td>22.05.2023</td>
+               <td>16:30:34</td>
+               <td>Circunscripcion 1</td>
+               <td>Lorem ipsum dolor</td>
+               <td>Lorem ipsum</td>
+               <td>Lorem ipsum</td>
+               <td>
+                  <div className='status-box'>
+                     P
+                  </div>
+               </td>
+               <td colSpan={2}>
+                  <div className='v-center-evenly  '>
+                     <FontAwesomeIcon icon={faEye} />
+                     <FontAwesomeIcon icon={faPlusCircle} />
+                     <FontAwesomeIcon icon={faEye} />
+                     <FontAwesomeIcon icon={faPhone} />
+                  </div>
+               </td>
+            </tr>))}
          </tbody>
       </Table>
    )

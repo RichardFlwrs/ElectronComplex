@@ -28,7 +28,7 @@
             letter-spacing: 1px
 
       .menu-separator
-         margin-bottom: 2.5rem
+         margin-bottom: 2rem
 
       .menu-item
          padding: 10px 10px
@@ -36,11 +36,17 @@
          width: 100%
          text-align: left
          background: inherit
+         border: 1px solid transparent
+         border-radius: 3px
+         &:hover
+            border: 1px solid rgba(53, 53, 64, 0.58) !important
 
          &.active
             background: #8e939f
             border-radius: 7px
             color: white
+            &:hover
+               background: #8e939fc7
 
       &>*
          padding-left: 1rem

@@ -22,7 +22,7 @@ body, html, app
 
   button:focus
     box-shadow: 0 0px 4px 2px rgb(53 53 64 / 58%) !important
-    border: 1px solid rgb(53 53 64 / 58%)
+    border: 1px solid rgb(53 53 64 / 58%)!important
 
   a.nav-link:focus
     // border: 1px solid rgb(53 53 64 / 58%)
@@ -54,6 +54,9 @@ p
   &-normal
     @extend .v-center
     justify-content: normal
+  &-evenly
+    @extend .v-center
+    justify-content: space-evenly
 
 .global-input
   background: white
@@ -66,7 +69,10 @@ p
 .btn-link
   color: $darkGray
   &:hover
-    color: $darkGray
+    color: $link_color
+
+  &:focus-visible, &:focus
+    color: $link_color
 
 .modal
   --bs-modal-width: 70%
@@ -82,6 +88,13 @@ p
   &:hover, &:focus
     box-shadow: none !important
 
+.row
+  --bs-gutter-x: 0
+
+table
+  border-collapse: separate
+  border-spacing: 0px
+
 .card-shadow
   @extend .transitionBoxShadow
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
@@ -90,3 +103,34 @@ p
 
 .hide
   display: none
+
+.circle-number
+  --circle-number-size: 21px
+  @extend .v-center
+  font-size: 10px
+  font-weight: 700
+  background: $darkGray
+  color: white
+  border-radius: 50%
+  width: var(--circle-number-size)
+  height: var(--circle-number-size)
+
+.circle-status
+  --circle-number-size: 14px
+  @extend .v-center
+  font-size: 10px
+  font-weight: 700
+  background: #b94943
+  color: white
+  border-radius: 50%
+  width: var(--circle-number-size)
+  height: var(--circle-number-size)
+
+.status-box
+  background: #F9E5E1
+  color: #b94943
+  border: 1px solid #b94943
+  border-radius: 5px
+  width: fit-content
+  padding: 4px 20px
+  margin: auto
