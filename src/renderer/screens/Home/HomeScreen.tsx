@@ -1,19 +1,24 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { Button, Container, Heading } from 'renderer/components'
-import { NavBar } from 'renderer/components/Layout/NavBar'
+import React, { useEffect } from 'react'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import MainLayout from 'renderer/components/Layout/MainLayout'
+import Supervisor from './views/Supervisor'
+import NotificationCard from 'renderer/components/NotificationCard/NotificationCard'
 
 export default function HomeScreen() {
+
    const navigate = useNavigate()
+
+   useEffect(() => {
+      navigate('/home/supervisor')
+   }, [])
+
 
    return (
       <MainLayout>
-         <Heading>Hello! 👋</Heading>
-
-         <h2>It's another screen! ✨</h2>
-
-         <Button onClick={() => navigate('/login')}>Go back to Login</Button>
+         <NotificationCard />
+         <Routes>
+            <Route path='supervisor' element={<Supervisor />} />
+         </Routes>
       </MainLayout>
    )
 }

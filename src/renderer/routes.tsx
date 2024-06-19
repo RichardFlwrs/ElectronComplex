@@ -11,7 +11,7 @@ export function AppRoutes() {
         <>
           <Route path="/" element={<MainScreen />} />
           <Route path="/login/*" element={<LoginScreen />} />
-          <Route path="/home" element={<HomeScreen />} />
+          <Route path="/home/*" element={<HomeScreen />} />
           <Route path="/anotherScreen" element={<AnotherScreen />} />
         </>
       }

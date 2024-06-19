@@ -2,6 +2,7 @@
 @import 'animations'
 @import 'colors'
 @import '_layout'
+@import '_components'
 
 body, html, app
   display: flex
@@ -42,6 +43,9 @@ p
   &-between
     @extend .v-center
     justify-content: space-between
+  &-normal
+    @extend .v-center
+    justify-content: normal
 
 .global-input
   background: white

@@ -68,6 +68,35 @@
       flex: 1
 
       .children-container
-         padding: 1rem
+         padding: 2rem
          background-color: $bg
          height: 100%
+
+.navbar
+   .nav-item, .nav-link
+      margin: 0 7px
+
+      &.active
+         font-weight: bold
+
+   &.bg-body-tertiary
+      background-color: white !important
+      border-bottom: 1px solid $cardBorder
+
+   .navbar-options
+      button
+         margin-left: 10px
+         border-color: $cardBorder
+         border-radius: 7px
+         text-transform: capitalize
+         font-weight: 400
+         color: $darkGray
+         width: auto
+         padding: 10px 14px
+         &.round
+            border-radius: 30px
+            padding: 10px 20px
+         p
+            padding-left: 7px
+            letter-spacing: initial
+            font-size: 14px
