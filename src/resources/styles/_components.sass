@@ -54,6 +54,22 @@
          letter-spacing: initial
          font-size: 14px
 
+// Drop Down
+.drop-down-card
+   @extend .card-box-style
+   padding: 0
+   position: absolute
+   z-index: 1
+   width: 100%
+   top: 74px
+
+   &>*
+      padding: 10px 1rem
+
+   >div
+      &:hover
+         background: $lightGray
+
 // Tabs - Tab Container
 div.nav
    border-bottom: 2px solid $cardBorder
@@ -108,3 +124,26 @@ table.table
 
       tr:last-child td
          border-bottom: 1px solid transparent
+
+// Cirle Status
+
+.circle-status
+   --circle-number-size: 14px
+   @extend .v-center
+   font-size: 10px
+   font-weight: 700
+   background: gray // TODO: Change color
+   color: white
+   border-radius: 50%
+   width: var(--circle-number-size)
+   height: var(--circle-number-size)
+
+   &-green
+      @extend .circle-status
+      background: #58ae96
+   &-red
+      @extend .circle-status
+      background: #b94943
+   &-orange
+      @extend .circle-status
+      background: #b68b41

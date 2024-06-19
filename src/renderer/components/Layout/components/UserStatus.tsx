@@ -1,6 +1,6 @@
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
+import React, { useState } from 'react'
 import { Button } from 'renderer/components/Button/Button'
 
 export default function UserStatus({ menuOpen }: { menuOpen: boolean }) {
@@ -11,13 +11,23 @@ export default function UserStatus({ menuOpen }: { menuOpen: boolean }) {
       width: 35,
       color: 'white',
    }
+
+   const [listOpen, setlistOpen] = useState(false)
+
+   const toggleListOpen = () => {
+      setlistOpen(!listOpen)
+   }
+
    return (
-      <div>
-         <Button variant='flat' id='userStatus' className={`card-shadow my-4 v-center`}>
+      <div className='position-relative'>
+         <Button
+            onClick={toggleListOpen}
+            variant='flat'
+            id='userStatus'
+            className={`card-shadow my-4 v-center`}
+         >
             {/* User-Icon */}
-            <div
-               className='v-center'
-            >
+            <div className='v-center' >
                <div className='v-center' style={circleStyle}>
                   A
                </div>
@@ -31,11 +41,25 @@ export default function UserStatus({ menuOpen }: { menuOpen: boolean }) {
 
             {/* dropdown icon */}
             <div className={menuOpen ? '' : 'hide'}>
-               <FontAwesomeIcon
-                  icon={faChevronDown}
-               />
+               <FontAwesomeIcon icon={faChevronDown} />
             </div>
          </Button>
+
+         {!listOpen ? null : <div className='drop-down-card'>
+            <p className=''>Estado</p>
+            <div className='v-center-normal gap-3'>
+               <div className='circle-status-green'></div>
+               <p>Status 1</p>
+            </div>
+            <div className='v-center-normal gap-3'>
+               <div className='circle-status-red'></div>
+               <p>Status 2</p>
+            </div>
+            <div className='v-center-normal gap-3'>
+               <div className='circle-status-orange'></div>
+               <p>Status 3</p>
+            </div>
+         </div>}
       </div>
    )
 }

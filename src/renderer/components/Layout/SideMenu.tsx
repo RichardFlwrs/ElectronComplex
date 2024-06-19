@@ -46,7 +46,9 @@ export default function SideMenu() {
          <LogoMenu menuOpen={menuOpen} toggleMenuOpen={toggleMenuOpen} />
 
          {/* Status */}
-         <UserStatus menuOpen={menuOpen} />
+         <div>
+            <UserStatus menuOpen={menuOpen} />
+         </div>
 
          {/* Menu list */}
          <nav>

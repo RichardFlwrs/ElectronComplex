@@ -131,7 +131,7 @@ const DummyTble = () => {
          <tbody>
             {Array.from({ length: 5 }).map((_, index) => (<tr key={index}>
                <td>
-                  <div className='circle-status m-auto'></div>
+                  <div className='circle-status-red m-auto'></div>
                </td>
                <td>30.245.592</td>
                <td>22.05.2023</td>
