@@ -23,7 +23,7 @@ export default function MenuItem({ menuItem, menuOpen }: MenuItemProps) {
    });
 
    // set active style
-   const menuItemStyle = `menu-item v-center ${menuOpen ? 'justify-content-between' : ''}`
+   const menuItemStyle = `menu-item no-shadows v-center ${menuOpen ? 'justify-content-between' : ''}`
       .concat(menuItem.active ? ' active' : '')
 
 
@@ -35,7 +35,6 @@ export default function MenuItem({ menuItem, menuOpen }: MenuItemProps) {
             ref={subMenus.length ? onClickRef : null}
          >
             <Button
-               onClick={openMenuItem}
                variant="flat"
                className="no-shadows p-2 v-center-between"
             >
@@ -54,7 +53,7 @@ export default function MenuItem({ menuItem, menuOpen }: MenuItemProps) {
             />)}
 
             {/* Item */}
-            {!menuItem.name ? null : <div className={menuItemStyle}>
+            {!menuItem.name ? null : <button className={menuItemStyle}>
                {/* icon */}
                <div className="v-center" style={{ width: 28, height: 28 }}>
                   {!menuItem.icon ? null : <FontAwesomeIcon
@@ -67,7 +66,7 @@ export default function MenuItem({ menuItem, menuOpen }: MenuItemProps) {
                <div className={`px-4 ${menuOpen ? '' : 'hide'}`} style={{ flex: 1 }}>
                   <p>{menuItem.name}</p>
                </div>
-            </div>}
+            </button>}
          </div>
       </div>
    )

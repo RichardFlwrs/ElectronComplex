@@ -16,7 +16,6 @@ export const useSildeAnimation = ({ eToSlide, onClickRef, config = {} }: SlideAn
    const {
       duration = 600,
       direcction = 'y',
-      listening = {}
    } = config;
 
    const ON_Y = direcction === 'y'
@@ -36,7 +35,7 @@ export const useSildeAnimation = ({ eToSlide, onClickRef, config = {} }: SlideAn
          SLIDER.classList.add(SLIDE_CSS_NAME, ON_Y ? "slide-y" : "slide-x");
          style.setProperty("--slide-duration", `${duration}ms`);
          if (ON_Y)
-            style.setProperty("--slide-height", `${height}px`);
+            style.setProperty("--slide-height", `${height + 2}px`);
          else
             style.setProperty("--slide-width", `${width}px`);
       };

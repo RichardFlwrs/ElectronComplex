@@ -37,7 +37,12 @@ export function Button(P: Button) {
 
 
   return (
-    <button {...P} type={P.type || "button"} className={combinedClassNames} ref={buttonRef}>
+    <button
+      {...P}
+      type={P.type || "button"}
+      className={combinedClassNames}
+      ref={buttonRef}
+    >
       {P.children}
     </button>
   )
