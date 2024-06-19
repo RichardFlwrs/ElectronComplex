@@ -56,9 +56,9 @@ export default function Supervisor() {
 
          {/* Table */}
          <CardBox className='mb-4'>
-            <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+            <Tab.Container id="my-tab-id" defaultActiveKey="first">
                <Row>
-                  <Nav variant="pills" className="gap-2">
+                  <Nav variant="tabs" className="gap-2">
                      <Nav.Item>
                         <Nav.Link eventKey="first">Tab 1</Nav.Link>
                      </Nav.Item>
