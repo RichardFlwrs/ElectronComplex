@@ -47,18 +47,18 @@ export default function UserStatus({ menuOpen }: { menuOpen: boolean }) {
 
          {!listOpen ? null : <div className='drop-down-card'>
             <p className=''>Estado</p>
-            <div className='v-center-normal gap-3'>
+            <Button variant='flat' className='dd-option'>
                <div className='circle-status-green'></div>
-               <p>Status 1</p>
-            </div>
-            <div className='v-center-normal gap-3'>
+               <p>Presente</p>
+            </Button>
+            <Button variant='flat' className='dd-option'>
                <div className='circle-status-red'></div>
-               <p>Status 2</p>
-            </div>
-            <div className='v-center-normal gap-3'>
+               <p>Desocupado</p>
+            </Button>
+            <Button variant='flat' className='dd-option'>
                <div className='circle-status-orange'></div>
-               <p>Status 3</p>
-            </div>
+               <p>En espera</p>
+            </Button>
          </div>}
       </div>
    )

@@ -21,12 +21,32 @@ body, html, app
   -webkit-font-smoothing: antialiased
 
   button:focus
-    box-shadow: 0 0px 4px 2px rgb(53 53 64 / 58%) !important
+    box-shadow: 0 0px 4px 0px rgb(53 53 64 / 58%) !important
     border: 1px solid rgb(53 53 64 / 58%)!important
 
   a.nav-link:focus
     // border: 1px solid rgb(53 53 64 / 58%)
     box-shadow: 0 0px 4px 1px rgb(53 53 64 / 58%) !important
+
+.scroll-style
+  --sb-track-color: #ffffff
+  --sb-thumb-color: #cccccc
+  --sb-size: 8px
+
+  &::-webkit-scrollbar
+    width: var(--sb-size) !important
+
+  &::-webkit-scrollbar-track
+    background: var(--sb-track-color) !important
+    border-radius: 3px !important
+
+  &::-webkit-scrollbar-thumb
+    background: var(--sb-thumb-color) !important
+    border-radius: 3px !important
+
+@supports not selector(::-webkit-scrollbar)
+  body
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color)
 
 p
   margin: 0
