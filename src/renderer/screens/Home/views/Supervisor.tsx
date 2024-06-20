@@ -1,6 +1,6 @@
-import { faBookmark, faCalendar, faChevronDown, faCloud, faEllipsisV, faEye, faPhone, faPlusCircle, faSliders } from '@fortawesome/free-solid-svg-icons'
+import { faBookmark, faCalendar, faChevronDown, faChevronLeft, faChevronRight, faCloud, faEllipsisV, faEye, faPhone, faPlusCircle, faSliders, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Col, Form, Nav, Row, Tab, Table, Tabs } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import { Button, Heading } from 'renderer/components'
@@ -55,50 +55,107 @@ export default function Supervisor() {
          </CardBox>
 
          {/* Table */}
-         <CardBox className='mb-4'>
-            <Tab.Container id="my-tab-id" defaultActiveKey="opens">
-               <Row>
-                  <Nav variant="tabs" className="mb-4 gap-2">
-                     <Nav.Item>
-                        <Nav.Link eventKey="opens">
-                           Abiertas <div className='circle-number'>10</div>
-                        </Nav.Link>
-                     </Nav.Item>
-                     <Nav.Item>
-                        <Nav.Link eventKey="pendings">
-                           Pendientes/En proceso <div className='circle-number'>4</div>
-                        </Nav.Link>
-                     </Nav.Item>
-                     <Nav.Item>
-                        <Nav.Link eventKey="closed">
-                           Cerradas <div className='circle-number'>6</div>
-                        </Nav.Link>
-                     </Nav.Item>
+         <div>
+            <CardBox className='mb-4'>
+               <Tab.Container id="my-tab-id" defaultActiveKey="opens">
+                  <Row>
+                     <Nav variant="tabs" className="mb-4 gap-2">
+                        <Nav.Item>
+                           <Nav.Link eventKey="opens">
+                              Abiertas <div className='circle-number'>10</div>
+                           </Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                           <Nav.Link eventKey="pendings">
+                              Pendientes/En proceso <div className='circle-number'>4</div>
+                           </Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                           <Nav.Link eventKey="closed">
+                              Cerradas <div className='circle-number'>6</div>
+                           </Nav.Link>
+                        </Nav.Item>
 
-                     <div className='nav-left-section'>
-                        <Button onClick={() => null} variant="link" className='v-center'>
-                           <FontAwesomeIcon icon={faCloud} />
-                           Excel
-                        </Button>
-                        <Button onClick={() => null} variant="link" className='v-center'>
-                           <FontAwesomeIcon icon={faCloud} />
-                           PDF
-                        </Button>
-                        <Button onClick={() => null} variant="link" className='v-center'>
-                           <FontAwesomeIcon icon={faCloud} />
-                           CSV
-                        </Button>
-                     </div>
-                  </Nav>
-               </Row>
-               <Tab.Content>
-                  <Tab.Pane eventKey="opens"><DummyTble /></Tab.Pane>
-                  <Tab.Pane eventKey="pendings"><DummyTble /></Tab.Pane>
-                  <Tab.Pane eventKey="closed"><DummyTble /></Tab.Pane>
-               </Tab.Content>
-            </Tab.Container>
-         </CardBox>
+                        <div className='nav-left-section'>
+                           <Button onClick={() => null} variant="link" className='v-center'>
+                              <FontAwesomeIcon icon={faCloud} />
+                              Excel
+                           </Button>
+                           <Button onClick={() => null} variant="link" className='v-center'>
+                              <FontAwesomeIcon icon={faCloud} />
+                              PDF
+                           </Button>
+                           <Button onClick={() => null} variant="link" className='v-center'>
+                              <FontAwesomeIcon icon={faCloud} />
+                              CSV
+                           </Button>
+                        </div>
+                     </Nav>
+                  </Row>
+                  <Tab.Content>
+                     <Tab.Pane eventKey="opens"><DummyTble /></Tab.Pane>
+                     <Tab.Pane eventKey="pendings"><DummyTble /></Tab.Pane>
+                     <Tab.Pane eventKey="closed"><DummyTble /></Tab.Pane>
+                  </Tab.Content>
+               </Tab.Container>
+            </CardBox>
 
+            <nav className='t-paginator v-center-end gap-2'>
+               <Button variant='flat' className='v-center w-auto p-2'>
+                  <FontAwesomeIcon icon={faChevronLeft} />
+               </Button>
+
+               <Button variant='primary' className='v-center'>
+                  1
+               </Button>
+
+               <Button variant='light' className='v-center'>
+                  2
+               </Button>
+
+               <Button variant='flat' className='v-center w-auto p-2'>
+                  <FontAwesomeIcon icon={faChevronRight} />
+               </Button>
+            </nav>
+         </div>
+
+      </div>
+   )
+}
+
+const TableOptions = () => {
+   const [listOpen, setlistOpen] = useState(false)
+
+   const toggleListOpen = () => {
+      setlistOpen(!listOpen)
+   }
+
+   const filterOptions = ["Partido", "Cuad", "Localidad", "Cria", "Comisaria", "Calle N"]
+
+   return (
+      <div className='tOption position-relative'>
+
+         <Button variant='flat' className='v-center' onClick={toggleListOpen}>
+            <FontAwesomeIcon icon={faEllipsisV} />
+         </Button>
+         {!listOpen ? null : <div className='drop-down-card' style={{ top: 0, right: 0, width: '17rem' }}>
+            <div className='v-center-between dd-header'>
+               <p className=''>Agregar:</p>
+               <Button variant='flat' className='v-center w-auto' onClick={toggleListOpen}>
+                  <FontAwesomeIcon icon={faTimesCircle} />
+               </Button>
+            </div>
+            <Row className='pb-0'>
+               {filterOptions.map((_f, idx) => <Col xs={6} className='v-center-normal gap-3' key={idx}>
+                  <Form.Check type='checkbox' label={`${_f}`} id={`${_f}`} />
+               </Col>)}
+            </Row>
+            <div className='pt-0'>
+               <Button variant='link' className='w-auto'>
+                  Aplicar filtros
+               </Button>
+            </div>
+         </div>}
       </div>
    )
 }
@@ -117,7 +174,7 @@ const DummyTble = () => {
       "ANI",
       "ESTADO",
       "ACCION",
-      <FontAwesomeIcon icon={faEllipsisV} />
+      <TableOptions />
    ]
    return (
       <Table responsive>

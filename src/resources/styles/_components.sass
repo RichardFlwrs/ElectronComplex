@@ -60,12 +60,11 @@
    padding: 0
    position: absolute
    z-index: 1
-   width: 100%
+   width: 16rem //TODO: change on click
    top: 74px
 
    &>*
       padding: 10px 1rem
-
 
    button.dd-option
       @extend .v-center-normal
@@ -76,6 +75,9 @@
       &:hover
          background: $lightGray
 
+   .dd-header
+      border-bottom: 1px solid $cardBorder
+      font-weight: bold
 
 // Tabs - Tab Container
 div.nav
@@ -102,6 +104,16 @@ div.nav
 
 table.table
    font-size: 15px
+
+   .tOption
+      width: 30px
+      height: 38px
+      margin: auto
+      >button
+         width: 100%
+         height: 100%
+         background: transparent
+
    thead
       background: $lightGray
    th
@@ -118,6 +130,8 @@ table.table
       &:last-child
          border-bottom-right-radius: 10px
          border-top-right-radius: 10px
+         padding: 0
+         vertical-align: middle
 
    tbody
       td
@@ -131,6 +145,13 @@ table.table
 
       tr:last-child td
          border-bottom: 1px solid transparent
+
+nav.t-paginator
+   button
+      height: 30px
+      width: 30px
+      border-radius: 4px
+      margin: 0
 
 // Cirle Status
 
