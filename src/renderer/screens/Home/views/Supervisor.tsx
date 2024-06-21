@@ -1,10 +1,11 @@
-import { faBookmark, faCalendar, faChevronDown, faChevronLeft, faChevronRight, faCloud, faEllipsisV, faEye, faPhone, faPlusCircle, faSliders, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+import { faBookmark, faCalendar, faChevronDown, faChevronLeft, faChevronRight, faCloud, faEarListen, faEllipsisV, faEye, faPhone, faPlayCircle, faPlusCircle, faSliders, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useState } from 'react'
 import { Col, Form, Nav, Row, Tab, Table, Tabs } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import { Button, Heading } from 'renderer/components'
 import CardBox from 'renderer/components/CardBox/CardBox'
+import DropDown from 'renderer/components/DropDown/DropDown'
 import NotificationCard from 'renderer/components/NotificationCard/NotificationCard'
 
 export default function Supervisor() {
@@ -124,39 +125,27 @@ export default function Supervisor() {
 }
 
 const TableOptions = () => {
-   const [listOpen, setlistOpen] = useState(false)
-
-   const toggleListOpen = () => {
-      setlistOpen(!listOpen)
-   }
-
    const filterOptions = ["Partido", "Cuad", "Localidad", "Cria", "Comisaria", "Calle N"]
 
    return (
-      <div className='tOption position-relative'>
-
-         <Button variant='flat' className='v-center' onClick={toggleListOpen}>
-            <FontAwesomeIcon icon={faEllipsisV} />
-         </Button>
-         {!listOpen ? null : <div className='drop-down-card' style={{ top: 0, right: 0, width: '17rem' }}>
-            <div className='v-center-between dd-header'>
-               <p className=''>Agregar:</p>
-               <Button variant='flat' className='v-center w-auto' onClick={toggleListOpen}>
-                  <FontAwesomeIcon icon={faTimesCircle} />
-               </Button>
-            </div>
-            <Row className='pb-0'>
-               {filterOptions.map((_f, idx) => <Col xs={6} className='v-center-normal gap-3' key={idx}>
-                  <Form.Check type='checkbox' label={`${_f}`} id={`${_f}`} />
-               </Col>)}
-            </Row>
-            <div className='pt-0'>
-               <Button variant='link' className='w-auto'>
-                  Aplicar filtros
-               </Button>
-            </div>
-         </div>}
-      </div>
+      <DropDown
+         className='tOption'
+         dropdownParent={<FontAwesomeIcon icon={faEllipsisV} />}
+         headerTitle='Agregar:'
+         withCloseBtn={true}
+         ddOption={{ width: '17rem' }}
+      >
+         <Row className='pb-0'>
+            {filterOptions.map((_f, idx) => <Col xs={6} className='v-center-normal gap-3' key={idx}>
+               <Form.Check type='checkbox' label={`${_f}`} id={`${_f}`} />
+            </Col>)}
+         </Row>
+         <div className='pt-0'>
+            <Button variant='link' className='w-auto'>
+               Aplicar filtros
+            </Button>
+         </div>
+      </DropDown>
    )
 }
 
@@ -204,14 +193,54 @@ const DummyTble = () => {
                </td>
                <td colSpan={2}>
                   <div className='v-center-evenly  '>
-                     <FontAwesomeIcon icon={faEye} />
-                     <FontAwesomeIcon icon={faPlusCircle} />
-                     <FontAwesomeIcon icon={faEye} />
-                     <FontAwesomeIcon icon={faPhone} />
+                     <Button variant='flat' className='w-auto no-shadows'>
+                        <FontAwesomeIcon icon={faEye} />
+                     </Button>
+                     <Button variant='flat' className='w-auto no-shadows'>
+                        <FontAwesomeIcon icon={faPlusCircle} />
+                     </Button>
+                     <HearAudio idx={index} />
+                     <Button variant='flat' className='w-auto no-shadows'>
+                        <FontAwesomeIcon icon={faPhone} />
+                     </Button>
                   </div>
                </td>
             </tr>))}
          </tbody>
       </Table>
+   )
+}
+
+import SoundImage from "resources/public/wave-sound.png"
+
+const HearAudio = ({ idx }: { idx: number }) => {
+
+
+   return (
+      <DropDown
+         parentId={'hearOption' + idx}
+         classContainer='audiobox-option'
+         className='w-auto no-shadows'
+         dropdownParent={<FontAwesomeIcon icon={faEarListen} />}
+         withCloseBtn={true}
+         ddOption={{ width: '17rem' }}
+      >
+         <div className='v-center-normal'>
+            <FontAwesomeIcon icon={faPlayCircle} />
+            <img
+               src={SoundImage}
+               alt=""
+               width={100}
+               height={62}
+            />
+            <img
+               style={{marginLeft: -10}}
+               src={SoundImage}
+               alt=""
+               width={100}
+               height={62}
+            />
+         </div>
+      </DropDown>
    )
 }
