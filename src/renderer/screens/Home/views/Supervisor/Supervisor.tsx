@@ -174,7 +174,7 @@ const DummyTble = () => {
                ))}
             </tr>
          </thead>
-         <tbody>
+         <tbody className='text-center'>
             {Array.from({ length: 5 }).map((_, index) => (<tr key={index}>
                <td>
                   <div className='circle-status-red m-auto'></div>
