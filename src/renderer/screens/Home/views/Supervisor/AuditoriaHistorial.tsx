@@ -1,4 +1,4 @@
-import { faCloud } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faChevronRight, faCloud } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Table } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
@@ -63,6 +63,24 @@ export default function AuditoriaHistorial() {
 
 
             </CardBox>
+
+            <nav className='mt-3 t-paginator v-center-end gap-2'>
+                <Button variant='flat' className='v-center w-auto p-2'>
+                    <FontAwesomeIcon icon={faChevronLeft} />
+                </Button>
+
+                <Button variant='primary' className='v-center'>
+                    1
+                </Button>
+
+                <Button variant='light' className='v-center'>
+                    2
+                </Button>
+
+                <Button variant='flat' className='v-center w-auto p-2'>
+                    <FontAwesomeIcon icon={faChevronRight} />
+                </Button>
+            </nav>
         </div>
     )
 }

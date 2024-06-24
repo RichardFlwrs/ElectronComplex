@@ -11,7 +11,7 @@ type TextInputProps = {
    value?: string
    onChange?: string
    icon?: IconDefinition
-   wrapperClassName?: string
+   wrapperclassname?: string
    max?: number
    maxLength?: number
    inputstyle?: React.CSSProperties | undefined
@@ -20,14 +20,14 @@ type TextInputProps = {
 
 
 export default function TextInput(P: TextInputProps) {
-   const combinedClassNames = [styles.myInputWrapper, P.wrapperClassName].join(' ')
+   const combinedClassNames = [styles.myInputWrapper, P.wrapperclassname].join(' ')
 
    return (
-      <div className={combinedClassNames} {...P}>
+      <div {...P} className={combinedClassNames}>
          {P.icon ? <FontAwesomeIcon className={styles.myInputIcon} icon={P.icon} /> : null}
 
          <input
-            tabIndex={P.tabIndex || 1}
+            tabIndex={P.tabIndex || 0}
             max={P.max}
             maxLength={P.maxLength}
             style={P.inputstyle}

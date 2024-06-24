@@ -10,8 +10,11 @@
       If you want restrict the sources from where you can load resources:
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'" />
     -->
-  <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self' *; script-src 'self' *; style-src 'self' 'unsafe-inline' *;" />
+  <meta http-equiv="Content-Security-Policy" content="
+    worker-src atom:; 
+    child-src atom: gap:;
+    img-src 'self' atom: data:;
+    default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:" />
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>
 

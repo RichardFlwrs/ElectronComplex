@@ -1,22 +1,25 @@
 import { faBook, faCloud, faGear, faHashtag, faMapLocation, faTimesCircle, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { PropsWithChildren, useState } from 'react'
+import { PropsWithChildren, useEffect, useState } from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '../Button/Button';
 import { Form, Modal } from 'react-bootstrap';
 import TextInput from '../TextInput/TextInput';
 
-type NavBarProps = {
-
+const iterateElements = (array: HTMLCollectionOf<Element>, func: (e: Element) => void) => {
+   for (let index = 0; index < array.length; index++) {
+      func(array[index])
+   }
 }
 
 export function NavBar() {
    const navigate = useNavigate()
+   const location = useLocation();
    const [show, setShow] = useState(false);
 
    const handleClose = () => {
@@ -28,23 +31,47 @@ export function NavBar() {
    }
    const handleShow = () => setShow(true);
 
+   const deactivateNavLink = () => {
+      const MAIN_NAV = document.getElementById('main-navbar-nav')
+      if (MAIN_NAV) {
+         const LIST = MAIN_NAV.getElementsByClassName('nav-link')
+         iterateElements(LIST, (el) => el.classList.remove('active'))
+      }
+   }
+   const activeNavLink = (id: string) => {
+      document.getElementById(id)?.classList.add('active')
+   }
+
+   useEffect(() => {
+      const url = window.location.href;
+      const check = url.split('/home')
+      // Check if the current location is inside "home" route
+      if (check[1]) {
+         const current = check[1] // '/noticias'
+         deactivateNavLink()
+
+         if (current.includes('supervisor')) activeNavLink('nav-supervisor')
+         if (current.includes('noticias')) activeNavLink('nav-noticias')
+      }
+   }, [location])
+
    return (
       <>
          <Navbar expand="lg" className="bg-body-tertiary px-3">
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
+            <Navbar.Toggle aria-controls="main-navbar-nav" />
+            <Navbar.Collapse id="main-navbar-nav">
                <Nav className="me-auto">
-                  <NavDropdown className='active' title="Supervisor" id="dp-supervisor">
+                  <NavDropdown title="Supervisor" id="nav-supervisor">
                      <NavDropdown.Item onClick={handleShow} >Auditoria</NavDropdown.Item>
                      <NavDropdown.Item onClick={() => navigate('/home/supervisor/estado-agencia')} >Estado Agencia</NavDropdown.Item>
                      {/* <NavDropdown.Divider />
                   <NavDropdown.Item onClick={() => navigate('/home/supervisor')} >Separated link</NavDropdown.Item> */}
                   </NavDropdown>
-                  <Nav.Link onClick={() => navigate('/home/supervisor')} >Noticias</Nav.Link>
-                  <NavDropdown title="Reportes" id="dp-reportes">
+                  <Nav.Link onClick={() => navigate('/home/noticias')} id='nav-noticias' >Noticias</Nav.Link>
+                  <NavDropdown title="Reportes" id="nav-reportes">
                      <NavDropdown.Item onClick={() => navigate('/home/supervisor')} >Something</NavDropdown.Item>
                   </NavDropdown>
-                  <NavDropdown title="Gestor Recursos" id="dp-gestor">
+                  <NavDropdown title="Gestor Recursos" id="nav-gestor">
                      <NavDropdown.Item onClick={() => navigate('/home/supervisor')} >Something</NavDropdown.Item>
                   </NavDropdown>
                   <Nav.Link onClick={() => navigate('/home/supervisor')} >Operadores</Nav.Link>
@@ -82,7 +109,7 @@ export function NavBar() {
                <Form.Group className="mb-3">
                   <TextInput icon={faHashtag} placeholder='12483639900' />
                </Form.Group>
-               <Form.Group style={{marginRight: '15%'}}>
+               <Form.Group style={{ marginRight: '15%' }}>
                   <Form.Check
                      type={'checkbox'} id={`Historico`} label={`Historico`}
                   />

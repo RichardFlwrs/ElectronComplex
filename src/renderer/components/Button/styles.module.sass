@@ -19,7 +19,7 @@
   &:hover, &:focus
     color: white
     background: mix(white, $darkGray, 10%)
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 7px 25px -5px
+    // box-shadow: rgba(0, 0, 0, 0.1) 0px 7px 25px -5px
 
   &Light
     @extend .button
@@ -29,6 +29,13 @@
     &:hover, &:focus
       color: $darkGray
       background: mix(white, $darkGray, 98%)
+
+  &Danger
+    @extend .button
+    background: $redColor
+    border: 1px solid $redColor
+    &:hover, &:focus
+      background: mix(white, $redColor, 10%)
 
   &Icon
     @extend .button

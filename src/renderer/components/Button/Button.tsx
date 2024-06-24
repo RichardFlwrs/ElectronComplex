@@ -4,7 +4,7 @@ import styles from './styles.module.sass'
 import { Button as BtnBootstrap } from 'react-bootstrap'
 import { useClickAnimation } from 'renderer/utils/ClickAnimation'
 
-type Variant = 'primary' | 'light' | 'link' | 'flat' | 'icon'
+type Variant = 'primary' | 'light' | 'danger' | 'link' | 'flat' | 'icon'
 
 type Button = {
   variant?: Variant
@@ -53,6 +53,9 @@ const getStyleVariant = (type: Variant | undefined): string => {
   switch (type) {
     case 'light':
       return styles.buttonLight
+
+    case 'danger':
+      return styles.buttonDanger
 
     case 'icon':
       return styles.buttonIcon

@@ -4,6 +4,7 @@ import { IMenuItem } from "renderer/store/menuList"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
 import { useSildeAnimation } from "renderer/utils/SlideAnimation"
+import { useNavigate } from "react-router-dom"
 
 type MenuItemProps = { menuItem: IMenuItem, menuOpen: boolean }
 
@@ -12,6 +13,7 @@ export default function MenuItem({ menuItem, menuOpen }: MenuItemProps) {
    const [optionOpen, setoptionOpen] = useState(true)
    const slideRef = useRef<any>();
    const onClickRef = useRef<any>();
+   const navigate = useNavigate();
 
    const openMenuItem = () => {
       setoptionOpen(!optionOpen)
@@ -53,7 +55,10 @@ export default function MenuItem({ menuItem, menuOpen }: MenuItemProps) {
             />)}
 
             {/* Item */}
-            {!menuItem.name ? null : <button className={menuItemStyle}>
+            {!menuItem.name ? null : <button
+               onClick={() => menuItem.link ? navigate(menuItem.link) : null}
+               className={menuItemStyle}
+            >
                {/* icon */}
                <div className="v-center" style={{ width: 28, height: 28 }}>
                   {!menuItem.icon ? null : <FontAwesomeIcon

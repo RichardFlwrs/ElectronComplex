@@ -6,6 +6,7 @@ export type IMenuItem = {
    name?: string
    image?: string
    title?: string,
+   link?: string,
    active?: boolean,
    subMenus?: IMenuItem[]
 
@@ -14,7 +15,7 @@ export type IMenuItem = {
 export const MENU: IMenuItem[] = [
    {
       title: 'Nombre Agente', subMenus: [
-         { icon: faUser, name: 'Presencia' },
+         { icon: faUser, name: 'Presencia', link: '/home/supervisor' },
          { icon: faMobileRetro, name: 'Marcar' },
          { icon: faPhone, name: 'Contestar' },
          { icon: faPhoneSlash, name: 'Colgar' },
