@@ -1,22 +1,52 @@
 import { faBookmark, faCalendar, faChevronDown, faSliders } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useState } from 'react'
-import { Form } from 'react-bootstrap'
+import { Col, Form, Row } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import { Button } from 'renderer/components'
 import CardBox from 'renderer/components/CardBox/CardBox'
 import MainTable from '../../components/MainTable'
 
-export default function Supervisor() {
+export default function FiltrosMultiples() {
    const navigate = useNavigate()
 
    return (
       <div>
          {/* Filtros */}
          <CardBox className='mb-4'>
-            <h3 className='cardTitle'><FontAwesomeIcon icon={faSliders} />  Filtros</h3>
 
-            <div className='v-center-normal gap-4'>
+            <div className='v-center-between'>
+               <h3 className='cardTitle'>Filtros múltiples</h3>
+               <Button
+                  onClick={() => null}
+                  className='w-auto px-5'
+                  style={{ padding: 12 }}
+               >
+                  Filtrar
+               </Button>
+            </div>
+
+            <div className='wrapper-filter mt-4'>
+               <div>
+                  <p className='form-header'>Estado</p>
+                  <Button variant='light' className='card-btn v-center-between w-100'>
+                     <p style={{ paddingRight: 40 }}>Estado</p>
+                     <FontAwesomeIcon icon={faChevronDown} />
+                  </Button>
+               </div>
+
+               <Row>
+                  {/* Tipificación */}
+                  <Col>
+
+                  </Col>
+               </Row>
+
+
+
+
+
+
                <Form.Check
                   type={'radio'}
                   id={`default-radio`}

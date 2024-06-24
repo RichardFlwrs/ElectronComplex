@@ -47,11 +47,12 @@ export function NavBar() {
       const check = url.split('/home')
       // Check if the current location is inside "home" route
       if (check[1]) {
-         const current = check[1] // '/noticias'
+         const current = check[1] // eg -> '/noticias'
          deactivateNavLink()
 
          if (current.includes('supervisor')) activeNavLink('nav-supervisor')
          if (current.includes('noticias')) activeNavLink('nav-noticias')
+         if (current.includes('filtros-multiples')) activeNavLink('nav-filtros')
       }
    }, [location])
 
@@ -75,7 +76,7 @@ export function NavBar() {
                      <NavDropdown.Item onClick={() => navigate('/home/supervisor')} >Something</NavDropdown.Item>
                   </NavDropdown>
                   <Nav.Link onClick={() => navigate('/home/supervisor')} >Operadores</Nav.Link>
-                  <Nav.Link onClick={() => navigate('/home/supervisor')} >Filtros multiples</Nav.Link>
+                  <Nav.Link onClick={() => navigate('/home/filtros-multiples')} id='nav-filtros' >Filtros multiples</Nav.Link>
                </Nav>
 
                <div className='v-center navbar-options'>
