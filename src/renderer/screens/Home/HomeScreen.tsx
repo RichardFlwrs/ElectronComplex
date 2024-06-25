@@ -9,6 +9,8 @@ import Noticias from './views/Noticias/Noticias'
 import CrearNoticias from './views/Noticias/CrearNoticias'
 import VerNoticias from './views/Noticias/VerNoticia'
 import FiltrosMultiples from './views/FiltrosMultiples/FiltrosMultiples'
+import Operadores from './views/Operadores/Operadores'
+import NuevoOperador from './views/Operadores/NuevoOperador'
 
 export const ModalContext = createContext({
    isOpen: false,
@@ -53,6 +55,8 @@ export default function HomeScreen() {
                <Route path='noticias/crear-noticia' element={<CrearNoticias />} />
                <Route path='noticias/ver-noticia' element={<VerNoticias />} />
                <Route path='filtros-multiples' element={<FiltrosMultiples />} />
+               <Route path='operadores' element={<Operadores />} />
+               <Route path='operadores/form/:id' element={<NuevoOperador />} />
             </Routes>
 
 

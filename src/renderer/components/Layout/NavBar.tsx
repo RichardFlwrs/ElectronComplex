@@ -53,6 +53,7 @@ export function NavBar() {
          if (current.includes('supervisor')) activeNavLink('nav-supervisor')
          if (current.includes('noticias')) activeNavLink('nav-noticias')
          if (current.includes('filtros-multiples')) activeNavLink('nav-filtros')
+         if (current.includes('operadores')) activeNavLink('nav-operadores')
       }
    }, [location])
 
@@ -75,7 +76,7 @@ export function NavBar() {
                   <NavDropdown title="Gestor Recursos" id="nav-gestor">
                      <NavDropdown.Item onClick={() => navigate('/home/supervisor')} >Something</NavDropdown.Item>
                   </NavDropdown>
-                  <Nav.Link onClick={() => navigate('/home/supervisor')} >Operadores</Nav.Link>
+                  <Nav.Link onClick={() => navigate('/home/operadores')} id='nav-operadores'>Operadores</Nav.Link>
                   <Nav.Link onClick={() => navigate('/home/filtros-multiples')} id='nav-filtros' >Filtros multiples</Nav.Link>
                </Nav>
 

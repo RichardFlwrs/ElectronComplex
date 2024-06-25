@@ -83,7 +83,7 @@ export default function CrearNoticias() {
             <div className='v-center gap-4'>
                <Button
                   onClick={() => navigate('/home/noticias')}
-                  className='v-center w-auto px-5 bg-red'
+                  className='v-center w-auto px-5'
                   variant='danger'
                >
                   Cancelar

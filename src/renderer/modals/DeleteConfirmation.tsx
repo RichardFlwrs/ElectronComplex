@@ -33,10 +33,10 @@ export default function DeleteConfirmation(P: Props) {
             </Modal.Header>
             <Modal.Body className='text-center center-col m'>
                <img src={MyImage} alt="" width={150} height={150} className='mb-3' />
-               <h2 style={{ fontWeight: 'bold' }} className='w-50'>
+               <h2 style={{ fontWeight: 'bold' }} className='w-75'>
                   {P.title}
                </h2>
-               <p style={{ fontSize: 20 }} className='w-75'>
+               <p style={{ fontSize: 15 }} className='w-75'>
                   {P.subtitle}
                </p>
             </Modal.Body>

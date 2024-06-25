@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import { faLock, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import MyImage from "resources/public/logo.png"
+import BasicModal from 'renderer/modals/BasicModal'
 
 
 export default function ChangePass() {
@@ -53,24 +54,11 @@ export default function ChangePass() {
          </Form>
 
 
-         <Modal show={show} onHide={handleClose}>
-            <Modal.Header>
-               <Button onClick={handleClose} variant='icon'>
-                  <FontAwesomeIcon style={{ padding: 12 }} icon={faTimesCircle} />
-               </Button>
-            </Modal.Header>
-            <Modal.Body className='text-center center-col m'>
-               <img src={MyImage} alt="" width={150} height={150} className='mb-3' />
-               <h2 style={{ fontWeight: 'bold' }} className='w-50'>
-                  Tu contraseña se ha cambiado con exito!
-               </h2>
-            </Modal.Body>
-            <Modal.Footer className='center-col mb-4'>
-               <Button onClick={handleClose} className='w-50'>
-                  Aceptar
-               </Button>
-            </Modal.Footer>
-         </Modal>
+         <BasicModal
+            show={show}
+            onClosed={handleClose}
+            title='Tu contraseña se ha cambiado con exito!'
+         />
       </>
    )
 }
