@@ -29,6 +29,22 @@ body, html, app
     // border: 1px solid rgb(53 53 64 / 58%)
     box-shadow: 0 0px 4px 1px rgb(53 53 64 / 58%) !important
 
+  .btn-link
+    color: $darkGray
+    &:hover
+      color: $darkGray
+      font-weight: 300
+    &:focus-visible, &:focus
+      color: $darkGray
+      font-weight: 300
+
+  .btn-link:focus-visible, .btn-link:focus
+    color: $darkGray
+    font-weight: 300
+    &:hover
+      color: $darkGray
+      font-weight: 300
+
   .form-check-input
     background-color: transparent
 
@@ -119,14 +135,6 @@ p
   box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px
   border: 1px solid transparent
   @extend .transitionBorder
-
-.btn-link
-  color: $darkGray
-  &:hover
-    color: $link_color
-
-  &:focus-visible, &:focus
-    color: $link_color
 
 .modal
   --bs-modal-width: 60%

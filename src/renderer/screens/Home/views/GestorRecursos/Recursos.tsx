@@ -19,13 +19,21 @@ import {
    faUserNurse
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useState } from 'react'
 import { Form, Table } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import { Button } from 'renderer/components'
 import CardBox from 'renderer/components/CardBox/CardBox'
+import MultipleSelect from 'renderer/components/MultipleSelect/MultipleSelect'
 
 export default function Recursos() {
    const navigate = useNavigate()
+   const [checkedItems, setCheckedItems] = useState([
+      { text: "Zona 1", value: true },
+      { text: "Zona 2", value: false },
+      { text: "Zona 3", value: false },
+      { text: "Zona 4", value: false },
+   ]);
 
    return (
       <div id='gestor-recursos-table'>
@@ -42,8 +50,6 @@ export default function Recursos() {
                {[
                   { t: 'Tipos de recursos', i: faShop },
                   { t: 'Subtipos de recursos', i: faBox },
-                  { t: 'Zona de influenica', i: faLocationDot },
-                  { t: 'Estados', i: faBookmark },
                ].map((data, idx) => <Button key={idx} variant='light' className='card-btn v-center-between gap-2'>
                   <div className='v-center'>
                      <FontAwesomeIcon icon={data.i} />
@@ -51,6 +57,24 @@ export default function Recursos() {
                   </div>
                   <FontAwesomeIcon icon={faChevronDown} />
                </Button>)}
+               <MultipleSelect
+                  className='card-btn no-shadows'
+                  icon={faLocationDot}
+                  placeholder='Zona de influenica'
+                  data={checkedItems}
+                  onChange={(_data) => { setCheckedItems(_data) }}
+               >
+                  <div className='v-center p-0 mb-2'>
+                     <Button className='w-auto px-2' variant='link'>Ver todas las zonas</Button>
+                  </div>
+               </MultipleSelect>
+               <Button variant='light' className='card-btn v-center-between gap-2'>
+                  <div className='v-center'>
+                     <FontAwesomeIcon icon={faBookmark} />
+                     <p>Estados</p>
+                  </div>
+                  <FontAwesomeIcon icon={faChevronDown} />
+               </Button>
 
                <div className='d-flex flex-1 gap-3'>
                   <Button variant='light' className='card-btn v-center-between gap-2 w-50'>

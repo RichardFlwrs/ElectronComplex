@@ -1,6 +1,6 @@
 import Form from 'react-bootstrap/Form';
 import TextInput from 'renderer/components/TextInput/TextInput';
-import { faChevronDown, faLock, faMapPin, faSquare, faThumbTack, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faBook, faChevronDown, faLock, faMapPin, faSquare, faThumbTack, faUser } from '@fortawesome/free-solid-svg-icons';
 import { Button } from 'renderer/components';
 import Select from 'renderer/components/Select/Select';
 import { useNavigate } from 'react-router-dom';
@@ -9,6 +9,7 @@ import DropDown from 'renderer/components/DropDown/DropDown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquareFull } from '@fortawesome/free-regular-svg-icons';
 import { useState } from 'react';
+import MultipleSelect from 'renderer/components/MultipleSelect/MultipleSelect';
 
 export default function AuthForm() {
    const navigate = useNavigate()
@@ -18,12 +19,6 @@ export default function AuthForm() {
       { text: "CD BARILOCHE", value: false },
       { text: "CD GENERAL ROCA", value: false },
    ]);
-
-   const handleCheckboxChange = (event: any, index: number) => {
-      const newCheckedItems = [...checkedItems]; // Copy the array
-      newCheckedItems[index].value = event.currentTarget.checked; // Update value
-      setCheckedItems(newCheckedItems); // Update state
-   };
 
    return (
       <>
@@ -45,27 +40,12 @@ export default function AuthForm() {
             </Form.Group>
 
             <Form.Group className="mb-3">
-               <DropDown
-                  classContainer=''
-                  className='v-center-between card-box-style px-3 py-3'
-                  dropdownParent={<>
-                     <div className='v-center gap-2'>
-                        <FontAwesomeIcon icon={faThumbTack} />
-                        <p>Agencia</p>
-                     </div>
-                     <FontAwesomeIcon icon={faChevronDown} />
-                  </>}
-               >
-                  {checkedItems.map((data, idx) => <div className='v-center-normal gap-2' key={idx}>
-                     <Form.Check
-                        type={'checkbox'}
-                        id={data.text}
-                        label={data.text}
-                        defaultChecked={data.value}
-                        onChange={(e) => handleCheckboxChange(e, idx)}
-                     />
-                  </div>)}
-               </DropDown>
+               <MultipleSelect
+                  className='px-3 py-3'
+                  placeholder='Agencia'
+                  data={checkedItems}
+                  onChange={(_data) => { setCheckedItems(_data) }}
+               />
             </Form.Group>
 
 
