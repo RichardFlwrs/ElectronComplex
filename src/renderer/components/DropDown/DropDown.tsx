@@ -70,7 +70,7 @@ export default function DropDown(P: Button) {
     )
 
     return (
-        <div className={`position-relative ${P.classContainer}`}>
+        <div ref={wrapperRef} className={`position-relative ${P.classContainer}`}>
             <Button
                 variant='flat'
                 className={combinedClassNames}
@@ -80,7 +80,7 @@ export default function DropDown(P: Button) {
                 {P.dropdownParent}
             </Button>
 
-            {!listOpen ? null : <div ref={wrapperRef} className='drop-down-card' style={ddPosition}>
+            {!listOpen ? null : <div className='drop-down-card' style={ddPosition}>
                 {!withHeader ? null : <div className='v-center-between dd-header'>
                     <p className=''>{P.headerTitle}</p>
                     {P.withCloseBtn ? CloseButton : null}
