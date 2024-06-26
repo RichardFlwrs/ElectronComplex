@@ -65,7 +65,9 @@ export default function Recursos() {
                   onChange={(_data) => { setCheckedItems(_data) }}
                >
                   <div className='v-center p-0 mb-2'>
-                     <Button className='w-auto px-2' variant='link'>Ver todas las zonas</Button>
+                     <Button onClick={() => navigate('/home/gestor/zona-influencia')} className='w-auto px-2' variant='link'>
+                        Ver todas las zonas
+                     </Button>
                   </div>
                </MultipleSelect>
                <Button variant='light' className='card-btn v-center-between gap-2'>

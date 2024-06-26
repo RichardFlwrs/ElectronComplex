@@ -14,6 +14,7 @@ import NuevoOperador from './views/Operadores/NuevoOperador'
 import TiposRecursos from './views/GestorRecursos/TiposRecursos'
 import Recursos from './views/GestorRecursos/Recursos'
 import VerRecurso from './views/GestorRecursos/VerRecurso'
+import ZonInfluencia from './views/GestorRecursos/ZonInfluencia'
 
 export const ModalContext = createContext({
    isOpen: false,
@@ -103,6 +104,10 @@ export default function HomeScreen() {
                <Route
                   path='gestor/recursos/:id'
                   element={<VerRecurso />}
+               />
+               <Route
+                  path='gestor/zona-influencia'
+                  element={<ZonInfluencia />}
                />
             </Routes>
 
