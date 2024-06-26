@@ -18,12 +18,12 @@ export default function Supervisor() {
             <div className='v-center-normal gap-4'>
                <Form.Check
                   type={'radio'}
-                  id={`default-radio`}
+                  id={`Ultimas dos horas`}
                   label={`Ultimas dos horas`}
                />
                <Form.Check
                   type={'radio'}
-                  id={`default-radio`}
+                  id={`Carta`}
                   label={`Carta`}
                />
 

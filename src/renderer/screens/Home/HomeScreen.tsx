@@ -51,22 +51,59 @@ export default function HomeScreen() {
          <MainLayout>
             <NotificationCard />
             <Routes>
-               <Route path='supervisor' element={<Supervisor />} />
-               <Route path='supervisor/audotoria-historial' element={<AuditoriaHistorial />} />
-               <Route path='supervisor/estado-agencia' element={<EstadoAgencia />} />
-               {/*            Noticias          */}
-               <Route path='noticias' element={<Noticias />} />
-               <Route path='noticias/crear-noticia' element={<CrearNoticias />} />
-               <Route path='noticias/ver-noticia' element={<VerNoticias />} />
-               {/*            Filtros          */}
-               <Route path='filtros-multiples' element={<FiltrosMultiples />} />
-               {/*            Operadores          */}
-               <Route path='operadores' element={<Operadores />} />
-               <Route path='operadores/form/:id' element={<NuevoOperador />} />
-               {/*            Gestor Recursos          */}
-               <Route path='gestor/tipos-recursos' element={<TiposRecursos />} />
-               <Route path='gestor/recursos' element={<Recursos />} />
-               <Route path='gestor/recursos/:id' element={<VerRecurso />} />
+               {/* Supervisor */}
+               <Route
+                  path='supervisor'
+                  element={<Supervisor />}
+               />
+               <Route
+                  path='supervisor/audotoria-historial'
+                  element={<AuditoriaHistorial />}
+               />
+               <Route
+                  path='supervisor/estado-agencia'
+                  element={<EstadoAgencia />}
+               />
+               {/* Noticias */}
+               <Route
+                  path='noticias'
+                  element={<Noticias />}
+               />
+               <Route
+                  path='noticias/crear-noticia'
+                  element={<CrearNoticias />}
+               />
+               <Route
+                  path='noticias/ver-noticia'
+                  element={<VerNoticias />}
+               />
+               {/* Filtros */}
+               <Route
+                  path='filtros-multiples'
+                  element={<FiltrosMultiples />}
+               />
+               {/* Operadores */}
+               <Route
+                  path='operadores'
+                  element={<Operadores />}
+               />
+               <Route
+                  path='operadores/form/:id'
+                  element={<NuevoOperador />}
+               />
+               {/* Gestor Recursos */}
+               <Route
+                  path='gestor/tipos-recursos'
+                  element={<TiposRecursos />}
+               />
+               <Route
+                  path='gestor/recursos'
+                  element={<Recursos />}
+               />
+               <Route
+                  path='gestor/recursos/:id'
+                  element={<VerRecurso />}
+               />
             </Routes>
 
 

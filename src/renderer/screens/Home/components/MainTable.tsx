@@ -165,8 +165,6 @@ const DummyTble = () => {
 }
 
 const HearAudio = ({ idx }: { idx: number }) => {
-
-
    return (
       <DropDown
          parentId={'hearOption' + idx}

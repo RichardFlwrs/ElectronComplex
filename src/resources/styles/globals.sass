@@ -29,6 +29,19 @@ body, html, app
     // border: 1px solid rgb(53 53 64 / 58%)
     box-shadow: 0 0px 4px 1px rgb(53 53 64 / 58%) !important
 
+  .form-check-input
+    background-color: transparent
+
+    &:focus
+      border-color: $darkGray
+      outline: 0
+      box-shadow: 0 0px 4px 1px rgb(53 53 64 / 58%) !important
+
+    &:checked[type=checkbox]
+      background-color: transparent
+      border-color: $darkGray
+      --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23424b5f' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e")
+
   .pr-0
     padding-right: 0 !important
   .pl-0

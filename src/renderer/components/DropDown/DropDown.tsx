@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useState } from 'react'
+import React, { PropsWithChildren, useEffect, useRef, useState } from 'react'
 import { Button } from '../Button/Button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
@@ -18,7 +18,14 @@ type Button = {
 
 export default function DropDown(P: Button) {
     const [listOpen, setlistOpen] = useState(false)
+    const [ddPosition, setddPosition] = useState({
+        top: P.ddOption?.top || 0,
+        right: P.ddOption?.right || 0,
+        width: P.ddOption?.width || '12rem',
+    })
     const PARENT_ID = P.parentId || 'dd-parent-button'
+    const wrapperRef = useRef(null);
+
 
     const toggleListOpen = () => {
         setlistOpen(!listOpen)
@@ -32,11 +39,24 @@ export default function DropDown(P: Button) {
 
     const combinedClassNames = ['v-center', P.className].join(' ')
     const withHeader = P.headerTitle || P.withCloseBtn
-    const ddPosition = {
-        top: P.ddOption?.top || 0,
-        right: P.ddOption?.right || 0,
-        width: P.ddOption?.width || '12rem',
-    }
+
+    useOutsideAlerter(
+        wrapperRef,
+        () => {
+            setlistOpen(false)
+        }
+    );
+
+    useEffect(() => {
+        const el = document.getElementById(PARENT_ID)
+        if (el) {
+            setddPosition({
+                top: P.ddOption?.top || el.offsetHeight,
+                right: P.ddOption?.right || 0,
+                width: P.ddOption?.width || el.offsetWidth,
+            })
+        }
+    }, [])
 
     const CloseButton = (
         <Button
@@ -60,7 +80,7 @@ export default function DropDown(P: Button) {
                 {P.dropdownParent}
             </Button>
 
-            {!listOpen ? null : <div className='drop-down-card' style={ddPosition}>
+            {!listOpen ? null : <div ref={wrapperRef} className='drop-down-card' style={ddPosition}>
                 {!withHeader ? null : <div className='v-center-between dd-header'>
                     <p className=''>{P.headerTitle}</p>
                     {P.withCloseBtn ? CloseButton : null}
@@ -69,4 +89,26 @@ export default function DropDown(P: Button) {
             </div>}
         </div>
     )
+}
+
+/**
+ * Hook that alerts clicks outside of the passed ref
+ */
+function useOutsideAlerter(_ref: any, fn: () => void) {
+    useEffect(() => {
+        /**
+         * Alert if clicked on outside of element
+         */
+        const handleClickOutside = (event: MouseEvent) => {
+            if (_ref.current && !_ref.current.contains(event.target)) {
+                fn();
+            }
+        }
+        // Bind the event listener
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            // Unbind the event listener on clean up
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [_ref]);
 }

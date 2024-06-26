@@ -1,10 +1,28 @@
-import { faBookmark, faBox, faBusSimple, faCalendar, faCar, faChevronDown, faChevronLeft, faChevronRight, faCloud, faEye, faFile, faLocationDot, faMotorcycle, faShop, faSliders, faThumbTack, faTruckMedical, faTruckMonster, faUserNurse } from '@fortawesome/free-solid-svg-icons'
+import {
+   faBookmark,
+   faBox,
+   faBusSimple,
+   faCalendar,
+   faChevronDown,
+   faChevronLeft,
+   faChevronRight,
+   faCloud,
+   faEye,
+   faFile,
+   faLocationDot,
+   faMotorcycle,
+   faShop,
+   faSliders,
+   faThumbTack,
+   faTruckMedical,
+   faTruckMonster,
+   faUserNurse
+} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Form, Table } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import { Button } from 'renderer/components'
 import CardBox from 'renderer/components/CardBox/CardBox'
-import MainTable from '../../components/MainTable'
 
 export default function Recursos() {
    const navigate = useNavigate()
