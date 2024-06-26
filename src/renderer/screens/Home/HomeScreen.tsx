@@ -13,6 +13,7 @@ import Operadores from './views/Operadores/Operadores'
 import NuevoOperador from './views/Operadores/NuevoOperador'
 import TiposRecursos from './views/GestorRecursos/TiposRecursos'
 import Recursos from './views/GestorRecursos/Recursos'
+import VerRecurso from './views/GestorRecursos/VerRecurso'
 
 export const ModalContext = createContext({
    isOpen: false,
@@ -65,6 +66,7 @@ export default function HomeScreen() {
                {/*            Gestor Recursos          */}
                <Route path='gestor/tipos-recursos' element={<TiposRecursos />} />
                <Route path='gestor/recursos' element={<Recursos />} />
+               <Route path='gestor/recursos/:id' element={<VerRecurso />} />
             </Routes>
 
 

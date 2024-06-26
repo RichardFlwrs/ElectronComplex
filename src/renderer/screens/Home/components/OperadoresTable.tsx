@@ -66,7 +66,7 @@ export default function OperadoresTable() {
                            <Button
                               variant='flat'
                               className='w-auto no-shadows'
-                              onClick={() => { navigate('/home/noticias/ver-noticia') }}
+                              onClick={() => { navigate('form/nuevo') }}
                            >
                               <FontAwesomeIcon icon={faEye} />
                            </Button>
