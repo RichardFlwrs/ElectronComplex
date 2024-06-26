@@ -1,7 +1,6 @@
 import { faBook, faCloud, faGear, faHashtag, faMapLocation, faTimesCircle, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { PropsWithChildren, useEffect, useState } from 'react'
-import Container from 'react-bootstrap/Container';
+import { useEffect, useState } from 'react'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -54,6 +53,7 @@ export function NavBar() {
          if (current.includes('noticias')) activeNavLink('nav-noticias')
          if (current.includes('filtros-multiples')) activeNavLink('nav-filtros')
          if (current.includes('operadores')) activeNavLink('nav-operadores')
+         if (current.includes('gestor')) activeNavLink('nav-gestor')
       }
    }, [location])
 
@@ -74,7 +74,18 @@ export function NavBar() {
                      <NavDropdown.Item onClick={() => navigate('/home/supervisor')} >Something</NavDropdown.Item>
                   </NavDropdown>
                   <NavDropdown title="Gestor Recursos" id="nav-gestor">
-                     <NavDropdown.Item onClick={() => navigate('/home/supervisor')} >Something</NavDropdown.Item>
+                     <NavDropdown.Item onClick={() => navigate('/home/gestor/tipos-recursos')}>
+                        Tipos/Subtipos
+                     </NavDropdown.Item>
+                     <NavDropdown.Item onClick={() => navigate('/home/gestor/recursos')}>
+                        Recursos
+                     </NavDropdown.Item>
+                     <NavDropdown.Item onClick={() => null}>
+                        CAMARAS
+                     </NavDropdown.Item>
+                     <NavDropdown.Item onClick={() => null}>
+                        ETC
+                     </NavDropdown.Item>
                   </NavDropdown>
                   <Nav.Link onClick={() => navigate('/home/operadores')} id='nav-operadores'>Operadores</Nav.Link>
                   <Nav.Link onClick={() => navigate('/home/filtros-multiples')} id='nav-filtros' >Filtros multiples</Nav.Link>

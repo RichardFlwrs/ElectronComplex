@@ -1,6 +1,5 @@
 import { faBookmark, faCalendar, faChevronDown, faSliders } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useEffect, useState } from 'react'
 import { Form } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import { Button } from 'renderer/components'
@@ -29,7 +28,7 @@ export default function Supervisor() {
                />
 
                <Button variant='light' className='card-btn'>
-                  <p>Numerico</p>
+                  <p className='p-0'>Numerico</p>
                </Button>
 
                <Button variant='light' className='card-btn v-center gap-2'>
@@ -50,7 +49,7 @@ export default function Supervisor() {
                   <FontAwesomeIcon icon={faChevronDown} />
                </Button>
 
-               <Button style={{ width: '10rem' }} onClick={() => null}>Filtrar</Button>
+               <Button className='w-auto px-5 py-2' onClick={() => null}>Filtrar</Button>
             </div>
          </CardBox>
 
