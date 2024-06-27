@@ -43,7 +43,7 @@ export const MENU: IMenuItem[] = [
    },
    {
       title: 'Contactos', subMenus: [
-         { icon: faAddressBook, name: 'Agenda' },
+         { icon: faAddressBook, name: 'Agenda', link: '/home/agenda' },
       ]
    },
 ]
