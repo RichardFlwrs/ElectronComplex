@@ -1,3 +1,5 @@
+@import 'colors'
+
 #filtros-multiples
    .col-6
       &:nth-child(odd)
@@ -40,3 +42,65 @@
       @extend .box-base
       background-color: #fbf7ff
       border: 1px solid #e7cefc
+
+#mensajes-tap-wrapper
+   display: flex
+   margin-top: -24px
+   padding-top: 0
+
+   .contacts-wrapper
+      // max-height: calc(100vh - 400px)
+      padding-top: 12px
+      border-right: 2px solid $cardBorder
+
+      .card-input
+         height: 42px
+
+      .filter-options
+         padding-top: 12px
+         display: flex
+         button
+            @extend .no-shadows
+            width: auto
+            padding: 2px 14px
+            border: 1px solid $cardBorder
+            border-radius: 15px
+
+            &.selected
+               background: $activeItem
+               color: white
+
+      .list-of-contacts
+         @extend .scroll-style
+         --sb-size: 2px !important
+         overflow-y: scroll
+         overflow-x: hidden
+         max-height: calc(100vh - 540px)
+         >*
+            width: 24rem
+            padding: 1rem
+            padding-left: 2rem
+            &:hover
+               background-color: #f4f4f4
+
+      .contact-card
+         .center-col
+            font-size: 14px
+            p.active
+               color: $green_new_message
+
+            .circle-number
+               --circle-number-size: 16px
+               background-color: $green_new_message
+
+   .chatbox-section
+      flex: 1
+      max-height: calc(100vh - 400px)
+      .chat-header
+         background-color: #e8e8e8
+         padding-top: 0 !important
+
+         .number-phone
+            display: none
+      .conversation-box
+         --sb-size: 4px !important

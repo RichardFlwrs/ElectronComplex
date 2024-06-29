@@ -42,7 +42,7 @@
             border: 1px solid rgba(53, 53, 64, 0.58) !important
 
          &.active
-            background: #8e939f
+            background: $activeItem
             border-radius: 7px
             svg, p
                color: white
@@ -84,6 +84,10 @@
          padding: 2rem
          background-color: $bg
          height: 100%
+
+         > div
+            margin: auto
+            max-width: 1700px
 
 .navbar
    .nav-item, .nav-link

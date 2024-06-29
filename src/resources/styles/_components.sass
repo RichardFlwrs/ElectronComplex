@@ -184,3 +184,36 @@ nav.t-paginator
    &-orange
       @extend .circle-status
       background: #b68b41
+
+.chat-box-wrapper
+   display: flex
+   flex-direction: column
+   .chat-header
+      @extend .bb-card
+      position: relative
+   .conversation-box
+      flex: 1
+      padding: 1.5rem
+      padding-bottom: 0
+      @extend .scroll-style
+      overflow-y: scroll
+      .bubble-chat
+         background-color: #e8e8e8
+         color: $darkGray
+         margin-bottom: 8px
+         border-radius: 22px
+         padding: 7px 1rem
+         width: fit-content
+         max-width: calc(100% - 50px)
+
+         &.source
+            border-bottom-left-radius: 0
+         &.sending
+            border-bottom-right-radius: 0
+            background-color: #dff0d8
+            color: #67b08b
+            margin-left: auto
+
+.contact-card
+   @extend .v-center-between
+   border-bottom: 1px solid $cardBorder

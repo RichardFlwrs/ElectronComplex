@@ -15,9 +15,16 @@ export default function Agenda() {
    const openChat = () => {
       setchatOpen(true)
    }
+   const closeChat = () => {
+      setchatOpen(false)
+   }
 
    return (
-      <div>
+      <div 
+         id="agenda-tap-wrapper" 
+         className="pb-5" 
+         style={{ paddingRight: '2rem', paddingLeft: '2rem' }}
+      >
          <div className="v-center-normal gap-5">
             <TextInput
                icon={faMagnifyingGlass}
@@ -31,8 +38,8 @@ export default function Agenda() {
          </div>
 
          <Row className="mt-4 d-flex flex-wrap">
-            {Array.from({ length: 15 }).map(() =>
-               <Col xl={4} style={{ height: 85 }}>
+            {Array.from({ length: 15 }).map((data, idx) =>
+               <Col xl={4} style={{ height: 85 }} key={idx}>
                   <CardBox className="v-center-between mx-2 my-4 p-2 px-3">
                      <div className="v-center gap-3">
                         <FontAwesomeIcon icon={faUser} />
@@ -41,12 +48,12 @@ export default function Agenda() {
                            <p>000000</p>
                         </div>
                      </div>
-                     <div className="v-center gap-3">
-                        <Button variant="flat">
-                           <FontAwesomeIcon icon={faPhone} />
+                     <div className="v-center gap-2">
+                        <Button variant="icon">
+                           <FontAwesomeIcon icon={faPhone} style={{ fontSize: 14 }} />
                         </Button>
-                        <Button variant="flat" onClick={() => openChat()}>
-                           <FontAwesomeIcon icon={faComment} />
+                        <Button variant="icon" onClick={() => openChat()}>
+                           <FontAwesomeIcon icon={faComment} style={{ fontSize: 14 }} />
                         </Button>
                      </div>
                   </CardBox>
@@ -75,7 +82,7 @@ export default function Agenda() {
 
          </div>
 
-         <ChatModal />
+         <ChatModal visible={chatOpen} onClose={closeChat} />
       </div>
    )
 }

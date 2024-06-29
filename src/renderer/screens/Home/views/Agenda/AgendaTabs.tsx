@@ -7,9 +7,9 @@ import Mensajes from "./tabs/Mensajes";
 export default function AgendaTabs() {
    return (
       <div>
-         <CardBox>
+         <CardBox className="pb-0 pr-0 pl-0">
             <Tab.Container id="my-tab-id" defaultActiveKey="opens">
-               <Row>
+               <Row style={{ paddingLeft: '2rem' }}>
                   <Nav variant="tabs" className="mb-4 gap-2">
                      <Nav.Item>
                         <Nav.Link eventKey="opens">

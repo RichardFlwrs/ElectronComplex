@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconDefinition, faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 import styles from './styles.module.sass'
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren, useEffect, useRef } from 'react'
 import { Form } from 'react-bootstrap'
 
 type TextInputProps = {
@@ -17,16 +17,41 @@ type TextInputProps = {
    inputstyle?: React.CSSProperties | undefined
 } & PropsWithChildren<React.HtmlHTMLAttributes<HTMLDivElement>>
 
-
+function focusInputOnClick(_ref: any, fn: () => void) {
+   useEffect(() => {
+      /**
+       * Alert if clicked on outside of element
+       */
+      const handleClickOutside = (event: MouseEvent) => {
+         if (_ref.current && _ref.current.contains(event.target)) {
+            fn();
+         }
+      }
+      // Bind the event listener
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+         // Unbind the event listener on clean up
+         document.removeEventListener("mousedown", handleClickOutside);
+      };
+   }, [_ref]);
+}
 
 export default function TextInput(P: TextInputProps) {
    const combinedClassNames = [styles.myInputWrapper, P.wrapperclassname].join(' ')
+   const wrapperRef = useRef(null);
+   const inputRef = useRef(null);
+   focusInputOnClick(wrapperRef, () => {
+      if (inputRef.current) {
+         (inputRef.current as any).focus()
+      }
+   })
 
    return (
-      <div {...P} className={combinedClassNames}>
+      <div {...P} className={combinedClassNames} ref={wrapperRef}>
          {P.icon ? <FontAwesomeIcon className={styles.myInputIcon} icon={P.icon} /> : null}
 
          <input
+            ref={inputRef}
             tabIndex={P.tabIndex || 0}
             max={P.max}
             maxLength={P.maxLength}
