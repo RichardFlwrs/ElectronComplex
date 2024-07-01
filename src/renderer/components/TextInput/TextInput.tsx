@@ -19,9 +19,6 @@ type TextInputProps = {
 
 function focusInputOnClick(_ref: any, fn: () => void) {
    useEffect(() => {
-      /**
-       * Alert if clicked on outside of element
-       */
       const handleClickOutside = (event: MouseEvent) => {
          if (_ref.current && _ref.current.contains(event.target)) {
             fn();
@@ -42,7 +39,8 @@ export default function TextInput(P: TextInputProps) {
    const inputRef = useRef(null);
    focusInputOnClick(wrapperRef, () => {
       if (inputRef.current) {
-         (inputRef.current as any).focus()
+         const _input = inputRef.current as HTMLInputElement
+         setTimeout(() => { _input.focus() }, 25);
       }
    })
 

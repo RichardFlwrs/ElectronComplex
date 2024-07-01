@@ -100,7 +100,7 @@ export function NavBar() {
                      <FontAwesomeIcon icon={faMapLocation} />
                      <p>Mapa</p>
                   </Button>
-                  <Button variant='light' onClick={() => navigate('/')}>
+                  <Button variant='light' onClick={() => navigate('/home/user-settings')}>
                      <FontAwesomeIcon icon={faGear} />
                   </Button>
                   <Button variant='light' onClick={() => navigate('/')}>

@@ -16,6 +16,7 @@ import Recursos from './views/GestorRecursos/Recursos'
 import VerRecurso from './views/GestorRecursos/VerRecurso'
 import ZonInfluencia from './views/GestorRecursos/ZonInfluencia'
 import AgendaTabs from './views/Agenda/AgendaTabs'
+import UserSettings from './views/UserSettings/UserSettings'
 
 export const ModalContext = createContext({
    isOpen: false,
@@ -52,29 +53,35 @@ export default function HomeScreen() {
       <ModalProvider>
          <MainLayout>
             <NotificationCard />
-            <Routes>
-               {/* Supervisor */}
-               <Route path='supervisor' element={<Supervisor />} />
-               <Route path='supervisor/audotoria-historial' element={<AuditoriaHistorial />} />
-               <Route path='supervisor/estado-agencia' element={<EstadoAgencia />} />
-               {/* Noticias */}
-               <Route path='noticias' element={<Noticias />} />
-               <Route path='noticias/crear-noticia' element={<CrearNoticias />} />
-               <Route path='noticias/ver-noticia' element={<VerNoticias />} />
-               {/* Filtros */}
-               <Route path='filtros-multiples' element={<FiltrosMultiples />} />
-               {/* Operadores */}
-               <Route path='operadores' element={<Operadores />} />
-               <Route path='operadores/form/:id' element={<NuevoOperador />} />
-               {/* Gestor Recursos */}
-               <Route path='gestor/tipos-recursos' element={<TiposRecursos />} />
-               <Route path='gestor/recursos' element={<Recursos />} />
-               <Route path='gestor/recursos/:id' element={<VerRecurso />} />
-               <Route path='gestor/zona-influencia' element={<ZonInfluencia />} />
-               {/* Agenda */}
-               <Route path='agenda' element={<AgendaTabs />} />
-            </Routes>
+            <RouteList/>
          </MainLayout>
       </ModalProvider>
    )
+}
+
+const RouteList = () => {
+   return <Routes>
+      {/* Supervisor */}
+      <Route path='supervisor' element={<Supervisor />} />
+      <Route path='supervisor/audotoria-historial' element={<AuditoriaHistorial />} />
+      <Route path='supervisor/estado-agencia' element={<EstadoAgencia />} />
+      {/* Noticias */}
+      <Route path='noticias' element={<Noticias />} />
+      <Route path='noticias/crear-noticia' element={<CrearNoticias />} />
+      <Route path='noticias/ver-noticia' element={<VerNoticias />} />
+      {/* Filtros */}
+      <Route path='filtros-multiples' element={<FiltrosMultiples />} />
+      {/* Operadores */}
+      <Route path='operadores' element={<Operadores />} />
+      <Route path='operadores/form/:id' element={<NuevoOperador />} />
+      {/* Gestor Recursos */}
+      <Route path='gestor/tipos-recursos' element={<TiposRecursos />} />
+      <Route path='gestor/recursos' element={<Recursos />} />
+      <Route path='gestor/recursos/:id' element={<VerRecurso />} />
+      <Route path='gestor/zona-influencia' element={<ZonInfluencia />} />
+      {/* Agenda */}
+      <Route path='agenda' element={<AgendaTabs />} />
+      {/* Settings */}
+      <Route path='user-settings' element={<UserSettings />} />
+   </Routes>
 }

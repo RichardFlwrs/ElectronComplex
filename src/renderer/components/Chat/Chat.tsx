@@ -21,6 +21,11 @@ const CHAT_HARDCODE: IChat[] = [
    { type: 'source', message: 'Lorem ipsum.' },
    { type: 'sending', message: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, odio, sit amet consectetur adipisicing elit. Quasi laboriosam esse laudantium.' },
    { type: 'sending', message: 'Lorem ipsum dolor sit amet.' },
+   { type: 'source', message: 'L' },
+   { type: 'source', message: ' o' },
+   { type: 'source', message: '  r' },
+   { type: 'source', message: '   e' },
+   { type: 'source', message: '    m' },
 ]
 
 export default function Chat() {

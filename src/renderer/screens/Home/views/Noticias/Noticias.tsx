@@ -40,7 +40,7 @@ export default function Noticias() {
             <Table responsive className='text-left'>
                <thead>
                   <tr>
-                     {["ID", "TÍTULO", "HABILITADO DESDE", "HABILITADO HASTA", "ACTIVACION", "ACCIÓN"]
+                     {["ID", "TÍTULO", "HABILITADO DESDE", "HABILITADO HASTA", "ACTIVACIÓN", "ACCIÓN"]
                         .map((title: any, index: number) => (
                            <th className='px-4' key={index}>{title}</th>
                         ))}
