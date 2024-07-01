@@ -35,6 +35,7 @@ export default function ZonInfluencia() {
                </div>
             </div>
 
+            {/* TODO MAP */}
             <div
                style={{
                   backgroundColor: 'cyan',

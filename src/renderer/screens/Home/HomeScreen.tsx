@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import MainLayout from 'renderer/components/Layout/MainLayout'
 import NotificationCard from 'renderer/components/NotificationCard/NotificationCard'
@@ -17,6 +17,7 @@ import VerRecurso from './views/GestorRecursos/VerRecurso'
 import ZonInfluencia from './views/GestorRecursos/ZonInfluencia'
 import AgendaTabs from './views/Agenda/AgendaTabs'
 import UserSettings from './views/UserSettings/UserSettings'
+import MapaCalor from './views/Reportes/MapaCalor'
 
 export const ModalContext = createContext({
    isOpen: false,
@@ -83,5 +84,7 @@ const RouteList = () => {
       <Route path='agenda' element={<AgendaTabs />} />
       {/* Settings */}
       <Route path='user-settings' element={<UserSettings />} />
+      {/* Reportes */}
+      <Route path='reportes/mapa-calor' element={<MapaCalor />} />
    </Routes>
 }

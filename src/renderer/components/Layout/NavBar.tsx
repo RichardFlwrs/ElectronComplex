@@ -71,7 +71,7 @@ export function NavBar() {
                   </NavDropdown>
                   <Nav.Link onClick={() => navigate('/home/noticias')} id='nav-noticias' >Noticias</Nav.Link>
                   <NavDropdown title="Reportes" id="nav-reportes">
-                     <NavDropdown.Item onClick={() => navigate('/home/supervisor')} >Something</NavDropdown.Item>
+                     <NavDropdown.Item onClick={() => navigate('/home/reportes/mapa-calor')} >Mapa de calor</NavDropdown.Item>
                   </NavDropdown>
                   <NavDropdown title="Gestor Recursos" id="nav-gestor">
                      <NavDropdown.Item onClick={() => navigate('/home/gestor/tipos-recursos')}>
