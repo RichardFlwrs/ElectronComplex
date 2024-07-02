@@ -18,6 +18,8 @@ import ZonInfluencia from './views/GestorRecursos/ZonInfluencia'
 import AgendaTabs from './views/Agenda/AgendaTabs'
 import UserSettings from './views/UserSettings/UserSettings'
 import MapaCalor from './views/Reportes/MapaCalor'
+import Carta from './views/Carta/Carta'
+import Mapa from './views/Mapa/Mapa'
 
 export const ModalContext = createContext({
    isOpen: false,
@@ -86,5 +88,9 @@ const RouteList = () => {
       <Route path='user-settings' element={<UserSettings />} />
       {/* Reportes */}
       <Route path='reportes/mapa-calor' element={<MapaCalor />} />
+      {/* Carta */}
+      <Route path='carta' element={<Carta />} />
+      {/* Carta */}
+      <Route path='zonas-mapa' element={<Mapa />} />
    </Routes>
 }

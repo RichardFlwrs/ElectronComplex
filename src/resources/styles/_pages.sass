@@ -105,8 +105,6 @@
       .conversation-box
          --sb-size: 4px !important
 
-
-
 #mapa-calor
    .form-section
       .card-input
@@ -114,3 +112,23 @@
       .row
          .col
             padding: 10px
+
+#carta-llamada
+   .buttons-option
+      button
+         border-radius: 14px
+         width: 100%
+         margin: 0
+   .tab-wrapper
+      border: 1px solid $cardBorder
+      border-radius: 5px
+      @extend .scroll-style
+      --sb-size: 4px !important
+      overflow-y: scroll
+      overflow-x: hidden
+      padding: 20px 15px
+      height: 330px
+      max-height: 330px
+      
+      .card-input
+         padding: 5px 10px

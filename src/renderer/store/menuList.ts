@@ -1,5 +1,5 @@
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core"
-import { faAddressBook, faEarListen, faFaceSurprise, faHand, faMobileRetro, faPhone, faPhoneSlash, faPhoneVolume, faTimesCircle, faUser, faUsers } from "@fortawesome/free-solid-svg-icons"
+import { faAddressBook, faEarListen, faFaceFrownOpen, faHand, faMobileRetro, faPhone, faPhoneSlash, faPhoneVolume, faTimesCircle, faUser, faUsers } from "@fortawesome/free-solid-svg-icons"
 
 export type IMenuItem = {
    icon?: IconDefinition
@@ -32,7 +32,7 @@ export const MENU: IMenuItem[] = [
    },
    {
       title: 'Derivacion', subMenus: [
-         { icon: faFaceSurprise, name: 'Broma' },
+         { icon: faFaceFrownOpen, name: 'Broma' },
          { icon: faMobileRetro, name: 'Interna' },
       ]
    },

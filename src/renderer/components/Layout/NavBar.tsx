@@ -92,11 +92,11 @@ export function NavBar() {
                </Nav>
 
                <div className='v-center navbar-options'>
-                  <Button variant='light' className='v-center round'>
+                  <Button onClick={() => navigate('/home/carta')} variant='light' className='v-center round'>
                      <FontAwesomeIcon icon={faBook} />
                      <p>Carta</p>
                   </Button>
-                  <Button variant='light' className='v-center round'>
+                  <Button onClick={() => navigate('/home/zonas-mapa')} variant='light' className='v-center round'>
                      <FontAwesomeIcon icon={faMapLocation} />
                      <p>Mapa</p>
                   </Button>

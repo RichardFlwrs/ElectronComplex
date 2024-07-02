@@ -12,7 +12,7 @@ type Button = {
 } & PropsWithChildren<React.ButtonHTMLAttributes<HTMLButtonElement>>
 
 export function Button(P: Button) {
-  const buttonRef = useRef<any>();
+  const buttonRef = useRef(null);
   const combinedClassNames = [getStyleVariant(P.variant), P.className].join(' ')
 
   useClickAnimation(buttonRef, {

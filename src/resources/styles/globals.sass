@@ -47,6 +47,7 @@ body, html, app
 
   .form-check-input
     background-color: transparent
+    border: 2px solid $cardBorder
 
     &:focus
       border-color: $darkGray
@@ -150,6 +151,8 @@ p
   border: 1px solid transparent
   @extend .transitionBorder
 
+.modal-center
+  padding-top: 15vh
 .modal
   --bs-modal-width: 60%
 .modal-header
@@ -249,3 +252,13 @@ table
 .wrapper-filter
   button
     padding: 8px
+
+.col-spacing
+  > div
+    padding: 10px
+
+.tab-footer-absolute
+  position: absolute
+  width: 100%
+  bottom: 0
+  background-color: white

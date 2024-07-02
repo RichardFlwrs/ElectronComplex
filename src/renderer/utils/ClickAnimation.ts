@@ -10,15 +10,17 @@ export const useClickAnimation = (element: React.MutableRefObject<any>, config: 
 
    useEffect(() => {
       if (!element.current) return
+      const _el = element.current as HTMLButtonElement
 
       const applyContainerProperties = () => {
-         element.current.classList.add("effect-container", effectName);
+         if (_el.classList.contains('effect-container')) return
+         _el.classList.add("effect-container", effectName);
       };
 
       const applyStyles = (e: MouseEvent) => {
          const { layerX, layerY } = e;
          const sizeOffset = size / 2;
-         const { style } = element.current;
+         const { style } = _el;
 
          style.setProperty("--effect-duration", `${duration}ms`);
          style.setProperty("--effect-top", `${layerY - sizeOffset}px`);
@@ -27,24 +29,33 @@ export const useClickAnimation = (element: React.MutableRefObject<any>, config: 
          style.setProperty("--effect-width", `${size}px`);
          style.setProperty("--effect-color", color);
       };
+      let timer: NodeJS.Timeout
 
       const onClick = (e: MouseEvent) => {
-         element.current.classList.remove("active");
+         _el.classList.remove("active");
          applyStyles(e);
-         element.current.classList.add("active");
+         _el.classList.add("active");
+
+         if (timer) clearTimeout(timer);
+
+         timer = setTimeout(() => {
+            _el.classList.remove("active");
+            const { style } = _el;
+            style.setProperty("--effect-color", 'transparent');
+         }, duration);
       };
 
       // Apply the styles and classname to the element
       applyContainerProperties();
 
       // Add the event listener on mount
-      element.current.addEventListener("mouseup", onClick);
+      _el.addEventListener("mouseup", onClick);
 
       // Needed for referencing the ref in the return function
-      const cleanupRef = element.current;
+      const cleanupRef = _el;
 
       return () => {
          cleanupRef.removeEventListener("mouseup", onClick);
       };
-   }, [color, duration, effectName, element, size]);
+   }, [element]);
 };
