@@ -20,6 +20,7 @@ import UserSettings from './views/UserSettings/UserSettings'
 import MapaCalor from './views/Reportes/MapaCalor'
 import Carta from './views/Carta/Carta'
 import Mapa from './views/Mapa/Mapa'
+import VerCarta from './views/Carta/VerCarta'
 
 export const ModalContext = createContext({
    isOpen: false,
@@ -90,6 +91,7 @@ const RouteList = () => {
       <Route path='reportes/mapa-calor' element={<MapaCalor />} />
       {/* Carta */}
       <Route path='carta' element={<Carta />} />
+      <Route path='carta/ver/:id' element={<VerCarta />} />
       {/* Carta */}
       <Route path='zonas-mapa' element={<Mapa />} />
    </Routes>

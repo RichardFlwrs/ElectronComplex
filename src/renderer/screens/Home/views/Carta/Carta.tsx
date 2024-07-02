@@ -7,11 +7,12 @@ import CartaInversa from "./tabs/CartaInversa";
 import CartaLlamda from "./tabs/CartaLlamda";
 import { Button } from "renderer/components";
 import DropDown from "renderer/components/DropDown/DropDown";
+import InboxTable from "./components/InboxTable";
 
 export default function Carta() {
    return (
       <div>
-         <CardBox className="">
+         <CardBox className="mb-4">
             <Tab.Container id="my-tab-id" defaultActiveKey="opens">
                <Row>
                   <Nav variant="tabs" className="mb-4 gap-2">
@@ -41,11 +42,13 @@ export default function Carta() {
                      <CartaLlamda />
                   </Tab.Pane>
                   <Tab.Pane eventKey="pendings">
-                     <CartaInversa />
+                     <CartaLlamda />
                   </Tab.Pane>
                </Tab.Content>
             </Tab.Container>
          </CardBox>
+
+         <InboxTable/>
       </div>
    )
 }

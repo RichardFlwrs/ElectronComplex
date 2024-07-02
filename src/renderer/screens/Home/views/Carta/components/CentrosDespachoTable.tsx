@@ -6,8 +6,8 @@ export default function CentrosDespachoTable() {
          <h6 className="cardTitle my-3">Centros de despacho</h6>
 
          <div className='scroll-style' style={{ maxHeight: 300, overflowY: 'scroll' }}>
-            <Table responsive>
-               <thead>
+            <Table className='position-relative'>
+               <thead className='sticky-top'>
                   <tr>
                      <th>ESTADO</th>
                      <th>NOMBRE</th>
