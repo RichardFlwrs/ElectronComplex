@@ -1,4 +1,4 @@
-import { faCircleInfo, faThumbtack, faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
+import { faBoxArchive, faBusSimple, faCircleInfo, faFilePdf, faHashtag, faMotorcycle, faPersonMilitaryPointing, faReceipt, faShield, faThumbtack, faTriangleExclamation, faTruckMedical, faUserInjured } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
@@ -6,7 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Button } from "renderer/components";
 import CardBox from "renderer/components/CardBox/CardBox";
 import InboxTable from "./components/InboxTable";
-import { faBookmark, faCalendar } from "@fortawesome/free-regular-svg-icons";
+import { faBookmark, faCalendar, faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 
 export default function VerCarta() {
    const navigate = useNavigate()
@@ -95,29 +95,56 @@ export default function VerCarta() {
             </Col>
             <Col xl={6}>
                <CardBox className="p-3 mb-3">
-                  <div className="v-center-normal gap-2">
-                     <FontAwesomeIcon icon={faCircleInfo} className="circle-icon" />
-                     <p className="cardTitle m-0">Estado</p>
-                  </div>
-                  <p className="my-2">Abierta</p>
-                  <div className="v-center-normal gap-2">
-                     <FontAwesomeIcon icon={faCircleInfo} className="circle-icon" />
-                     <p className="cardTitle m-0">Estado</p>
-                  </div>
-                  <p className="my-2">Abierta</p>
+                  {[
+                     [
+                        {
+                           icon: faShield, lbl: 'Prioridad', content: <div className="v-center">
+                              <div className="circle-status-red"></div>
+                              <p>Alta</p>
+                           </div>
+                        },
+                        { icon: faReceipt, lbl: 'Ani', content: '234506' },
+                        { icon: faPersonMilitaryPointing, lbl: 'Comisaria', content: 'Lorem ipsum dolor' },
+                     ],
+                     [
+                        { icon: faUserInjured, lbl: 'N de victimas', content: '3' },
+                        { icon: faHashtag, lbl: 'ID', content: '30.245.592' },
+                        { icon: faBoxArchive, lbl: 'Subtipos', content: 'Lorem ipsum' },
+                     ]
+                  ].map((section, idx) => <div
+                     key={idx}
+                     className={`v-center-normal py-3 px-2 gap-3 ${idx == 0 ? 'bb-card' : ''}`}
+                  >
+                     {section.map((data, _i) => <CartaPropiedad
+                        key={_i}
+                        icon={data.icon}
+                        label={data.lbl}
+                        content={data.content}
+                     />)}
+                  </div>)}
                </CardBox>
 
                <CardBox className="p-3">
-                  <div className="v-center-normal gap-2">
-                     <FontAwesomeIcon icon={faCircleInfo} className="circle-icon" />
-                     <p className="cardTitle m-0">Estado</p>
+                  <div className="v-center-between mb-3">
+                     <p className="cardTitle m-0">Recursos Asignados</p>
+                     <Button variant="link" className="">
+                        Agregar recursos
+                     </Button>
                   </div>
-                  <p className="my-2">Abierta</p>
-                  <div className="v-center-normal gap-2">
-                     <FontAwesomeIcon icon={faCircleInfo} className="circle-icon" />
-                     <p className="cardTitle m-0">Estado</p>
+                  <div className="v-center-between gap-4">
+                     <div className="w-100 py-2 box-ambulancia v-center gap-3">
+                        <FontAwesomeIcon icon={faTruckMedical} />
+                        Ambulancia (3)
+                     </div>
+                     <div className="w-100 py-2 box-bomberos v-center gap-3">
+                        <FontAwesomeIcon icon={faBusSimple} />
+                        Bomberos (2)
+                     </div>
+                     <div className="w-100 py-2 box-moto v-center gap-3">
+                        <FontAwesomeIcon icon={faMotorcycle} />
+                        Moto (3)
+                     </div>
                   </div>
-                  <p className="my-2">Abierta</p>
                </CardBox>
             </Col>
             <Col xl={6}>
@@ -136,11 +163,26 @@ export default function VerCarta() {
 
             <Col xl={12}>
                <CardBox className="p-3">
-                  <div className="v-center-normal gap-2">
-                     <FontAwesomeIcon icon={faCircleInfo} className="circle-icon" />
-                     <p className="cardTitle m-0">Estado</p>
+                  <div className="v-center-between mb-3">
+                     <div className="v-center gap-2">
+                        <p className="cardTitle m-0">Archivos adjuntos</p>
+                        <div className="circle-number">6</div>
+                     </div>
+                     <Button variant="link" className="">
+                        Agregar archivos
+                     </Button>
                   </div>
-                  <p className="my-2">Abierta</p>
+                  <div className="v-center-normal gap-3">
+                     {Array.from({ length: 6 }).map((d, i) => <div key={i} className="file-chip">
+                        <FontAwesomeIcon icon={faFilePdf} />
+                        <p title="Lorem ipsum dolor, sit amet consectetur adipisicing.">
+                           Lorem ipsum dolor, sit amet consectetur adipisicing.
+                        </p>
+                        <Button variant="link" className="w-auto p-0">
+                           <FontAwesomeIcon icon={faTimesCircle} />
+                        </Button>
+                     </div>)}
+                  </div>
                </CardBox>
             </Col>
          </Row>
@@ -176,7 +218,7 @@ export default function VerCarta() {
          </div>
 
          <div style={{ paddingLeft: '2rem' }} className="mb-5">
-            <Button variant="link" className="">
+            <Button onClick={() => navigate(`/home/carta/historial/${id}`)} variant="link" className="">
                Ver historial carta
             </Button>
          </div>
@@ -185,3 +227,16 @@ export default function VerCarta() {
    )
 }
 
+
+
+const CartaPropiedad = ({ icon, label, content }: any) => {
+   return <div className="flex-1 v-center gap-1">
+      <FontAwesomeIcon icon={icon} />
+      <p className="bolder">{label}:</p>
+      <div
+         style={{
+            width: 'max-content',
+         }}
+      >{content}</div>
+   </div>
+}

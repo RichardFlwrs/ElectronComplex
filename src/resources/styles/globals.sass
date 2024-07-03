@@ -68,6 +68,9 @@ body, html, app
   .pl-0
     padding-left: 0 !important
 
+  .card-padding
+    padding: 5px 10px !important
+
 h1, h2, h3, h4, h5, h6, p, svg
   color: $darkGray
 
@@ -268,3 +271,38 @@ table
   width: 100%
   bottom: 0
   background-color: white
+
+.box-base
+  padding: 3px 12px
+  padding-right: 0
+  border-radius: 5px
+
+.box-ambulancia
+  @extend .box-base
+  background-color: #f7fdff
+  border: 1px solid #5dbede
+.box-bomberos
+  @extend .box-base
+  background-color: #fdedef
+  border: 1px solid #ee747a
+.box-moto
+  @extend .box-base
+  background-color: #fbe8e1
+  border: 1px solid #f09473
+.box-cuatriciclo
+  @extend .box-base
+  background-color: #fbf7ff
+  border: 1px solid #e7cefc
+
+.file-chip
+  @extend .v-center-between
+  border-radius: 15px
+  border: 1.5px solid $cardBorder
+  padding: 3px 6px
+  font-size: 12px
+  max-width: 140px
+  gap: 7px
+  p
+    text-overflow: ellipsis
+    overflow: hidden
+    white-space: nowrap
