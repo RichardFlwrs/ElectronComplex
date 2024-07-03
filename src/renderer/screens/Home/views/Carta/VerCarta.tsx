@@ -100,9 +100,19 @@ export default function VerCarta() {
                      <p className="cardTitle m-0">Estado</p>
                   </div>
                   <p className="my-2">Abierta</p>
+                  <div className="v-center-normal gap-2">
+                     <FontAwesomeIcon icon={faCircleInfo} className="circle-icon" />
+                     <p className="cardTitle m-0">Estado</p>
+                  </div>
+                  <p className="my-2">Abierta</p>
                </CardBox>
 
                <CardBox className="p-3">
+                  <div className="v-center-normal gap-2">
+                     <FontAwesomeIcon icon={faCircleInfo} className="circle-icon" />
+                     <p className="cardTitle m-0">Estado</p>
+                  </div>
+                  <p className="my-2">Abierta</p>
                   <div className="v-center-normal gap-2">
                      <FontAwesomeIcon icon={faCircleInfo} className="circle-icon" />
                      <p className="cardTitle m-0">Estado</p>
@@ -112,13 +122,18 @@ export default function VerCarta() {
             </Col>
             <Col xl={6}>
                <CardBox className="p-3 h-100">
-                  <div className="v-center-normal gap-2">
-                     <FontAwesomeIcon icon={faCircleInfo} className="circle-icon" />
-                     <p className="cardTitle m-0">Estado</p>
+                  <div className="">
+                     <p className="cardTitle mb-3">Comentarios</p>
                   </div>
-                  <p className="my-2">Abierta</p>
+                  <p className="my-2">Fecha: 22.05.2024 l Hora: 15:30:20</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero blanditiis necessitatibus qui nostrum neque ab corporis dignissimos obcaecati dolorum repudiandae eius a repellendus vitae fuga, dolor facere velit nulla aperiam.</p>
+
+                  <div className="bb-card my-3"></div>
+                  <p className="my-2">Fecha: 22.05.2024 l Hora: 15:30:20</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero blanditiis necessitatibus qui nostrum neque ab corporis dignissimos obcaecati dolorum repudiandae eius a repellendus vitae fuga, dolor facere velit nulla aperiam.</p>
                </CardBox>
             </Col>
+
             <Col xl={12}>
                <CardBox className="p-3">
                   <div className="v-center-normal gap-2">
@@ -130,7 +145,7 @@ export default function VerCarta() {
             </Col>
          </Row>
 
-         <CardBox className="map-section">
+         <CardBox className="map-section mb-4">
             <h5 className="cardTitle">Geolocalización</h5>
 
             <div className="map-info-section gap-4">
