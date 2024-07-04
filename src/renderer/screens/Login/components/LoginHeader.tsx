@@ -1,4 +1,4 @@
-import MyImage from "resources/public/logo.png"
+import MyImage from "resources/public/logo_911.png"
 
 export default function LoginHeader({ title, subtitle }: any) {
    return (

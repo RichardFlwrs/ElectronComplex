@@ -1,10 +1,9 @@
 import Form from 'react-bootstrap/Form';
-import MyImage from "resources/public/logo.png"
 import TextInput from 'renderer/components/TextInput/TextInput';
-import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { Button } from 'renderer/components';
 import { useNavigate } from 'react-router-dom';
 import LoginHeader from '../components/LoginHeader';
+import { iconEmail, iconPhone } from 'renderer/store/icons.index';
 
 export default function ForgotPass() {
    const navigate = useNavigate()
@@ -20,11 +19,11 @@ export default function ForgotPass() {
          {/* Login Form */}
          <Form onSubmit={() => null}>
             <Form.Group className="mb-3">
-               <TextInput icon={faEnvelope} placeholder='Email' />
+               <TextInput icon={iconEmail} placeholder='Email' />
             </Form.Group>
 
             <Form.Group className="mb-3">
-               <TextInput icon={faPhone} placeholder='Telefono' />
+               <TextInput icon={iconPhone} placeholder='Telefono' />
             </Form.Group>
 
 

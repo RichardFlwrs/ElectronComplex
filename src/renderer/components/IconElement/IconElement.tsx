@@ -26,11 +26,29 @@ export default function IconElement(P: Props) {
    const alt_text = SVG.split('icons/')[1]
    return (
       <div>
-         <img
+         {/* 19 x 19 */}
+         {/* <img
             className={P.className}
             src={SVG}
             alt={alt_text}
-         />
+            style={{
+               ...P.style,
+               backgroundImage: SVG
+            }}
+         /> */}
+
+         <div
+            className={`svg-icon ${P.className}`}
+            style={{
+               mask: `url("${SVG}")`,
+               WebkitMaskImage: `url("${SVG}")`,
+               WebkitMaskRepeat: 'no-repeat',
+               WebkitMaskSize: 'cover',
+               backgroundSize: 'cover',
+               width: 19,
+               height: 19,
+            }}
+         ></div>
       </div>
    )
 }

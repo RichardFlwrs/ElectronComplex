@@ -1,6 +1,5 @@
 import Form from 'react-bootstrap/Form';
 import TextInput from 'renderer/components/TextInput/TextInput';
-import { faLock, faUser } from '@fortawesome/free-solid-svg-icons';
 import { Button } from 'renderer/components';
 import { useNavigate } from 'react-router-dom';
 import LoginHeader from '../components/LoginHeader';

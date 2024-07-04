@@ -1,13 +1,12 @@
 import { useState } from 'react'
 import LoginHeader from '../components/LoginHeader'
-import { Form, Modal } from 'react-bootstrap'
+import { Form } from 'react-bootstrap'
 import TextInput from 'renderer/components/TextInput/TextInput'
 import { Button } from 'renderer/components'
 import { useNavigate } from 'react-router-dom'
-import { faLock, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
-import IconElement from 'renderer/components/IconElement/IconElement'
-import MyImage from "resources/public/logo.png"
 import BasicModal from 'renderer/modals/BasicModal'
+import { iconLock } from 'renderer/store/icons.index'
+import MyImage from "resources/public/bell-modal.png"
 
 
 export default function ChangePass() {
@@ -32,11 +31,11 @@ export default function ChangePass() {
          {/* Login Form */}
          <Form onSubmit={() => null}>
             <Form.Group className="mb-3">
-               <TextInput icon={faLock} placeholder='Nueva contraseña' type='password' />
+               <TextInput icon={iconLock} placeholder='Nueva contraseña' type='password' />
             </Form.Group>
 
             <Form.Group className="mb-3">
-               <TextInput icon={faLock} placeholder='Repetir contraseña' type='password' />
+               <TextInput icon={iconLock} placeholder='Repetir contraseña' type='password' />
             </Form.Group>
 
 
@@ -58,6 +57,7 @@ export default function ChangePass() {
             show={show}
             onClosed={handleClose}
             title='Tu contraseña se ha cambiado con exito!'
+            image={MyImage}
          />
       </>
    )

@@ -9,6 +9,7 @@ import { Button } from '../Button/Button';
 import { Form, Modal } from 'react-bootstrap';
 import TextInput from '../TextInput/TextInput';
 import IconElement from '../IconElement/IconElement';
+import { iconCog, iconMap, iconPaperSearching, iconPerfilAlt } from 'renderer/store/icons.index';
 
 const iterateElements = (array: HTMLCollectionOf<Element>, func: (e: Element) => void) => {
    for (let index = 0; index < array.length; index++) {
@@ -93,18 +94,18 @@ export function NavBar() {
 
                <div className='v-center navbar-options'>
                   <Button onClick={() => navigate('/home/carta')} variant='light' className='v-center round'>
-                     <IconElement icon={faBook} />
+                     <IconElement icon={iconPaperSearching} />
                      <p>Carta</p>
                   </Button>
                   <Button onClick={() => navigate('/home/zonas-mapa')} variant='light' className='v-center round'>
-                     <IconElement icon={faMapLocation} />
+                     <IconElement icon={iconMap} />
                      <p>Mapa</p>
                   </Button>
                   <Button variant='light' onClick={() => navigate('/home/user-settings')}>
-                     <IconElement icon={faGear} />
+                     <IconElement icon={iconCog} />
                   </Button>
                   <Button variant='light' onClick={() => navigate('/')}>
-                     <IconElement icon={faUser} />
+                     <IconElement icon={iconPerfilAlt} />
                   </Button>
                </div>
             </Navbar.Collapse>
