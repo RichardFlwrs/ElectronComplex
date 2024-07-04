@@ -18,7 +18,7 @@ import {
    faTruckMonster,
    faUserNurse
 } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import IconElement from 'renderer/components/IconElement/IconElement'
 import { useState } from 'react'
 import { Form, Table } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
@@ -40,7 +40,7 @@ export default function Recursos() {
          {/* Filtros */}
          <CardBox className='mb-4'>
             <div className='v-center-between mb-2'>
-               <h4 className='cardTitle'><FontAwesomeIcon icon={faSliders} />  Filtros</h4>
+               <h4 className='cardTitle'><IconElement icon={faSliders} />  Filtros</h4>
                <Button className='w-auto px-5 py-2'>
                   Filtrar
                </Button>
@@ -52,10 +52,10 @@ export default function Recursos() {
                   { t: 'Subtipos de recursos', i: faBox },
                ].map((data, idx) => <Button key={idx} variant='light' className='card-btn v-center-between gap-2'>
                   <div className='v-center'>
-                     <FontAwesomeIcon icon={data.i} />
+                     <IconElement icon={data.i} />
                      <p>{data.t}</p>
                   </div>
-                  <FontAwesomeIcon icon={faChevronDown} />
+                  <IconElement icon={faChevronDown} />
                </Button>)}
                <MultipleSelect
                   className='card-btn no-shadows'
@@ -72,27 +72,27 @@ export default function Recursos() {
                </MultipleSelect>
                <Button variant='light' className='card-btn v-center-between gap-2'>
                   <div className='v-center'>
-                     <FontAwesomeIcon icon={faBookmark} />
+                     <IconElement icon={faBookmark} />
                      <p>Estados</p>
                   </div>
-                  <FontAwesomeIcon icon={faChevronDown} />
+                  <IconElement icon={faChevronDown} />
                </Button>
 
                <div className='d-flex flex-1 gap-3'>
                   <Button variant='light' className='card-btn v-center-between gap-2 w-50'>
                      <div className='v-center'>
-                        <FontAwesomeIcon icon={faCalendar} />
+                        <IconElement icon={faCalendar} />
                         <p>Desde</p>
                      </div>
-                     <FontAwesomeIcon icon={faChevronDown} />
+                     <IconElement icon={faChevronDown} />
                   </Button>
 
                   <Button variant='light' className='card-btn v-center-between gap-2 w-50'>
                      <div className='v-center'>
-                        <FontAwesomeIcon icon={faCalendar} />
+                        <IconElement icon={faCalendar} />
                         <p>Desde</p>
                      </div>
-                     <FontAwesomeIcon icon={faChevronDown} />
+                     <IconElement icon={faChevronDown} />
                   </Button>
                </div>
             </div>
@@ -104,10 +104,10 @@ export default function Recursos() {
                   { t: 'Numero de carta', i: faFile },
                ].map((data, idx) => <Button key={idx} variant='light' className='card-btn v-center-between gap-2'>
                   <div className='v-center'>
-                     <FontAwesomeIcon icon={data.i} />
+                     <IconElement icon={data.i} />
                      <p>{data.t}</p>
                   </div>
-                  <FontAwesomeIcon icon={faChevronDown} />
+                  <IconElement icon={faChevronDown} />
                </Button>)}
             </div>
          </CardBox>
@@ -132,15 +132,15 @@ const HARDCODE_TABLE = (P: { title: string, nav: any }) => <>
          <h3 className='cardTitle'>{P.title}</h3>
          <div className='v-center-end'>
             <Button onClick={() => null} variant="link" className='v-center'>
-               <FontAwesomeIcon icon={faCloud} />
+               <IconElement icon={faCloud} />
                Excel
             </Button>
             <Button onClick={() => null} variant="link" className='v-center'>
-               <FontAwesomeIcon icon={faCloud} />
+               <IconElement icon={faCloud} />
                PDF
             </Button>
             <Button onClick={() => null} variant="link" className='v-center'>
-               <FontAwesomeIcon icon={faCloud} />
+               <IconElement icon={faCloud} />
                CSV
             </Button>
          </div>
@@ -172,7 +172,7 @@ const HARDCODE_TABLE = (P: { title: string, nav: any }) => <>
                   <div
                      className={`v-center-normal gap-2 box-${data.tipo}`}
                   >
-                     <FontAwesomeIcon icon={data.i} />
+                     <IconElement icon={data.i} />
                      <p>{data.tipo}</p>
                   </div>
                </td>
@@ -194,7 +194,7 @@ const HARDCODE_TABLE = (P: { title: string, nav: any }) => <>
                         className='w-auto no-shadows'
                         onClick={() => { P.nav('0') }}
                      >
-                        <FontAwesomeIcon icon={faEye} />
+                        <IconElement icon={faEye} />
                      </Button>
                   </div>
                </td>
@@ -207,7 +207,7 @@ const HARDCODE_TABLE = (P: { title: string, nav: any }) => <>
 
    <nav className='t-paginator v-center-end gap-2 mb-4'>
       <Button variant='flat' className='v-center w-auto p-2'>
-         <FontAwesomeIcon icon={faChevronLeft} />
+         <IconElement icon={faChevronLeft} />
       </Button>
 
       <Button variant='primary' className='v-center'>
@@ -219,7 +219,7 @@ const HARDCODE_TABLE = (P: { title: string, nav: any }) => <>
       </Button>
 
       <Button variant='flat' className='v-center w-auto p-2'>
-         <FontAwesomeIcon icon={faChevronRight} />
+         <IconElement icon={faChevronRight} />
       </Button>
    </nav>
 

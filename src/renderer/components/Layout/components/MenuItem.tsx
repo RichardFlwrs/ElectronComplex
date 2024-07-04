@@ -1,7 +1,7 @@
 import { useRef, useState } from "react"
 import { Button } from "renderer/components/Button/Button"
 import { IMenuItem } from "renderer/store/menuList"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import IconElement from "renderer/components/IconElement/IconElement"
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
 import { useSildeAnimation } from "renderer/utils/SlideAnimation"
 import { useNavigate } from "react-router-dom"
@@ -42,7 +42,7 @@ export default function MenuItem({ menuItem, menuOpen }: MenuItemProps) {
             >
                {menuItem.title}
 
-               <FontAwesomeIcon icon={faChevronDown} />
+               <IconElement icon={faChevronDown} />
             </Button>
          </div>}
 
@@ -61,7 +61,7 @@ export default function MenuItem({ menuItem, menuOpen }: MenuItemProps) {
             >
                {/* icon */}
                <div className="v-center" style={{ width: 28, height: 28 }}>
-                  {!menuItem.icon ? null : <FontAwesomeIcon
+                  {!menuItem.icon ? null : <IconElement
                      style={{ transform: 'scale(1.3)' }}
                      icon={menuItem.icon}
                   />}

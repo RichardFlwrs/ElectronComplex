@@ -1,6 +1,6 @@
 import { faEye } from "@fortawesome/free-regular-svg-icons";
 import { faChevronDown, faChevronLeft, faChevronRight, faCloud, faEllipsisV, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import IconElement from "renderer/components/IconElement/IconElement";
 import { Table } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { Button } from "renderer/components";
@@ -15,15 +15,15 @@ export default function InboxTable() {
                <h3 className='cardTitle'>Estado de Agencias</h3>
                <div className='v-center-end'>
                   <Button onClick={() => null} variant="link" className='v-center'>
-                     <FontAwesomeIcon icon={faCloud} />
+                     <IconElement icon={faCloud} />
                      Excel
                   </Button>
                   <Button onClick={() => null} variant="link" className='v-center'>
-                     <FontAwesomeIcon icon={faCloud} />
+                     <IconElement icon={faCloud} />
                      PDF
                   </Button>
                   <Button onClick={() => null} variant="link" className='v-center'>
-                     <FontAwesomeIcon icon={faCloud} />
+                     <IconElement icon={faCloud} />
                      CSV
                   </Button>
                </div>
@@ -32,7 +32,7 @@ export default function InboxTable() {
             <Table className='position-relative'>
                <thead className='sticky-top'>
                   <tr>
-                     <th>P <FontAwesomeIcon icon={faChevronDown} /> </th>
+                     <th>P <IconElement icon={faChevronDown} /> </th>
                      <th>ID</th>
                      <th>FECHA</th>
                      <th>HORA</th>
@@ -40,9 +40,9 @@ export default function InboxTable() {
                      <th>TIPO DE DELITO</th>
                      <th>RECURSOS</th>
                      <th>ANI</th>
-                     <th>ESTADO<FontAwesomeIcon icon={faChevronDown} /></th>
+                     <th>ESTADO<IconElement icon={faChevronDown} /></th>
                      <th>ACCIÓN</th>
-                     <th className="px-4"><FontAwesomeIcon icon={faEllipsisV} /></th>
+                     <th className="px-4"><IconElement icon={faEllipsisV} /></th>
                   </tr>
                </thead>
                <tbody>
@@ -65,14 +65,14 @@ export default function InboxTable() {
                               className='w-auto no-shadows'
                               onClick={() => { nav(`/home/carta/ver/${index + 1}`) }}
                            >
-                              <FontAwesomeIcon icon={faEye} />
+                              <IconElement icon={faEye} />
                            </Button>
                            <Button
                               variant='flat'
                               className='w-auto no-shadows'
                               onClick={() => { }}
                            >
-                              <FontAwesomeIcon icon={faPlusCircle} />
+                              <IconElement icon={faPlusCircle} />
                            </Button>
                         </div>
                      </td>
@@ -83,7 +83,7 @@ export default function InboxTable() {
 
          <nav className='t-paginator v-center-end gap-2 mt-3'>
             <Button variant='flat' className='v-center w-auto p-2'>
-               <FontAwesomeIcon icon={faChevronLeft} />
+               <IconElement icon={faChevronLeft} />
             </Button>
 
             <Button variant='primary' className='v-center'>
@@ -95,7 +95,7 @@ export default function InboxTable() {
             </Button>
 
             <Button variant='flat' className='v-center w-auto p-2'>
-               <FontAwesomeIcon icon={faChevronRight} />
+               <IconElement icon={faChevronRight} />
             </Button>
          </nav>
       </div>

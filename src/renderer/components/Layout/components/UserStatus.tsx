@@ -1,7 +1,7 @@
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Button } from 'renderer/components/Button/Button'
+import IconElement from 'renderer/components/IconElement/IconElement'
 
 export default function UserStatus({ menuOpen }: { menuOpen: boolean }) {
    const circleStyle = {
@@ -41,7 +41,7 @@ export default function UserStatus({ menuOpen }: { menuOpen: boolean }) {
 
             {/* dropdown icon */}
             <div className={menuOpen ? '' : 'hide'}>
-               <FontAwesomeIcon icon={faChevronDown} />
+               <IconElement icon={faChevronDown} />
             </div>
          </Button>
 

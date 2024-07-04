@@ -1,5 +1,5 @@
 import { faBoxArchive, faBusSimple, faCircleInfo, faFilePdf, faHashtag, faMotorcycle, faPersonMilitaryPointing, faReceipt, faShield, faThumbtack, faTriangleExclamation, faTruckMedical, faUserInjured } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import IconElement from "renderer/components/IconElement/IconElement";
 import { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
@@ -63,7 +63,7 @@ export default function VerCarta() {
             <Col xl={12} className="d-flex gap-3">
                <CardBox className="flex-1 p-3">
                   <div className="v-center-normal gap-2">
-                     <FontAwesomeIcon icon={faTriangleExclamation} className="circle-icon" />
+                     <IconElement icon={faTriangleExclamation} className="circle-icon" />
                      <p className="cardTitle bolder m-0">Tipo de delito</p>
                   </div>
                   <p className="my-2">Lorem ipsum</p>
@@ -71,7 +71,7 @@ export default function VerCarta() {
 
                <CardBox className="flex-1 p-3">
                   <div className="v-center-normal gap-2">
-                     <FontAwesomeIcon icon={faCalendar} className="circle-icon" />
+                     <IconElement icon={faCalendar} className="circle-icon" />
                      <p className="cardTitle bolder m-0">Fecha y hora</p>
                   </div>
                   <p className="my-2">22.05.2023 | 16:30:34</p>
@@ -79,7 +79,7 @@ export default function VerCarta() {
 
                <CardBox className="flex-1 p-3">
                   <div className="v-center-normal gap-2">
-                     <FontAwesomeIcon icon={faThumbtack} className="circle-icon" />
+                     <IconElement icon={faThumbtack} className="circle-icon" />
                      <p className="cardTitle bolder m-0">Agencia</p>
                   </div>
                   <p className="my-2">Circunscripcion 1</p>
@@ -87,7 +87,7 @@ export default function VerCarta() {
 
                <CardBox className="flex-1 p-3">
                   <div className="v-center-normal gap-2">
-                     <FontAwesomeIcon icon={faBookmark} className="circle-icon" />
+                     <IconElement icon={faBookmark} className="circle-icon" />
                      <p className="cardTitle bolder m-0">Estado</p>
                   </div>
                   <p className="my-2">Abierta</p>
@@ -133,15 +133,15 @@ export default function VerCarta() {
                   </div>
                   <div className="v-center-between gap-4">
                      <div className="w-100 py-2 box-ambulancia v-center gap-3">
-                        <FontAwesomeIcon icon={faTruckMedical} />
+                        <IconElement icon={faTruckMedical} />
                         Ambulancia (3)
                      </div>
                      <div className="w-100 py-2 box-bomberos v-center gap-3">
-                        <FontAwesomeIcon icon={faBusSimple} />
+                        <IconElement icon={faBusSimple} />
                         Bomberos (2)
                      </div>
                      <div className="w-100 py-2 box-moto v-center gap-3">
-                        <FontAwesomeIcon icon={faMotorcycle} />
+                        <IconElement icon={faMotorcycle} />
                         Moto (3)
                      </div>
                   </div>
@@ -174,12 +174,12 @@ export default function VerCarta() {
                   </div>
                   <div className="v-center-normal gap-3">
                      {Array.from({ length: 6 }).map((d, i) => <div key={i} className="file-chip">
-                        <FontAwesomeIcon icon={faFilePdf} />
+                        <IconElement icon={faFilePdf} />
                         <p title="Lorem ipsum dolor, sit amet consectetur adipisicing.">
                            Lorem ipsum dolor, sit amet consectetur adipisicing.
                         </p>
                         <Button variant="link" className="w-auto p-0">
-                           <FontAwesomeIcon icon={faTimesCircle} />
+                           <IconElement icon={faTimesCircle} />
                         </Button>
                      </div>)}
                   </div>
@@ -231,7 +231,7 @@ export default function VerCarta() {
 
 const CartaPropiedad = ({ icon, label, content }: any) => {
    return <div className="flex-1 v-center gap-1">
-      <FontAwesomeIcon icon={icon} />
+      <IconElement icon={icon} />
       <p className="bolder">{label}:</p>
       <div
          style={{

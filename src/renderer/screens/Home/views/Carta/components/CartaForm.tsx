@@ -1,5 +1,5 @@
 import { faPaperclip } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import IconElement from "renderer/components/IconElement/IconElement";
 import { Col, Form, Row, Tab, Table, Tabs } from "react-bootstrap";
 import { Button } from "renderer/components";
 import TextInput from "renderer/components/TextInput/TextInput";
@@ -167,7 +167,7 @@ export default function CartaForm() {
                      style={{ height: '80px' }}
                   />
                   <Button onClick={selectFile} variant="link" className="w-auto v-center gap-1">
-                     <FontAwesomeIcon icon={faPaperclip} />
+                     <IconElement icon={faPaperclip} />
                      Adjuntar archivos
                   </Button>
 

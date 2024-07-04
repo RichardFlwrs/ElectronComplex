@@ -1,5 +1,5 @@
 import { faLocationDot, faMagnifyingGlass, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import IconElement from 'renderer/components/IconElement/IconElement'
 import { useState } from 'react';
 import { Modal } from 'react-bootstrap'
 import { Button } from 'renderer/components'
@@ -17,14 +17,14 @@ export default function OpenMapModal() {
    return (
       <div>
          <Button onClick={handleShow} variant="link" className="w-auto v-center gap-2">
-            <FontAwesomeIcon icon={faLocationDot} />
+            <IconElement icon={faLocationDot} />
             <p>Mapa</p>
          </Button>
 
          <Modal show={show} onHide={handleClose} className='modal-center'>
             <Modal.Header>
                <Button onClick={handleClose} variant='icon'>
-                  <FontAwesomeIcon style={{ padding: 12 }} icon={faTimesCircle} />
+                  <IconElement style={{ padding: 12 }} icon={faTimesCircle} />
                </Button>
             </Modal.Header>
             <Modal.Body className='text-center center-col pb-0 px-5'>

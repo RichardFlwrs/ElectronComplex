@@ -1,5 +1,5 @@
 import { faChevronLeft, faChevronRight, faCloud, faDesktop, faHashtag, faPencil, faTimesCircle, faTrash, faWindowMaximize } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import IconElement from "renderer/components/IconElement/IconElement";
 import { useContext, useState } from "react";
 import { Form, Modal, Table } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
@@ -47,15 +47,15 @@ export default function IPSSettings() {
             <h4 className="cardTitle mx-3">IPS</h4>
             <div className='v-center'>
                <Button onClick={() => null} variant="link" className='v-center gap-1'>
-                  <FontAwesomeIcon icon={faCloud} />
+                  <IconElement icon={faCloud} />
                   Excel
                </Button>
                <Button onClick={() => null} variant="link" className='v-center gap-1'>
-                  <FontAwesomeIcon icon={faCloud} />
+                  <IconElement icon={faCloud} />
                   PDF
                </Button>
                <Button onClick={() => null} variant="link" className='v-center gap-1'>
-                  <FontAwesomeIcon icon={faCloud} />
+                  <IconElement icon={faCloud} />
                   CSV
                </Button>
             </div>
@@ -88,14 +88,14 @@ export default function IPSSettings() {
                            className='w-auto no-shadows'
                            onClick={() => { null }}
                         >
-                           <FontAwesomeIcon icon={faPencil} />
+                           <IconElement icon={faPencil} />
                         </Button>
                         <Button
                            variant='flat'
                            className='w-auto no-shadows'
                            onClick={() => { removeNews(0) }}
                         >
-                           <FontAwesomeIcon icon={faTrash} />
+                           <IconElement icon={faTrash} />
                         </Button>
                      </div>
                   </td>
@@ -107,7 +107,7 @@ export default function IPSSettings() {
          <div className="position-relative">
             <nav style={{ position: 'absolute', top: 55 }} className='t-paginator v-center-end gap-2 w-100'>
                <Button variant='flat' className='v-center w-auto p-2'>
-                  <FontAwesomeIcon icon={faChevronLeft} />
+                  <IconElement icon={faChevronLeft} />
                </Button>
 
                <Button variant='primary' className='v-center'>
@@ -119,7 +119,7 @@ export default function IPSSettings() {
                </Button>
 
                <Button variant='flat' className='v-center w-auto p-2'>
-                  <FontAwesomeIcon icon={faChevronRight} />
+                  <IconElement icon={faChevronRight} />
                </Button>
             </nav>
 
@@ -134,7 +134,7 @@ export default function IPSSettings() {
          <Modal show={show} onHide={handleClose}>
             <Modal.Header>
                <Button onClick={handleClose} variant='icon'>
-                  <FontAwesomeIcon style={{ padding: 12 }} icon={faTimesCircle} />
+                  <IconElement style={{ padding: 12 }} icon={faTimesCircle} />
                </Button>
             </Modal.Header>
             <Modal.Body className='text-center center-col pb-0'>

@@ -1,5 +1,5 @@
 import { faCloud, faSliders } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import IconElement from "renderer/components/IconElement/IconElement";
 import { Col, Form, Row } from "react-bootstrap";
 import { Button } from "renderer/components";
 import CardBox from "renderer/components/CardBox/CardBox";
@@ -10,7 +10,7 @@ export default function MapaCalor() {
       <CardBox id="mapa-calor">
          <div className="v-center-between">
             <h5 className="cardTitle">
-               <FontAwesomeIcon icon={faSliders} className="px-2" />
+               <IconElement icon={faSliders} className="px-2" />
                Filtros
             </h5>
 
@@ -97,7 +97,7 @@ export default function MapaCalor() {
             </h5>
 
             <Button className="w-auto" variant="link">
-               <FontAwesomeIcon icon={faCloud} />
+               <IconElement icon={faCloud} />
                PDF
             </Button>
          </div>

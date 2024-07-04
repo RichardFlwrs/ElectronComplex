@@ -1,15 +1,12 @@
 import Form from 'react-bootstrap/Form';
 import TextInput from 'renderer/components/TextInput/TextInput';
-import { faBook, faChevronDown, faLock, faMapPin, faSquare, faThumbTack, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faLock, faUser } from '@fortawesome/free-solid-svg-icons';
 import { Button } from 'renderer/components';
-import Select from 'renderer/components/Select/Select';
 import { useNavigate } from 'react-router-dom';
 import LoginHeader from '../components/LoginHeader';
-import DropDown from 'renderer/components/DropDown/DropDown';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSquareFull } from '@fortawesome/free-regular-svg-icons';
 import { useState } from 'react';
 import MultipleSelect from 'renderer/components/MultipleSelect/MultipleSelect';
+import { iconLock, iconPerfil } from 'renderer/store/icons.index';
 
 export default function AuthForm() {
    const navigate = useNavigate()
@@ -32,11 +29,11 @@ export default function AuthForm() {
          {/* Login Form */}
          <Form onSubmit={() => null}>
             <Form.Group className="mb-3">
-               <TextInput icon={faUser} placeholder='Usuario' />
+               <TextInput icon={iconPerfil} placeholder='Usuario' />
             </Form.Group>
 
             <Form.Group className="mb-3">
-               <TextInput icon={faLock} type='password' placeholder='Contraseña' />
+               <TextInput icon={iconLock} type='password' placeholder='Contraseña' />
             </Form.Group>
 
             <Form.Group className="mb-3">

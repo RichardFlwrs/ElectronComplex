@@ -1,14 +1,15 @@
 import DropDown from '../DropDown/DropDown'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconDefinition, faChevronDown, faThumbTack } from '@fortawesome/free-solid-svg-icons'
 import { Form } from 'react-bootstrap'
 import { PropsWithChildren, useState } from 'react'
+import IconElement from '../IconElement/IconElement'
+import { iconPin } from 'renderer/store/icons.index'
 
 type Props = {
    data: any[]
    placeholder: string
    onChange: (data: any) => void
-   icon?: IconDefinition
+   icon?: IconDefinition | string
    className?: string
    classContainer?: string
    defaultChecked?: boolean
@@ -31,10 +32,10 @@ export default function MultipleSelect(P: Props) {
          className={`v-center-between card-box-style ${P.className}`}
          dropdownParent={<>
             <div className='v-center gap-2'>
-               <FontAwesomeIcon icon={P.icon || faThumbTack} />
+               <IconElement icon={P.icon || iconPin} />
                <p>{P.placeholder}</p>
             </div>
-            <FontAwesomeIcon icon={faChevronDown} />
+            <IconElement icon={faChevronDown} />
          </>}
       >
          {P.data

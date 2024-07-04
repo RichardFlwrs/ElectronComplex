@@ -1,5 +1,5 @@
 import { faCircleInfo, faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import IconElement from "renderer/components/IconElement/IconElement";
 import { Col, Form, Row } from "react-bootstrap";
 import { Button } from "renderer/components";
 import TextInput from "renderer/components/TextInput/TextInput";
@@ -15,11 +15,11 @@ export default function Tab_Localizacion() {
                <TextInput placeholder="Nro" wrapperclassname="flex-1 card-input" />
                <TextInput placeholder="Depto" wrapperclassname="flex-1 card-input" />
                <Button variant="link" className="v-center gap-2">
-                  <FontAwesomeIcon icon={faLocationDot} />
+                  <IconElement icon={faLocationDot} />
                   Mapa
                </Button>
                <Button variant="link" className="v-center gap-2">
-                  <FontAwesomeIcon icon={faCircleInfo} />
+                  <IconElement icon={faCircleInfo} />
                   A incidente
                </Button>
             </Col>

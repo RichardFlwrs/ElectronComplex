@@ -1,5 +1,5 @@
 import { faChevronLeft, faChevronRight, faCloud } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import IconElement from 'renderer/components/IconElement/IconElement';
 import { Table } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'renderer/components'
@@ -34,15 +34,15 @@ export default function CartaHisotrial() {
             <CardBox>
                 <div className='v-center-end'>
                     <Button onClick={() => null} variant="link" className='v-center'>
-                        <FontAwesomeIcon icon={faCloud} />
+                        <IconElement icon={faCloud} />
                         Excel
                     </Button>
                     <Button onClick={() => null} variant="link" className='v-center'>
-                        <FontAwesomeIcon icon={faCloud} />
+                        <IconElement icon={faCloud} />
                         PDF
                     </Button>
                     <Button onClick={() => null} variant="link" className='v-center'>
-                        <FontAwesomeIcon icon={faCloud} />
+                        <IconElement icon={faCloud} />
                         CSV
                     </Button>
                 </div>
@@ -75,7 +75,7 @@ export default function CartaHisotrial() {
 
             <nav className='mt-3 t-paginator v-center-end gap-2'>
                 <Button variant='flat' className='v-center w-auto p-2'>
-                    <FontAwesomeIcon icon={faChevronLeft} />
+                    <IconElement icon={faChevronLeft} />
                 </Button>
 
                 <Button variant='primary' className='v-center'>
@@ -87,7 +87,7 @@ export default function CartaHisotrial() {
                 </Button>
 
                 <Button variant='flat' className='v-center w-auto p-2'>
-                    <FontAwesomeIcon icon={faChevronRight} />
+                    <IconElement icon={faChevronRight} />
                 </Button>
             </nav>
         </div>

@@ -1,7 +1,7 @@
 import React, { PropsWithChildren, useEffect, useRef, useState } from 'react'
 import { Button } from '../Button/Button'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+import IconElement from '../IconElement/IconElement'
 
 type Button = {
     dropdownParent: any,
@@ -30,11 +30,13 @@ export default function DropDown(P: Button) {
     const toggleListOpen = () => {
         setlistOpen(!listOpen)
         setTimeout(() => {
-            if (!listOpen)
+            if (!listOpen){
                 document.getElementById('dd-close-btn')?.focus()
+                setConfiguration()
+            }
             else
                 document.getElementById(PARENT_ID)?.focus()
-        }, 100);
+        }, 25);
     }
 
     const combinedClassNames = ['v-center', P.className].join(' ')
@@ -47,8 +49,9 @@ export default function DropDown(P: Button) {
         }
     );
 
-    useEffect(() => {
+    const setConfiguration = () => {
         const el = document.getElementById(PARENT_ID)
+
         if (el) {
             setddPosition({
                 top: P.ddOption?.top || el.offsetHeight,
@@ -56,7 +59,11 @@ export default function DropDown(P: Button) {
                 width: P.ddOption?.width || el.offsetWidth,
             })
         }
-    }, [])
+    }
+
+    useEffect(() => {
+        setConfiguration()
+    }, [wrapperRef, PARENT_ID])
 
     const CloseButton = (
         <Button
@@ -65,7 +72,7 @@ export default function DropDown(P: Button) {
             onClick={toggleListOpen}
             id='dd-close-btn'
         >
-            <FontAwesomeIcon icon={faTimesCircle} />
+            <IconElement icon={faTimesCircle} />
         </Button>
     )
 

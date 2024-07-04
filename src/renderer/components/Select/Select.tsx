@@ -3,7 +3,7 @@ import { Form } from 'react-bootstrap'
 
 import styles from './styles.module.sass'
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import IconElement from 'renderer/components/IconElement/IconElement'
 
 type SelectProps = {
    placeholder?: string
@@ -18,7 +18,7 @@ export default function Select(P: SelectProps) {
 
    return (
       <div className={combinedClassNames}>
-         {P.icon ? <FontAwesomeIcon className={styles.myInputIcon} icon={P.icon} /> : null}
+         {P.icon ? <IconElement className={styles.myInputIcon} icon={P.icon} /> : null}
 
 
          <select className={styles.formSelect} aria-label="Default select example">

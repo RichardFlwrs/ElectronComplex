@@ -1,7 +1,7 @@
-import { faPaperPlane, faPhone, faTimesCircle, faUser, faUserCircle } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaperPlane, faUserCircle } from '@fortawesome/free-solid-svg-icons'
 import { Button } from 'renderer/components'
 import TextInput from 'renderer/components/TextInput/TextInput'
+import IconElement from '../IconElement/IconElement'
 
 const CHAT_HARDCODE: IChat[] = [
    { type: 'sending', message: 'Lorem.' },
@@ -36,7 +36,7 @@ export default function Chat() {
             className='v-center-between p-2 chat-header'
          >
             <div className='v-center-normal gap-3 px-4 pt-3'>
-               <FontAwesomeIcon icon={faUserCircle} style={{ fontSize: 43 }} />
+               <IconElement icon={faUserCircle} style={{ fontSize: 43 }} />
                <div>
                   <p>Florencia Gonzalez</p>
                   <p className='number-phone'>000000</p>
@@ -56,7 +56,7 @@ export default function Chat() {
                id='send-message-input'
             />
 
-            <FontAwesomeIcon
+            <IconElement
                style={{
                   position: 'absolute',
                   top: '1.2rem',

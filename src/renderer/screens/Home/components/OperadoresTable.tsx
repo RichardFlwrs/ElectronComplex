@@ -1,5 +1,5 @@
 import { faChevronLeft, faChevronRight, faCloud, faEye, faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import IconElement from 'renderer/components/IconElement/IconElement';
 import { useContext, useState } from 'react';
 import { Form, Table } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
@@ -26,15 +26,15 @@ export default function OperadoresTable() {
       <div>
          <div className='v-center-end'>
             <Button onClick={() => null} variant="link" className='v-center'>
-               <FontAwesomeIcon icon={faCloud} />
+               <IconElement icon={faCloud} />
                Excel
             </Button>
             <Button onClick={() => null} variant="link" className='v-center'>
-               <FontAwesomeIcon icon={faCloud} />
+               <IconElement icon={faCloud} />
                PDF
             </Button>
             <Button onClick={() => null} variant="link" className='v-center'>
-               <FontAwesomeIcon icon={faCloud} />
+               <IconElement icon={faCloud} />
                CSV
             </Button>
          </div>
@@ -68,21 +68,21 @@ export default function OperadoresTable() {
                               className='w-auto no-shadows'
                               onClick={() => { navigate('form/nuevo') }}
                            >
-                              <FontAwesomeIcon icon={faEye} />
+                              <IconElement icon={faEye} />
                            </Button>
                            <Button
                               variant='flat'
                               className='w-auto no-shadows'
                               onClick={() => { navigate(`/home/operadores/form/${index + 1}`) }}
                            >
-                              <FontAwesomeIcon icon={faPencil} />
+                              <IconElement icon={faPencil} />
                            </Button>
                            <Button
                               variant='flat'
                               className='w-auto no-shadows'
                               onClick={() => { removeNews(0) }}
                            >
-                              <FontAwesomeIcon icon={faTrash} />
+                              <IconElement icon={faTrash} />
                            </Button>
                         </div>
                      </td>
@@ -95,7 +95,7 @@ export default function OperadoresTable() {
 
          <nav className='mt-3 t-paginator v-center-end gap-2'>
             <Button variant='flat' className='v-center w-auto p-2'>
-               <FontAwesomeIcon icon={faChevronLeft} />
+               <IconElement icon={faChevronLeft} />
             </Button>
 
             <Button variant='primary' className='v-center'>
@@ -107,7 +107,7 @@ export default function OperadoresTable() {
             </Button>
 
             <Button variant='flat' className='v-center w-auto p-2'>
-               <FontAwesomeIcon icon={faChevronRight} />
+               <IconElement icon={faChevronRight} />
             </Button>
          </nav>
 

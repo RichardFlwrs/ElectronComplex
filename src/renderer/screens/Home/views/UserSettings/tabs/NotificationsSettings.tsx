@@ -1,6 +1,6 @@
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 import { faPaperclip } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import IconElement from "renderer/components/IconElement/IconElement";
 import { Form } from "react-bootstrap";
 import { Button } from "renderer/components";
 
@@ -42,7 +42,7 @@ export default function NotificationsSettings() {
             </div>
 
             <Button onClick={selectFile} variant="link" className="w-auto v-center gap-1">
-               <FontAwesomeIcon icon={faPaperclip} />
+               <IconElement icon={faPaperclip} />
                Adjuntar archivos
             </Button>
 
@@ -73,7 +73,7 @@ export default function NotificationsSettings() {
 
 const ClockItem = () => {
    return <div className="v-center gap-2 flex-1 w-100">
-      <FontAwesomeIcon icon={faClock} className="fs-32" />
+      <IconElement icon={faClock} className="fs-32" />
       <div className="card-input py-1 px-3  w-100">
          <p>00.00.00 a 00.00.00</p>
       </div>

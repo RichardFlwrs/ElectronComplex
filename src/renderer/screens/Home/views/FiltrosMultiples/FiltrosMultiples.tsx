@@ -1,5 +1,5 @@
 import { faBookmark, faCalendar, faChevronDown, faSliders } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import IconElement from 'renderer/components/IconElement/IconElement'
 import { useEffect, useState } from 'react'
 import { Col, Form, Row } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
@@ -11,7 +11,7 @@ import MainTable from '../../components/MainTable'
 const HardCodeInput = (P: { text: string, noSelect?: boolean }) => {
    return <Button variant='light' className='card-btn w-100 v-center-between flex-1'>
       <p style={{ paddingRight: 40 }}>{P.text}</p>
-      {P.noSelect ? null : <FontAwesomeIcon icon={faChevronDown} />}
+      {P.noSelect ? null : <IconElement icon={faChevronDown} />}
    </Button>
 }
 
@@ -40,7 +40,7 @@ export default function FiltrosMultiples() {
                   <p className='form-header'>Estado</p>
                   <Button variant='light' className='card-btn v-center-between w-100 m-0'>
                      <p style={{ paddingRight: 40 }}>Estado</p>
-                     <FontAwesomeIcon icon={faChevronDown} />
+                     <IconElement icon={faChevronDown} />
                   </Button>
                </div>
 

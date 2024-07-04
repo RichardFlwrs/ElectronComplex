@@ -1,6 +1,6 @@
 import { faFaceFrownOpen } from "@fortawesome/free-regular-svg-icons";
 import { faBell, faBriefcaseMedical, faBullhorn, faCarSide, faFireExtinguisher, faHandHoldingHeart, faLocationDot, faMapLocationDot, faPaperclip, faPersonMilitaryPointing, faPhone, faShield, faUserInjured } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import IconElement from "renderer/components/IconElement/IconElement";
 import { Col, Form, Nav, Row, Tab, Table, Tabs } from "react-bootstrap";
 import { Button } from "renderer/components";
 import TextInput from "renderer/components/TextInput/TextInput";
@@ -33,19 +33,19 @@ export default function CartaLlamda() {
       <div id="carta-llamada">
          <div className="v-center-evenly gap-3 buttons-option mb-4">
             <Button variant="light" className="py-2 v-center gap-2 card-btn">
-               <FontAwesomeIcon icon={faFaceFrownOpen} />
+               <IconElement icon={faFaceFrownOpen} />
                Broma
             </Button>
             <Button variant="light" className="py-2 v-center gap-2 card-btn">
-               <FontAwesomeIcon icon={faBell} />
+               <IconElement icon={faBell} />
                No constituye emergencia
             </Button>
             <Button variant="light" className="py-2 v-center gap-2 card-btn">
-               <FontAwesomeIcon icon={faHandHoldingHeart} />
+               <IconElement icon={faHandHoldingHeart} />
                Agradecimiento
             </Button>
             <Button variant="light" className="py-2 v-center gap-2 card-btn">
-               <FontAwesomeIcon icon={faPhone} />
+               <IconElement icon={faPhone} />
                Llamada interna
             </Button>
          </div>
@@ -61,7 +61,7 @@ export default function CartaLlamda() {
                      {TabsIndex.map((data, index) =>
                         <Nav.Item key={index}>
                            <Nav.Link href="" eventKey={data.id}>
-                              <FontAwesomeIcon icon={data.icon} />
+                              <IconElement icon={data.icon} />
                               {data.text}
                            </Nav.Link>
                         </Nav.Item>

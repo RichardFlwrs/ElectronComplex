@@ -1,5 +1,5 @@
 import { faChevronLeft, faChevronRight, faCloud } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import IconElement from 'renderer/components/IconElement/IconElement'
 import { Table } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import { Button } from 'renderer/components'
@@ -23,15 +23,15 @@ const HARDCODE_TABLE = (P: { title: string }) => <>
          <h3 className='cardTitle'>{P.title}</h3>
          <div className='v-center-end'>
             <Button onClick={() => null} variant="link" className='v-center'>
-               <FontAwesomeIcon icon={faCloud} />
+               <IconElement icon={faCloud} />
                Excel
             </Button>
             <Button onClick={() => null} variant="link" className='v-center'>
-               <FontAwesomeIcon icon={faCloud} />
+               <IconElement icon={faCloud} />
                PDF
             </Button>
             <Button onClick={() => null} variant="link" className='v-center'>
-               <FontAwesomeIcon icon={faCloud} />
+               <IconElement icon={faCloud} />
                CSV
             </Button>
          </div>
@@ -69,7 +69,7 @@ const HARDCODE_TABLE = (P: { title: string }) => <>
 
    <nav className='t-paginator v-center-end gap-2 mb-4'>
       <Button variant='flat' className='v-center w-auto p-2'>
-         <FontAwesomeIcon icon={faChevronLeft} />
+         <IconElement icon={faChevronLeft} />
       </Button>
 
       <Button variant='primary' className='v-center'>
@@ -81,7 +81,7 @@ const HARDCODE_TABLE = (P: { title: string }) => <>
       </Button>
 
       <Button variant='flat' className='v-center w-auto p-2'>
-         <FontAwesomeIcon icon={faChevronRight} />
+         <IconElement icon={faChevronRight} />
       </Button>
    </nav>
 

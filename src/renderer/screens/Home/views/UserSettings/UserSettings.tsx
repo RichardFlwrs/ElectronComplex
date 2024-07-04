@@ -1,6 +1,6 @@
 import { faBell } from "@fortawesome/free-regular-svg-icons";
 import { faWindowMaximize } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import IconElement from "renderer/components/IconElement/IconElement";
 import { Nav, Row, Tab } from "react-bootstrap";
 import CardBox from "renderer/components/CardBox/CardBox";
 import NotificationsSettings from "./tabs/NotificationsSettings";
@@ -17,13 +17,13 @@ export default function UserSettings() {
                   <Nav variant="tabs" className="mb-4 gap-2">
                      <Nav.Item>
                         <Nav.Link eventKey="opens" className="v-center gap-2">
-                           <FontAwesomeIcon icon={faBell} />
+                           <IconElement icon={faBell} />
                            Notificaciones y carta
                         </Nav.Link>
                      </Nav.Item>
                      <Nav.Item>
                         <Nav.Link eventKey="pendings" className="v-center gap-2">
-                           <FontAwesomeIcon icon={faWindowMaximize} />
+                           <IconElement icon={faWindowMaximize} />
                            IPS
                         </Nav.Link>
                      </Nav.Item>

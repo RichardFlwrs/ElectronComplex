@@ -1,5 +1,5 @@
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import IconElement from "renderer/components/IconElement/IconElement";
 import { Col, Form, Row } from "react-bootstrap";
 import { Button } from "renderer/components";
 import TextInput from "renderer/components/TextInput/TextInput";
@@ -26,7 +26,7 @@ export default function Tab_Victimas() {
         <Col xl={6} className="v-center-normal gap-3">
           <Form.Check type="checkbox" label='Confidencial' id="Confidencial" />
           <Button variant="link" className="w-auto v-center gap-2">
-            <FontAwesomeIcon icon={faPlusCircle}/>
+            <IconElement icon={faPlusCircle}/>
             Agregar victima
           </Button>
         </Col>

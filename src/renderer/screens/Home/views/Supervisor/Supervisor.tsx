@@ -1,10 +1,10 @@
 import { faBookmark, faCalendar, faChevronDown, faSliders } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Form } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import { Button } from 'renderer/components'
 import CardBox from 'renderer/components/CardBox/CardBox'
 import MainTable from '../../components/MainTable'
+import IconElement from 'renderer/components/IconElement/IconElement'
 
 export default function Supervisor() {
    const navigate = useNavigate()
@@ -13,7 +13,7 @@ export default function Supervisor() {
       <div>
          {/* Filtros */}
          <CardBox className='mb-4'>
-            <h3 className='cardTitle'><FontAwesomeIcon icon={faSliders} />  Filtros</h3>
+            <h3 className='cardTitle'><IconElement icon={faSliders} />  Filtros</h3>
 
             <div className='v-center-normal gap-4'>
                <Form.Check
@@ -32,21 +32,21 @@ export default function Supervisor() {
                </Button>
 
                <Button variant='light' className='card-btn v-center gap-2'>
-                  <FontAwesomeIcon icon={faCalendar} />
+                  <IconElement icon={faCalendar} />
                   <p>Desde</p>
-                  <FontAwesomeIcon icon={faChevronDown} />
+                  <IconElement icon={faChevronDown} />
                </Button>
 
                <Button variant='light' className='card-btn v-center gap-2'>
-                  <FontAwesomeIcon icon={faCalendar} />
+                  <IconElement icon={faCalendar} />
                   <p>Hasta</p>
-                  <FontAwesomeIcon icon={faChevronDown} />
+                  <IconElement icon={faChevronDown} />
                </Button>
 
                <Button variant='light' className='card-btn v-center gap-2'>
-                  <FontAwesomeIcon icon={faBookmark} />
+                  <IconElement icon={faBookmark} />
                   <p style={{ paddingRight: 40 }}>Estado</p>
-                  <FontAwesomeIcon icon={faChevronDown} />
+                  <IconElement icon={faChevronDown} />
                </Button>
 
                <Button className='w-auto px-5 py-2' onClick={() => null}>Filtrar</Button>

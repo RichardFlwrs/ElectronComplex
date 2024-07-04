@@ -1,7 +1,7 @@
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Modal } from 'react-bootstrap'
 import { Button } from 'renderer/components'
+import IconElement from 'renderer/components/IconElement/IconElement'
 import MyImage from "resources/public/logo.png"
 
 type Props = {
@@ -21,7 +21,7 @@ export default function BasicModal(P: Props) {
          <Modal show={P.show} onHide={handleClose}>
             <Modal.Header>
                <Button onClick={handleClose} variant='icon'>
-                  <FontAwesomeIcon style={{ padding: 12 }} icon={faTimesCircle} />
+                  <IconElement style={{ padding: 12 }} icon={faTimesCircle} />
                </Button>
             </Modal.Header>
             <Modal.Body className='text-center center-col m'>

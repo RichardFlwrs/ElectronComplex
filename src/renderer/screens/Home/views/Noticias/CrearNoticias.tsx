@@ -1,5 +1,5 @@
 import { faBookmark, faCalendar, faChevronDown, faChevronLeft, faChevronRight, faCloud, faDesktop, faEye, faFileLines, faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import IconElement from 'renderer/components/IconElement/IconElement';
 import { Form, Table } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'renderer/components'
@@ -45,27 +45,27 @@ export default function CrearNoticias() {
                />
 
                <Button variant='light' className='card-btn v-center gap-2'>
-                  <FontAwesomeIcon icon={faBookmark} />
+                  <IconElement icon={faBookmark} />
                   <p style={{ paddingRight: 40 }}>Predeterminada</p>
-                  <FontAwesomeIcon icon={faChevronDown} />
+                  <IconElement icon={faChevronDown} />
                </Button>
 
                <Button variant='light' className='card-btn v-center gap-2'>
-                  <FontAwesomeIcon icon={faDesktop} />
+                  <IconElement icon={faDesktop} />
                   <p style={{ paddingRight: 40 }}>Destino de la noticia</p>
-                  <FontAwesomeIcon icon={faChevronDown} />
+                  <IconElement icon={faChevronDown} />
                </Button>
 
                <Button variant='light' className='card-btn v-center gap-2'>
-                  <FontAwesomeIcon icon={faCalendar} />
+                  <IconElement icon={faCalendar} />
                   <p>Desde</p>
-                  <FontAwesomeIcon icon={faChevronDown} />
+                  <IconElement icon={faChevronDown} />
                </Button>
 
                <Button variant='light' className='card-btn v-center gap-2'>
-                  <FontAwesomeIcon icon={faCalendar} />
+                  <IconElement icon={faCalendar} />
                   <p>Hasta</p>
-                  <FontAwesomeIcon icon={faChevronDown} />
+                  <IconElement icon={faChevronDown} />
                </Button>
             </div>
 

@@ -1,6 +1,6 @@
 import { faBell, faClock } from "@fortawesome/free-regular-svg-icons";
 import { faCloud, faEarthAmericas, faWindowMaximize } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import IconElement from "renderer/components/IconElement/IconElement";
 import { Col, Form, Nav, Row, Tab } from "react-bootstrap";
 import CardBox from "renderer/components/CardBox/CardBox";
 import CartaInversa from "./tabs/CartaInversa";
@@ -30,7 +30,7 @@ export default function Carta() {
                      <div className='nav-left-section gap-2'>
                         <TranslateOptions/>
                         <Button onClick={() => null} variant="light" className='v-center card-btn py-2'>
-                           <FontAwesomeIcon icon={faClock} style={{ marginRight: 5 }} />
+                           <IconElement icon={faClock} style={{ marginRight: 5 }} />
                            00:2
                         </Button>
                      </div>
@@ -60,7 +60,7 @@ const TranslateOptions = () => {
       <DropDown
          className='card-btn py-2'
          dropdownParent={<>
-            <FontAwesomeIcon icon={faEarthAmericas} style={{ marginRight: 5 }} />
+            <IconElement icon={faEarthAmericas} style={{ marginRight: 5 }} />
             Traducción
          </>}
          headerTitle='Idiomas:'

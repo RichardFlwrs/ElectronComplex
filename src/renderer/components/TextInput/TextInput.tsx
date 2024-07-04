@@ -1,16 +1,17 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconDefinition, faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 import styles from './styles.module.sass'
 import { PropsWithChildren, useEffect, useRef } from 'react'
 import { Form } from 'react-bootstrap'
+import { MyIcon } from 'renderer/store/icons.index'
+import IconElement from '../IconElement/IconElement'
 
 type TextInputProps = {
    type?: React.HTMLInputTypeAttribute | undefined
    placeholder?: string
    value?: string
    onChange?: string
-   icon?: IconDefinition
+   icon?: IconDefinition | MyIcon
    wrapperclassname?: string
    max?: number
    maxLength?: number
@@ -46,7 +47,10 @@ export default function TextInput(P: TextInputProps) {
 
    return (
       <div {...P} className={combinedClassNames} ref={wrapperRef}>
-         {P.icon ? <FontAwesomeIcon className={styles.myInputIcon} icon={P.icon} /> : null}
+         {!P.icon ? null : <IconElement
+            icon={P.icon}
+            className={styles.myInputIcon}
+         />}
 
          <input
             ref={inputRef}

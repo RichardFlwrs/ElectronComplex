@@ -1,11 +1,9 @@
-import { faBookmark, faCalendar, faChevronDown, faChevronLeft, faChevronRight, faCloud, faEarListen, faEllipsisV, faEye, faPhone, faPlayCircle, faPlusCircle, faSliders, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useEffect, useState } from 'react'
-import { Col, Form, Nav, Row, Tab, Table, Tabs } from 'react-bootstrap'
-import { useNavigate } from 'react-router-dom'
+import { faChevronLeft, faChevronRight, faCloud, faEarListen, faEllipsisV, faEye, faPhone, faPlayCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
+import { Col, Form, Nav, Row, Tab, Table } from 'react-bootstrap'
 import { Button } from 'renderer/components'
 import CardBox from 'renderer/components/CardBox/CardBox'
 import DropDown from 'renderer/components/DropDown/DropDown'
+import IconElement from 'renderer/components/IconElement/IconElement'
 import SoundImage from "resources/public/wave-sound.png"
 
 
@@ -34,15 +32,15 @@ export default function MainTable() {
 
                      <div className='nav-left-section'>
                         <Button onClick={() => null} variant="link" className='v-center'>
-                           <FontAwesomeIcon icon={faCloud} />
+                           <IconElement icon={faCloud} />
                            Excel
                         </Button>
                         <Button onClick={() => null} variant="link" className='v-center'>
-                           <FontAwesomeIcon icon={faCloud} />
+                           <IconElement icon={faCloud} />
                            PDF
                         </Button>
                         <Button onClick={() => null} variant="link" className='v-center'>
-                           <FontAwesomeIcon icon={faCloud} />
+                           <IconElement icon={faCloud} />
                            CSV
                         </Button>
                      </div>
@@ -58,7 +56,7 @@ export default function MainTable() {
 
          <nav className='t-paginator v-center-end gap-2'>
             <Button variant='flat' className='v-center w-auto p-2'>
-               <FontAwesomeIcon icon={faChevronLeft} />
+               <IconElement icon={faChevronLeft} />
             </Button>
 
             <Button variant='primary' className='v-center'>
@@ -70,7 +68,7 @@ export default function MainTable() {
             </Button>
 
             <Button variant='flat' className='v-center w-auto p-2'>
-               <FontAwesomeIcon icon={faChevronRight} />
+               <IconElement icon={faChevronRight} />
             </Button>
          </nav>
       </div>
@@ -83,7 +81,7 @@ const TableOptions = () => {
    return (
       <DropDown
          className='tOption'
-         dropdownParent={<FontAwesomeIcon icon={faEllipsisV} />}
+         dropdownParent={<IconElement icon={faEllipsisV} />}
          headerTitle='Agregar:'
          withCloseBtn={true}
          ddOption={{ width: '17rem' }}
@@ -147,14 +145,14 @@ const DummyTble = () => {
                <td colSpan={2}>
                   <div className='v-center-evenly  '>
                      <Button variant='flat' className='w-auto no-shadows'>
-                        <FontAwesomeIcon icon={faEye} />
+                        <IconElement icon={faEye} />
                      </Button>
                      <Button variant='flat' className='w-auto no-shadows'>
-                        <FontAwesomeIcon icon={faPlusCircle} />
+                        <IconElement icon={faPlusCircle} />
                      </Button>
                      <HearAudio idx={index} />
                      <Button variant='flat' className='w-auto no-shadows'>
-                        <FontAwesomeIcon icon={faPhone} />
+                        <IconElement icon={faPhone} />
                      </Button>
                   </div>
                </td>
@@ -170,12 +168,12 @@ const HearAudio = ({ idx }: { idx: number }) => {
          parentId={'hearOption' + idx}
          classContainer='audiobox-option'
          className='w-auto no-shadows'
-         dropdownParent={<FontAwesomeIcon icon={faEarListen} />}
+         dropdownParent={<IconElement icon={faEarListen} />}
          withCloseBtn={true}
          ddOption={{ width: '17rem' }}
       >
          <div className='v-center-normal'>
-            <FontAwesomeIcon icon={faPlayCircle} />
+            <IconElement icon={faPlayCircle} />
             <img
                src={SoundImage}
                alt=""

@@ -5,7 +5,7 @@ import TextInput from 'renderer/components/TextInput/TextInput'
 import { Button } from 'renderer/components'
 import { useNavigate } from 'react-router-dom'
 import { faLock, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import IconElement from 'renderer/components/IconElement/IconElement'
 import MyImage from "resources/public/logo.png"
 import BasicModal from 'renderer/modals/BasicModal'
 

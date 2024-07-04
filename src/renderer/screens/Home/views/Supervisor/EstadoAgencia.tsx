@@ -1,5 +1,5 @@
 import { faChevronLeft, faChevronRight, faCloud } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import IconElement from 'renderer/components/IconElement/IconElement'
 import { Table } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import { Button } from 'renderer/components'
@@ -46,15 +46,15 @@ export default function EstadoAgencia() {
                     <h3 className='cardTitle'>Estado de Agencias</h3>
                     <div className='v-center-end'>
                         <Button onClick={() => null} variant="link" className='v-center'>
-                            <FontAwesomeIcon icon={faCloud} />
+                            <IconElement icon={faCloud} />
                             Excel
                         </Button>
                         <Button onClick={() => null} variant="link" className='v-center'>
-                            <FontAwesomeIcon icon={faCloud} />
+                            <IconElement icon={faCloud} />
                             PDF
                         </Button>
                         <Button onClick={() => null} variant="link" className='v-center'>
-                            <FontAwesomeIcon icon={faCloud} />
+                            <IconElement icon={faCloud} />
                             CSV
                         </Button>
                     </div>
@@ -96,7 +96,7 @@ export default function EstadoAgencia() {
 
             <nav className='t-paginator v-center-end gap-2'>
                 <Button variant='flat' className='v-center w-auto p-2'>
-                    <FontAwesomeIcon icon={faChevronLeft} />
+                    <IconElement icon={faChevronLeft} />
                 </Button>
 
                 <Button variant='primary' className='v-center'>
@@ -108,7 +108,7 @@ export default function EstadoAgencia() {
                 </Button>
 
                 <Button variant='flat' className='v-center w-auto p-2'>
-                    <FontAwesomeIcon icon={faChevronRight} />
+                    <IconElement icon={faChevronRight} />
                 </Button>
             </nav>
         </div>

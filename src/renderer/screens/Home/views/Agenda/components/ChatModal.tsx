@@ -1,5 +1,5 @@
 import { faPhone, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import IconElement from "renderer/components/IconElement/IconElement";
 import { Button } from "renderer/components";
 import Chat from "renderer/components/Chat/Chat";
 
@@ -19,7 +19,7 @@ export default function ChatModal(P: { visible: boolean, onClose: () => void }) 
          <div className="position-relative">
             <div style={{ position: 'absolute', top: 7, right: 7, zIndex: 1 }}>
                <Button variant='icon' onClick={P.onClose}>
-                  <FontAwesomeIcon icon={faTimesCircle} style={{ fontSize: 14 }} />
+                  <IconElement icon={faTimesCircle} style={{ fontSize: 14 }} />
                </Button>
             </div>
          </div>
@@ -27,7 +27,7 @@ export default function ChatModal(P: { visible: boolean, onClose: () => void }) 
          <div className="position-relative">
             <div style={{ position: 'absolute', top: 28, right: 32, zIndex: 1 }}>
                <Button variant='icon' className="p-1">
-                  <FontAwesomeIcon icon={faPhone} style={{ fontSize: 24 }} />
+                  <IconElement icon={faPhone} style={{ fontSize: 24 }} />
                </Button>
             </div>
          </div>

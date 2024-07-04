@@ -1,5 +1,5 @@
 import { faChevronLeft, faChevronRight, faComment, faMagnifyingGlass, faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import IconElement from "renderer/components/IconElement/IconElement";
 import { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
@@ -42,7 +42,7 @@ export default function Agenda() {
                <Col xl={4} style={{ height: 85 }} key={idx}>
                   <CardBox className="v-center-between mx-2 my-4 p-2 px-3">
                      <div className="v-center gap-3">
-                        <FontAwesomeIcon icon={faUser} />
+                        <IconElement icon={faUser} />
                         <div>
                            <p>Florencia Gonzalez</p>
                            <p>000000</p>
@@ -50,10 +50,10 @@ export default function Agenda() {
                      </div>
                      <div className="v-center gap-2">
                         <Button variant="icon">
-                           <FontAwesomeIcon icon={faPhone} style={{ fontSize: 14 }} />
+                           <IconElement icon={faPhone} style={{ fontSize: 14 }} />
                         </Button>
                         <Button variant="icon" onClick={() => openChat()}>
-                           <FontAwesomeIcon icon={faComment} style={{ fontSize: 14 }} />
+                           <IconElement icon={faComment} style={{ fontSize: 14 }} />
                         </Button>
                      </div>
                   </CardBox>
@@ -64,7 +64,7 @@ export default function Agenda() {
          <div className="position-relative">
             <nav style={{ position: 'absolute', top: 55 }} className='t-paginator v-center-end gap-2 w-100'>
                <Button variant='flat' className='v-center w-auto p-2'>
-                  <FontAwesomeIcon icon={faChevronLeft} />
+                  <IconElement icon={faChevronLeft} />
                </Button>
 
                <Button variant='primary' className='v-center'>
@@ -76,7 +76,7 @@ export default function Agenda() {
                </Button>
 
                <Button variant='flat' className='v-center w-auto p-2'>
-                  <FontAwesomeIcon icon={faChevronRight} />
+                  <IconElement icon={faChevronRight} />
                </Button>
             </nav>
 

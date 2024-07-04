@@ -1,5 +1,5 @@
 import { faChevronLeft, faChevronRight, faCloud, faEye, faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import IconElement from 'renderer/components/IconElement/IconElement';
 import { useContext, useState } from 'react';
 import { Form, Table } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
@@ -64,21 +64,21 @@ export default function Noticias() {
                               className='w-auto no-shadows'
                               onClick={() => { navigate('/home/noticias/ver-noticia') }}
                            >
-                              <FontAwesomeIcon icon={faEye} />
+                              <IconElement icon={faEye} />
                            </Button>
                            <Button
                               variant='flat'
                               className='w-auto no-shadows'
                               onClick={() => { navigate('/home/noticias/crear-noticia') }}
                            >
-                              <FontAwesomeIcon icon={faPencil} />
+                              <IconElement icon={faPencil} />
                            </Button>
                            <Button
                               variant='flat'
                               className='w-auto no-shadows'
                               onClick={() => { removeNews(0) }}
                            >
-                              <FontAwesomeIcon icon={faTrash} />
+                              <IconElement icon={faTrash} />
                            </Button>
                         </div>
                      </td>
@@ -91,7 +91,7 @@ export default function Noticias() {
 
          <nav className='mt-3 t-paginator v-center-end gap-2'>
             <Button variant='flat' className='v-center w-auto p-2'>
-               <FontAwesomeIcon icon={faChevronLeft} />
+               <IconElement icon={faChevronLeft} />
             </Button>
 
             <Button variant='primary' className='v-center'>
@@ -103,7 +103,7 @@ export default function Noticias() {
             </Button>
 
             <Button variant='flat' className='v-center w-auto p-2'>
-               <FontAwesomeIcon icon={faChevronRight} />
+               <IconElement icon={faChevronRight} />
             </Button>
          </nav>
 

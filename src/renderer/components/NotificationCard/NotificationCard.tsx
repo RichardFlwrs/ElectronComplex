@@ -1,5 +1,5 @@
 import { faBell, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import IconElement from "renderer/components/IconElement/IconElement";
 import { Button } from "../Button/Button";
 
 export default function NotificationCard() {
@@ -7,10 +7,10 @@ export default function NotificationCard() {
       <div className="notfi-card-wrapper">
          <div className="notif-card v-center">
             <Button onClick={() => null} variant='icon' className="closeBtn">
-               <FontAwesomeIcon icon={faTimesCircle} />
+               <IconElement icon={faTimesCircle} />
             </Button>
 
-            <FontAwesomeIcon style={{ fontSize: 25 }} icon={faBell} />
+            <IconElement style={{ fontSize: 25 }} icon={faBell} />
 
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga praesentium libero delectus, laudantium quidem eaque nemo.</p>
          </div>

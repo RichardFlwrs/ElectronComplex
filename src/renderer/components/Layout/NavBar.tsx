@@ -1,5 +1,4 @@
 import { faBook, faCloud, faGear, faHashtag, faMapLocation, faTimesCircle, faUser } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -9,6 +8,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '../Button/Button';
 import { Form, Modal } from 'react-bootstrap';
 import TextInput from '../TextInput/TextInput';
+import IconElement from '../IconElement/IconElement';
 
 const iterateElements = (array: HTMLCollectionOf<Element>, func: (e: Element) => void) => {
    for (let index = 0; index < array.length; index++) {
@@ -93,18 +93,18 @@ export function NavBar() {
 
                <div className='v-center navbar-options'>
                   <Button onClick={() => navigate('/home/carta')} variant='light' className='v-center round'>
-                     <FontAwesomeIcon icon={faBook} />
+                     <IconElement icon={faBook} />
                      <p>Carta</p>
                   </Button>
                   <Button onClick={() => navigate('/home/zonas-mapa')} variant='light' className='v-center round'>
-                     <FontAwesomeIcon icon={faMapLocation} />
+                     <IconElement icon={faMapLocation} />
                      <p>Mapa</p>
                   </Button>
                   <Button variant='light' onClick={() => navigate('/home/user-settings')}>
-                     <FontAwesomeIcon icon={faGear} />
+                     <IconElement icon={faGear} />
                   </Button>
                   <Button variant='light' onClick={() => navigate('/')}>
-                     <FontAwesomeIcon icon={faUser} />
+                     <IconElement icon={faUser} />
                   </Button>
                </div>
             </Navbar.Collapse>
@@ -113,7 +113,7 @@ export function NavBar() {
          <Modal show={show} onHide={handleClose}>
             <Modal.Header>
                <Button onClick={handleClose} variant='icon'>
-                  <FontAwesomeIcon style={{ padding: 12 }} icon={faTimesCircle} />
+                  <IconElement style={{ padding: 12 }} icon={faTimesCircle} />
                </Button>
             </Modal.Header>
             <Modal.Body className='text-center center-col pb-0'>
@@ -135,15 +135,15 @@ export function NavBar() {
 
                <div className='v-center-between'>
                   <Button onClick={() => null} variant="link" className='v-center'>
-                     <FontAwesomeIcon icon={faCloud} />
+                     <IconElement icon={faCloud} />
                      Excel
                   </Button>
                   <Button onClick={() => null} variant="link" className='v-center'>
-                     <FontAwesomeIcon icon={faCloud} />
+                     <IconElement icon={faCloud} />
                      PDF
                   </Button>
                   <Button onClick={() => null} variant="link" className='v-center'>
-                     <FontAwesomeIcon icon={faCloud} />
+                     <IconElement icon={faCloud} />
                      CSV
                   </Button>
                </div>
