@@ -1,4 +1,4 @@
-import { faBook, faCloud, faGear, faHashtag, faMapLocation, faTimesCircle, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faHashtag, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -9,7 +9,7 @@ import { Button } from '../Button/Button';
 import { Form, Modal } from 'react-bootstrap';
 import TextInput from '../TextInput/TextInput';
 import IconElement from '../IconElement/IconElement';
-import { iconCog, iconMap, iconPaperSearching, iconPerfilAlt } from 'renderer/store/icons.index';
+import { iconCog, iconDescargar, iconMap, iconPaperSearching, iconPerfilAlt } from 'renderer/store/icons.index';
 
 const iterateElements = (array: HTMLCollectionOf<Element>, func: (e: Element) => void) => {
    for (let index = 0; index < array.length; index++) {
@@ -120,7 +120,7 @@ export function NavBar() {
             <Modal.Body className='text-center center-col pb-0'>
                <h2 style={{ fontWeight: 'bold' }} className='w-50'> Auditoria </h2>
                <p>Ingresa el ID del llamado a auditar</p>
-               <Form.Group className="mb-3">
+               <Form.Group className="my-4">
                   <TextInput icon={faHashtag} placeholder='12483639900' />
                </Form.Group>
                <Form.Group style={{ marginRight: '15%' }}>
@@ -135,16 +135,16 @@ export function NavBar() {
                </Button>
 
                <div className='v-center-between'>
-                  <Button onClick={() => null} variant="link" className='v-center'>
-                     <IconElement icon={faCloud} />
+                  <Button onClick={() => null} variant="link" className='v-center gap-1'>
+                     <IconElement icon={iconDescargar} />
                      Excel
                   </Button>
-                  <Button onClick={() => null} variant="link" className='v-center'>
-                     <IconElement icon={faCloud} />
+                  <Button onClick={() => null} variant="link" className='v-center gap-1'>
+                     <IconElement icon={iconDescargar} />
                      PDF
                   </Button>
-                  <Button onClick={() => null} variant="link" className='v-center'>
-                     <IconElement icon={faCloud} />
+                  <Button onClick={() => null} variant="link" className='v-center gap-1'>
+                     <IconElement icon={iconDescargar} />
                      CSV
                   </Button>
                </div>

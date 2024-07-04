@@ -1,10 +1,11 @@
-import { faBookmark, faCalendar, faChevronDown, faSliders } from '@fortawesome/free-solid-svg-icons'
+import { faBookmark, faCalendar, faChevronDown, faQuestion, faSliders } from '@fortawesome/free-solid-svg-icons'
 import { Form } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import { Button } from 'renderer/components'
 import CardBox from 'renderer/components/CardBox/CardBox'
 import MainTable from '../../components/MainTable'
 import IconElement from 'renderer/components/IconElement/IconElement'
+import { iconFiltros } from 'renderer/store/icons.index'
 
 export default function Supervisor() {
    const navigate = useNavigate()
@@ -13,7 +14,7 @@ export default function Supervisor() {
       <div>
          {/* Filtros */}
          <CardBox className='mb-4'>
-            <h3 className='cardTitle'><IconElement icon={faSliders} />  Filtros</h3>
+            <h3 className='cardTitle'><IconElement icon={iconFiltros} />  Filtros</h3>
 
             <div className='v-center-normal gap-4'>
                <Form.Check

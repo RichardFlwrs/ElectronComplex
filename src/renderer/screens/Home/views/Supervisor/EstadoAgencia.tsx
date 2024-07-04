@@ -4,6 +4,7 @@ import { Table } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import { Button } from 'renderer/components'
 import CardBox from 'renderer/components/CardBox/CardBox'
+import { iconDescargar } from 'renderer/store/icons.index'
 
 export default function EstadoAgencia() {
     const navigate = useNavigate()
@@ -45,16 +46,16 @@ export default function EstadoAgencia() {
                 <div className='v-center-between'>
                     <h3 className='cardTitle'>Estado de Agencias</h3>
                     <div className='v-center-end'>
-                        <Button onClick={() => null} variant="link" className='v-center'>
-                            <IconElement icon={faCloud} />
+                        <Button onClick={() => null} variant="link" className='v-center gap-1'>
+                            <IconElement icon={iconDescargar} />
                             Excel
                         </Button>
-                        <Button onClick={() => null} variant="link" className='v-center'>
-                            <IconElement icon={faCloud} />
+                        <Button onClick={() => null} variant="link" className='v-center gap-1'>
+                            <IconElement icon={iconDescargar} />
                             PDF
                         </Button>
-                        <Button onClick={() => null} variant="link" className='v-center'>
-                            <IconElement icon={faCloud} />
+                        <Button onClick={() => null} variant="link" className='v-center gap-1'>
+                            <IconElement icon={iconDescargar} />
                             CSV
                         </Button>
                     </div>

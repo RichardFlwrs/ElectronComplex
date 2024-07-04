@@ -4,6 +4,7 @@ import { Col, Form, Row } from "react-bootstrap";
 import { Button } from "renderer/components";
 import CardBox from "renderer/components/CardBox/CardBox";
 import TextInput from "renderer/components/TextInput/TextInput";
+import { iconDescargar } from "renderer/store/icons.index";
 
 export default function MapaCalor() {
    return (
@@ -97,7 +98,7 @@ export default function MapaCalor() {
             </h5>
 
             <Button className="w-auto" variant="link">
-               <IconElement icon={faCloud} />
+               <IconElement icon={iconDescargar} />
                PDF
             </Button>
          </div>

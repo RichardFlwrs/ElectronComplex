@@ -7,6 +7,7 @@ import { Button } from "renderer/components";
 import TextInput from "renderer/components/TextInput/TextInput";
 import DeleteConfirmation from "renderer/modals/DeleteConfirmation";
 import { ModalContext } from "renderer/screens/Home/HomeScreen";
+import { iconDescargar } from "renderer/store/icons.index";
 
 
 export default function IPSSettings() {
@@ -47,15 +48,15 @@ export default function IPSSettings() {
             <h4 className="cardTitle mx-3">IPS</h4>
             <div className='v-center'>
                <Button onClick={() => null} variant="link" className='v-center gap-1'>
-                  <IconElement icon={faCloud} />
+                  <IconElement icon={iconDescargar} />
                   Excel
                </Button>
                <Button onClick={() => null} variant="link" className='v-center gap-1'>
-                  <IconElement icon={faCloud} />
+                  <IconElement icon={iconDescargar} />
                   PDF
                </Button>
                <Button onClick={() => null} variant="link" className='v-center gap-1'>
-                  <IconElement icon={faCloud} />
+                  <IconElement icon={iconDescargar} />
                   CSV
                </Button>
             </div>

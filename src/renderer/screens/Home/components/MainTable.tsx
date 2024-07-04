@@ -4,6 +4,7 @@ import { Button } from 'renderer/components'
 import CardBox from 'renderer/components/CardBox/CardBox'
 import DropDown from 'renderer/components/DropDown/DropDown'
 import IconElement from 'renderer/components/IconElement/IconElement'
+import { iconDescargar } from 'renderer/store/icons.index'
 import SoundImage from "resources/public/wave-sound.png"
 
 
@@ -31,16 +32,16 @@ export default function MainTable() {
                      </Nav.Item>
 
                      <div className='nav-left-section'>
-                        <Button onClick={() => null} variant="link" className='v-center'>
-                           <IconElement icon={faCloud} />
+                        <Button onClick={() => null} variant="link" className='v-center gap-1'>
+                           <IconElement icon={iconDescargar} />
                            Excel
                         </Button>
-                        <Button onClick={() => null} variant="link" className='v-center'>
-                           <IconElement icon={faCloud} />
+                        <Button onClick={() => null} variant="link" className='v-center gap-1'>
+                           <IconElement icon={iconDescargar} />
                            PDF
                         </Button>
-                        <Button onClick={() => null} variant="link" className='v-center'>
-                           <IconElement icon={faCloud} />
+                        <Button onClick={() => null} variant="link" className='v-center gap-1'>
+                           <IconElement icon={iconDescargar} />
                            CSV
                         </Button>
                      </div>

@@ -1,16 +1,16 @@
-import { faBell, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import IconElement from "renderer/components/IconElement/IconElement";
 import { Button } from "../Button/Button";
+import { iconNotificacion, iconTimes } from "renderer/store/icons.index";
 
 export default function NotificationCard() {
    return (
       <div className="notfi-card-wrapper">
          <div className="notif-card v-center">
             <Button onClick={() => null} variant='icon' className="closeBtn">
-               <IconElement icon={faTimesCircle} />
+               <IconElement icon={iconTimes} />
             </Button>
 
-            <IconElement style={{ fontSize: 25 }} icon={faBell} />
+            <img src={iconNotificacion} alt="icono-notificacion" />
 
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga praesentium libero delectus, laudantium quidem eaque nemo.</p>
          </div>

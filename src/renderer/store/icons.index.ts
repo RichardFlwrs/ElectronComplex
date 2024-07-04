@@ -62,3 +62,27 @@ export const iconGridBotones: MyIcon = _GridBotones
 
 import _Mano from "resources/public/icons/participar.svg"
 export const iconMano: MyIcon = _Mano
+
+import _Agregar from "resources/public/icons/plus-circle.svg"
+export const iconAgregar: MyIcon = _Agregar
+
+import _Descargar from "resources/public/icons/descargar.svg"
+export const iconDescargar: MyIcon = _Descargar
+
+import _Filtros from "resources/public/icons/filtros.svg"
+export const iconFiltros: MyIcon = _Filtros
+
+import _Hashtag from "resources/public/icons/hashtag.svg"
+export const iconHashtag: MyIcon = _Hashtag
+
+import _NotiCarta from "resources/public/icons/noti-carta.svg"
+export const iconNotiCarta: MyIcon = _NotiCarta
+
+import _Notificacion from "resources/public/icons/notificacion.svg"
+export const iconNotificacion: MyIcon = _Notificacion
+
+import _Radio from "resources/public/icons/radio.svg"
+export const iconRadio: MyIcon = _Radio
+
+import _Ver from "resources/public/icons/ver.svg"
+export const iconVer: MyIcon = _Ver

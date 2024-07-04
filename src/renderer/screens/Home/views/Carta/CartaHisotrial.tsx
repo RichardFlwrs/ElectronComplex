@@ -4,6 +4,7 @@ import { Table } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'renderer/components'
 import CardBox from 'renderer/components/CardBox/CardBox';
+import { iconDescargar } from 'renderer/store/icons.index';
 
 export default function CartaHisotrial() {
     const navigate = useNavigate()
@@ -34,15 +35,15 @@ export default function CartaHisotrial() {
             <CardBox>
                 <div className='v-center-end'>
                     <Button onClick={() => null} variant="link" className='v-center'>
-                        <IconElement icon={faCloud} />
+                        <IconElement icon={iconDescargar} />
                         Excel
                     </Button>
                     <Button onClick={() => null} variant="link" className='v-center'>
-                        <IconElement icon={faCloud} />
+                        <IconElement icon={iconDescargar} />
                         PDF
                     </Button>
                     <Button onClick={() => null} variant="link" className='v-center'>
-                        <IconElement icon={faCloud} />
+                        <IconElement icon={iconDescargar} />
                         CSV
                     </Button>
                 </div>
