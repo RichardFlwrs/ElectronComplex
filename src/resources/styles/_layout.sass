@@ -41,11 +41,17 @@
          &:hover
             border: 1px solid rgba(53, 53, 64, 0.58) !important
 
+         .svg-icon
+            width: 30px
+            height: 22px
+
          &.active
             background: $activeItem
             border-radius: 7px
             svg, p
                color: white
+            .svg-icon
+               background-color: white
             &:hover
                background: #8e939fc7
 
@@ -119,4 +125,4 @@
             font-size: 14px
 
          .svg-icon
-           background-color: $darkGray
+            background-color: $darkGray

@@ -32,7 +32,7 @@ export default function DropDown(P: Button) {
         setTimeout(() => {
             if (!listOpen){
                 document.getElementById('dd-close-btn')?.focus()
-                setConfiguration()
+                // setConfiguration()
             }
             else
                 document.getElementById(PARENT_ID)?.focus()
@@ -63,7 +63,7 @@ export default function DropDown(P: Button) {
 
     useEffect(() => {
         setConfiguration()
-    }, [wrapperRef, PARENT_ID])
+    }, [wrapperRef, listOpen])
 
     const CloseButton = (
         <Button

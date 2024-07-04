@@ -25,7 +25,7 @@ export default function IconElement(P: Props) {
    const SVG = (P.icon) as string
    const alt_text = SVG.split('icons/')[1]
    return (
-      <div>
+      <div className='v-center'>
          {/* 19 x 19 */}
          {/* <img
             className={P.className}
@@ -43,10 +43,8 @@ export default function IconElement(P: Props) {
                mask: `url("${SVG}")`,
                WebkitMaskImage: `url("${SVG}")`,
                WebkitMaskRepeat: 'no-repeat',
-               WebkitMaskSize: 'cover',
-               backgroundSize: 'cover',
-               width: 19,
-               height: 19,
+               WebkitMaskSize: 'contain',
+               WebkitMaskPosition: 'center',
             }}
          ></div>
       </div>

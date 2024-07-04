@@ -1,8 +1,9 @@
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core"
 import { faAddressBook, faEarListen, faFaceFrownOpen, faHand, faMobileRetro, faPhone, faPhoneSlash, faPhoneVolume, faTimesCircle, faUser, faUsers } from "@fortawesome/free-solid-svg-icons"
+import { iconAgenda, iconBroma, iconConferencia, iconGridBotones, iconGrupo, iconMano, iconOreja, iconPerfil, iconTelColgar, iconTelContestar, iconTelEspera, iconTelInterna, iconTimes } from "./icons.index"
 
 export type IMenuItem = {
-   icon?: IconDefinition
+   icon?: IconDefinition | string
    name?: string
    image?: string
    title?: string,
@@ -15,35 +16,35 @@ export type IMenuItem = {
 export const MENU: IMenuItem[] = [
    {
       title: 'Nombre Agente', subMenus: [
-         { icon: faUser, name: 'Presencia', link: '/home/supervisor' },
-         { icon: faMobileRetro, name: 'Marcar' },
-         { icon: faPhone, name: 'Contestar' },
-         { icon: faPhoneSlash, name: 'Colgar' },
-         { icon: faPhoneVolume, name: 'Espera' },
-         { icon: faUsers, name: 'Conferencia' },
-         { icon: faTimesCircle, name: 'Cancelar' },
+         { icon: iconPerfil, name: 'Presencia', link: '/home/supervisor' },
+         { icon: iconGridBotones, name: 'Marcar' },
+         { icon: iconTelContestar, name: 'Contestar' },
+         { icon: iconTelColgar, name: 'Colgar' },
+         { icon: iconTelEspera, name: 'Espera' },
+         { icon: iconConferencia, name: 'Conferencia' },
+         { icon: iconTimes, name: 'Cancelar' },
       ]
    },
    {
       title: 'Escucha', subMenus: [
-         { icon: faEarListen, name: 'Escuchar' },
-         { icon: faHand, name: 'Participar' },
+         { icon: iconOreja, name: 'Escuchar' },
+         { icon: iconMano, name: 'Participar' },
       ]
    },
    {
       title: 'Derivacion', subMenus: [
-         { icon: faFaceFrownOpen, name: 'Broma' },
-         { icon: faMobileRetro, name: 'Interna' },
+         { icon: iconBroma, name: 'Broma' },
+         { icon: iconTelInterna, name: 'Interna' },
       ]
    },
    {
       title: 'Grupo', subMenus: [
-         { icon: faUsers, name: 'Cola sup.' },
+         { icon: iconGrupo, name: 'Cola sup.' },
       ]
    },
    {
       title: 'Contactos', subMenus: [
-         { icon: faAddressBook, name: 'Agenda', link: '/home/agenda' },
+         { icon: iconAgenda, name: 'Agenda', link: '/home/agenda' },
       ]
    },
 ]
