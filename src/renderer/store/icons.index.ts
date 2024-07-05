@@ -30,6 +30,36 @@ export const iconCog: MyIcon = _Cog
 import _Map from "resources/public/icons/map.svg"
 export const iconMap: MyIcon = _Map
 
+import _PinRedondo from "resources/public/icons/pin-redondo.svg"
+export const iconPinRedondo: MyIcon = _PinRedondo
+
+import _Calle from "resources/public/icons/calle.svg"
+export const iconCalle: MyIcon = _Calle
+
+import _Camara from "resources/public/icons/camara.svg"
+export const iconCamara: MyIcon = _Camara
+
+import _Coord from "resources/public/icons/coordenada.svg"
+export const iconCoord: MyIcon = _Coord
+
+import _Lista from "resources/public/icons/lista.svg"
+export const iconLista: MyIcon = _Lista
+
+import _Bookmark from "resources/public/icons/boomark.svg"
+export const iconBookmark: MyIcon = _Bookmark
+
+import _Croquis from "resources/public/icons/croquis.svg"
+export const iconCroquis: MyIcon = _Croquis
+
+import _Ubicacion from "resources/public/icons/ubicacion.svg"
+export const iconUbicacion: MyIcon = _Ubicacion
+
+import _Triptico from "resources/public/icons/triptico.svg"
+export const iconTriptico: MyIcon = _Triptico
+
+import _UbicacionMapa from "resources/public/icons/ubicacion-mapa.svg"
+export const iconUbicacionMapa: MyIcon = _UbicacionMapa
+
 import _Agenda from "resources/public/icons/agenda.svg"
 export const iconAgenda: MyIcon = _Agenda
 
@@ -75,14 +105,50 @@ export const iconFiltros: MyIcon = _Filtros
 import _Hashtag from "resources/public/icons/hashtag.svg"
 export const iconHashtag: MyIcon = _Hashtag
 
+import _Notificacion from "resources/public/icons/notificacion.svg"
+export const iconNotificacion: MyIcon = _Notificacion
+
 import _NotiCarta from "resources/public/icons/noti-carta.svg"
 export const iconNotiCarta: MyIcon = _NotiCarta
 
-import _Notificacion from "resources/public/icons/notificacion.svg"
-export const iconNotificacion: MyIcon = _Notificacion
+import _NotificacionRojo from "resources/public/icons/notificacion-rojo.svg"
+export const iconNotificacionRojo: MyIcon = _NotificacionRojo
 
 import _Radio from "resources/public/icons/radio.svg"
 export const iconRadio: MyIcon = _Radio
 
 import _Ver from "resources/public/icons/ver.svg"
 export const iconVer: MyIcon = _Ver
+
+import _Borrar from "resources/public/icons/borrar.svg"
+export const iconBorrar: MyIcon = _Borrar
+
+import _Pantalla from "resources/public/icons/pantalla.svg"
+export const iconPantalla: MyIcon = _Pantalla
+
+import _Editar from "resources/public/icons/editar.svg"
+export const iconEditar: MyIcon = _Editar
+
+import _Ticket from "resources/public/icons/ticket.svg"
+export const iconTicket: MyIcon = _Ticket
+
+import _Documento from "resources/public/icons/documento.svg"
+export const iconDocumento: MyIcon = _Documento
+
+import _Mensaje from "resources/public/icons/mensaje.svg"
+export const iconMensaje: MyIcon = _Mensaje
+
+import _DNI from "resources/public/icons/dni-card.svg"
+export const iconDNI: MyIcon = _DNI
+
+import _Maletin from "resources/public/icons/maletin.svg"
+export const iconMaletin: MyIcon = _Maletin
+
+import _Carpeta from "resources/public/icons/carpeta.svg"
+export const iconCarpeta: MyIcon = _Carpeta
+
+import _DocCertificado from "resources/public/icons/doc-certificado.svg"
+export const iconDocCertificado: MyIcon = _DocCertificado
+
+import _TooltipUser from "resources/public/icons/tooltip-user.svg"
+export const iconTooltipUser: MyIcon = _TooltipUser

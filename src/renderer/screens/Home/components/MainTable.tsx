@@ -4,7 +4,7 @@ import { Button } from 'renderer/components'
 import CardBox from 'renderer/components/CardBox/CardBox'
 import DropDown from 'renderer/components/DropDown/DropDown'
 import IconElement from 'renderer/components/IconElement/IconElement'
-import { iconDescargar } from 'renderer/store/icons.index'
+import { iconAgregar, iconDescargar, iconOreja, iconRadio, iconVer } from 'renderer/store/icons.index'
 import SoundImage from "resources/public/wave-sound.png"
 
 
@@ -146,14 +146,17 @@ const DummyTble = () => {
                <td colSpan={2}>
                   <div className='v-center-evenly  '>
                      <Button variant='flat' className='w-auto no-shadows'>
-                        <IconElement icon={faEye} />
+                        <IconElement icon={iconVer} />
                      </Button>
                      <Button variant='flat' className='w-auto no-shadows'>
-                        <IconElement icon={faPlusCircle} />
+                        <IconElement icon={iconAgregar} />
                      </Button>
                      <HearAudio idx={index} />
                      <Button variant='flat' className='w-auto no-shadows'>
-                        <IconElement icon={faPhone} />
+                        <IconElement
+                           icon={iconRadio}
+                           style={{ width: 14, height: 22 }}
+                        />
                      </Button>
                   </div>
                </td>
@@ -169,7 +172,7 @@ const HearAudio = ({ idx }: { idx: number }) => {
          parentId={'hearOption' + idx}
          classContainer='audiobox-option'
          className='w-auto no-shadows'
-         dropdownParent={<IconElement icon={faEarListen} />}
+         dropdownParent={<IconElement icon={iconOreja} />}
          withCloseBtn={true}
          ddOption={{ width: '17rem' }}
       >

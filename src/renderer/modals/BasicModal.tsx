@@ -27,7 +27,10 @@ export default function BasicModal(P: Props) {
                </Button>
             </Modal.Header>
             <Modal.Body className='text-center center-col m'>
-               <img src={P.image || MyImage} alt="" width={150} height={150} className='mb-3' />
+               <img
+                  src={P.image || MyImage} alt=""
+                  className='mb-3'
+               />
                <h2 style={{ fontWeight: 'bold' }} className='w-50'>
                   {P.title}
                </h2>

@@ -27,17 +27,6 @@ export default function IconElement(P: Props) {
    const alt_text = SVG.split('icons/')[1]
    return (
       <div style={{ display: 'inline-block' }}>
-         {/* 19 x 19 */}
-         {/* <img
-            className={P.className}
-            src={SVG}
-            alt={alt_text}
-            style={{
-               ...P.style,
-               backgroundImage: SVG
-            }}
-         /> */}
-
          <div
             className={`svg-icon ${P.wrapperClassName}`}
             style={{
@@ -46,6 +35,7 @@ export default function IconElement(P: Props) {
                WebkitMaskRepeat: 'no-repeat',
                WebkitMaskSize: 'contain',
                WebkitMaskPosition: 'center',
+               ...P.style
             }}
          >
             <i className={`${P.className}`}>|||</i>
