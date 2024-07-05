@@ -152,3 +152,6 @@ export const iconDocCertificado: MyIcon = _DocCertificado
 
 import _TooltipUser from "resources/public/icons/tooltip-user.svg"
 export const iconTooltipUser: MyIcon = _TooltipUser
+
+import _Calendar from "resources/public/icons/fecha-y-hora.svg"
+export const iconCalendar: MyIcon = _Calendar

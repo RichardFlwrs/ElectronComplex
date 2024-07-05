@@ -1,4 +1,4 @@
-import { faChevronLeft, faChevronRight, faCloud, faEarListen, faEllipsisV, faEye, faPhone, faPlayCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
+import { faChevronLeft, faChevronRight, faEllipsisV, faPlayCircle } from '@fortawesome/free-solid-svg-icons'
 import { Col, Form, Nav, Row, Tab, Table } from 'react-bootstrap'
 import { Button } from 'renderer/components'
 import CardBox from 'renderer/components/CardBox/CardBox'

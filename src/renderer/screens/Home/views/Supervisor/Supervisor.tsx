@@ -5,7 +5,7 @@ import { Button } from 'renderer/components'
 import CardBox from 'renderer/components/CardBox/CardBox'
 import MainTable from '../../components/MainTable'
 import IconElement from 'renderer/components/IconElement/IconElement'
-import { iconFiltros } from 'renderer/store/icons.index'
+import { iconBookmark, iconCalendar, iconFiltros } from 'renderer/store/icons.index'
 
 export default function Supervisor() {
    const navigate = useNavigate()
@@ -33,19 +33,19 @@ export default function Supervisor() {
                </Button>
 
                <Button variant='light' className='card-btn v-center gap-2'>
-                  <IconElement icon={faCalendar} />
+                  <IconElement icon={iconCalendar} />
                   <p>Desde</p>
                   <IconElement icon={faChevronDown} />
                </Button>
 
                <Button variant='light' className='card-btn v-center gap-2'>
-                  <IconElement icon={faCalendar} />
+                  <IconElement icon={iconCalendar} />
                   <p>Hasta</p>
                   <IconElement icon={faChevronDown} />
                </Button>
 
                <Button variant='light' className='card-btn v-center gap-2'>
-                  <IconElement icon={faBookmark} />
+                  <IconElement icon={iconBookmark} />
                   <p style={{ paddingRight: 40 }}>Estado</p>
                   <IconElement icon={faChevronDown} />
                </Button>

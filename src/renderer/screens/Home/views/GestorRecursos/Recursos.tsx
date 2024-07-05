@@ -25,7 +25,7 @@ import { useNavigate } from 'react-router-dom'
 import { Button } from 'renderer/components'
 import CardBox from 'renderer/components/CardBox/CardBox'
 import MultipleSelect from 'renderer/components/MultipleSelect/MultipleSelect'
-import { iconDescargar } from 'renderer/store/icons.index'
+import { iconBookmark, iconCalendar, iconDescargar } from 'renderer/store/icons.index'
 
 export default function Recursos() {
    const navigate = useNavigate()
@@ -73,7 +73,7 @@ export default function Recursos() {
                </MultipleSelect>
                <Button variant='light' className='card-btn v-center-between gap-2'>
                   <div className='v-center'>
-                     <IconElement icon={faBookmark} />
+                     <IconElement icon={iconBookmark} />
                      <p>Estados</p>
                   </div>
                   <IconElement icon={faChevronDown} />
@@ -82,7 +82,7 @@ export default function Recursos() {
                <div className='d-flex flex-1 gap-3'>
                   <Button variant='light' className='card-btn v-center-between gap-2 w-50'>
                      <div className='v-center'>
-                        <IconElement icon={faCalendar} />
+                        <IconElement icon={iconCalendar} />
                         <p>Desde</p>
                      </div>
                      <IconElement icon={faChevronDown} />
@@ -90,7 +90,7 @@ export default function Recursos() {
 
                   <Button variant='light' className='card-btn v-center-between gap-2 w-50'>
                      <div className='v-center'>
-                        <IconElement icon={faCalendar} />
+                        <IconElement icon={iconCalendar} />
                         <p>Desde</p>
                      </div>
                      <IconElement icon={faChevronDown} />

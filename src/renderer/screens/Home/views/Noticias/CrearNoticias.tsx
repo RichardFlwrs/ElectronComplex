@@ -1,10 +1,11 @@
-import { faBookmark, faCalendar, faChevronDown, faChevronLeft, faChevronRight, faCloud, faDesktop, faEye, faFileLines, faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faFileLines } from '@fortawesome/free-solid-svg-icons';
 import IconElement from 'renderer/components/IconElement/IconElement';
-import { Form, Table } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'renderer/components'
 import CardBox from 'renderer/components/CardBox/CardBox';
 import TextInput from 'renderer/components/TextInput/TextInput';
+import { iconBookmark, iconCalendar, iconDocumento, iconPantalla } from 'renderer/store/icons.index';
 
 const HARDCODE_1 = `Noticia
                      
@@ -39,31 +40,31 @@ export default function CrearNoticias() {
 
             <div className='v-center-normal gap-3'>
                <TextInput
-                  icon={faFileLines}
+                  icon={iconDocumento}
                   placeholder='Titulo'
                   wrapperclassname='card-input'
                />
 
                <Button variant='light' className='card-btn v-center gap-2'>
-                  <IconElement icon={faBookmark} />
+                  <IconElement icon={iconBookmark} />
                   <p style={{ paddingRight: 40 }}>Predeterminada</p>
                   <IconElement icon={faChevronDown} />
                </Button>
 
                <Button variant='light' className='card-btn v-center gap-2'>
-                  <IconElement icon={faDesktop} />
+                  <IconElement icon={iconPantalla} />
                   <p style={{ paddingRight: 40 }}>Destino de la noticia</p>
                   <IconElement icon={faChevronDown} />
                </Button>
 
                <Button variant='light' className='card-btn v-center gap-2'>
-                  <IconElement icon={faCalendar} />
+                  <IconElement icon={iconCalendar} />
                   <p>Desde</p>
                   <IconElement icon={faChevronDown} />
                </Button>
 
                <Button variant='light' className='card-btn v-center gap-2'>
-                  <IconElement icon={faCalendar} />
+                  <IconElement icon={iconCalendar} />
                   <p>Hasta</p>
                   <IconElement icon={faChevronDown} />
                </Button>

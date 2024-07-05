@@ -1,4 +1,4 @@
-import { faChevronLeft, faChevronRight, faCloud, faEye, faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import IconElement from 'renderer/components/IconElement/IconElement';
 import { useContext, useState } from 'react';
 import { Form, Table } from 'react-bootstrap';
@@ -7,6 +7,7 @@ import { Button } from 'renderer/components'
 import CardBox from 'renderer/components/CardBox/CardBox';
 import DeleteConfirmation from 'renderer/modals/DeleteConfirmation';
 import { ModalContext } from '../../HomeScreen';
+import { iconBorrar, iconEditar, iconVer } from 'renderer/store/icons.index';
 
 export default function Noticias() {
    const navigate = useNavigate()
@@ -64,21 +65,21 @@ export default function Noticias() {
                               className='w-auto no-shadows'
                               onClick={() => { navigate('/home/noticias/ver-noticia') }}
                            >
-                              <IconElement icon={faEye} />
+                              <IconElement icon={iconVer} />
                            </Button>
                            <Button
                               variant='flat'
-                              className='w-auto no-shadows'
+                              className='w-auto no-shadows p-1'
                               onClick={() => { navigate('/home/noticias/crear-noticia') }}
                            >
-                              <IconElement icon={faPencil} />
+                              <IconElement icon={iconEditar} />
                            </Button>
                            <Button
                               variant='flat'
-                              className='w-auto no-shadows'
+                              className='w-auto no-shadows p-1'
                               onClick={() => { removeNews(0) }}
                            >
-                              <IconElement icon={faTrash} />
+                              <IconElement icon={iconBorrar} />
                            </Button>
                         </div>
                      </td>
