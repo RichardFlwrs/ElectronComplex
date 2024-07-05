@@ -37,7 +37,7 @@ export default function AuthForm() {
 
             <Form.Group className="mb-3">
                <MultipleSelect
-                  className='px-3 py-3'
+                  className='px-3 py-2'
                   placeholder='Agencia'
                   data={checkedItems}
                   onChange={(_data) => { setCheckedItems(_data) }}

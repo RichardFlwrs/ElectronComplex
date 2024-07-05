@@ -5,6 +5,7 @@ import { MyIcon } from 'renderer/store/icons.index'
 type Props = {
    icon: IconDefinition | MyIcon
    className?: string
+   wrapperClassName?: string
    style?: React.CSSProperties | undefined
 }
 
@@ -38,7 +39,7 @@ export default function IconElement(P: Props) {
          /> */}
 
          <div
-            className={`svg-icon`}
+            className={`svg-icon ${P.wrapperClassName}`}
             style={{
                mask: `url("${SVG}")`,
                WebkitMaskImage: `url("${SVG}")`,

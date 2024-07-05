@@ -49,7 +49,7 @@ export default function TextInput(P: TextInputProps) {
       <div {...P} className={combinedClassNames} ref={wrapperRef}>
          {!P.icon ? null : <IconElement
             icon={P.icon}
-            className={styles.myInputIcon}
+            wrapperClassName={styles.myInputIcon}
          />}
 
          <input

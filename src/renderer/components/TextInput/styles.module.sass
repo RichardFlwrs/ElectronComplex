@@ -7,7 +7,8 @@
    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 25px 3px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px
    border: 1px solid transparent
    @extend .transitionBorder
-   display: flex
+   @extend .v-center
+   gap: 5px
 
    &:hover, &:focus-within
       border: 1px solid $darkGray
@@ -15,8 +16,11 @@
       border: 1px solid rgba(53, 53, 64, 0.58) !important
 
    .myInputIcon
-      margin: 15px
+      margin: 6px 10px
       color: $darkGray
+
+      i
+         font-size: 21px
 
    .myInput
       border: 0
