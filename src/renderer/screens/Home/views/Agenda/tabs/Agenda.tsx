@@ -7,6 +7,7 @@ import { Button } from "renderer/components";
 import CardBox from "renderer/components/CardBox/CardBox";
 import TextInput from "renderer/components/TextInput/TextInput";
 import ChatModal from "../components/ChatModal";
+import { iconMensaje, iconPhone } from "renderer/store/icons.index";
 
 export default function Agenda() {
    const nav = useNavigate()
@@ -49,11 +50,11 @@ export default function Agenda() {
                         </div>
                      </div>
                      <div className="v-center gap-2">
-                        <Button variant="icon">
-                           <IconElement icon={faPhone} style={{ fontSize: 14 }} />
+                        <Button variant="icon" className="p-1">
+                           <IconElement icon={iconPhone} style={{ fontSize: 14 }} />
                         </Button>
-                        <Button variant="icon" onClick={() => openChat()}>
-                           <IconElement icon={faComment} style={{ fontSize: 14 }} />
+                        <Button variant="icon" className="p-1" onClick={() => openChat()}>
+                           <IconElement icon={iconMensaje} style={{ fontSize: 14 }} />
                         </Button>
                      </div>
                   </CardBox>

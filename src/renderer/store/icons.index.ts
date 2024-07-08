@@ -1,5 +1,21 @@
 export type MyIcon = string
 
+// Recursos
+
+import _Ambulancia from "resources/public/recursos/ambulancia.svg"
+export const iconAmbulancia: MyIcon = _Ambulancia
+
+import _Bomberos from "resources/public/recursos/bomberos.svg"
+export const iconBomberos: MyIcon = _Bomberos
+
+import _Cuatriciclo from "resources/public/recursos/cuatriciclo.svg"
+export const iconCuatriciclo: MyIcon = _Cuatriciclo
+
+import _Moto from "resources/public/recursos/moto.svg"
+export const iconMoto: MyIcon = _Moto
+
+// General
+
 import _Perfil from "resources/public/icons/perfil.svg"
 export const iconPerfil: MyIcon = _Perfil
 
@@ -155,3 +171,6 @@ export const iconTooltipUser: MyIcon = _TooltipUser
 
 import _Calendar from "resources/public/icons/fecha-y-hora.svg"
 export const iconCalendar: MyIcon = _Calendar
+
+import _Comisario from "resources/public/icons/comisario.svg"
+export const iconComisario: MyIcon = _Comisario

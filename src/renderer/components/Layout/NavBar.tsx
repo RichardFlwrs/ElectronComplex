@@ -10,6 +10,7 @@ import { Form, Modal } from 'react-bootstrap';
 import TextInput from '../TextInput/TextInput';
 import IconElement from '../IconElement/IconElement';
 import { iconCog, iconDescargar, iconMap, iconPaperSearching, iconPerfilAlt } from 'renderer/store/icons.index';
+import UserSettingsDropDown from './components/UserSettingsDropDown';
 
 const iterateElements = (array: HTMLCollectionOf<Element>, func: (e: Element) => void) => {
    for (let index = 0; index < array.length; index++) {
@@ -104,9 +105,10 @@ export function NavBar() {
                   <Button variant='light' onClick={() => navigate('/home/user-settings')}>
                      <IconElement icon={iconCog} />
                   </Button>
-                  <Button variant='light' onClick={() => navigate('/')}>
+                  <UserSettingsDropDown/>
+                  {/* <Button variant='light' onClick={() => navigate('/')}>
                      <IconElement icon={iconPerfilAlt} />
-                  </Button>
+                  </Button> */}
                </div>
             </Navbar.Collapse>
          </Navbar>

@@ -25,7 +25,7 @@ import { useNavigate } from 'react-router-dom'
 import { Button } from 'renderer/components'
 import CardBox from 'renderer/components/CardBox/CardBox'
 import MultipleSelect from 'renderer/components/MultipleSelect/MultipleSelect'
-import { iconBookmark, iconCalendar, iconDescargar } from 'renderer/store/icons.index'
+import { iconAmbulancia, iconBomberos, iconBookmark, iconCalendar, iconComisario, iconCuatriciclo, iconDescargar, iconDocumento, iconMoto, iconPin, iconUbicacion } from 'renderer/store/icons.index'
 
 export default function Recursos() {
    const navigate = useNavigate()
@@ -60,7 +60,7 @@ export default function Recursos() {
                </Button>)}
                <MultipleSelect
                   className='card-btn no-shadows'
-                  icon={faLocationDot}
+                  icon={iconUbicacion}
                   placeholder='Zona de influenica'
                   data={checkedItems}
                   onChange={(_data) => { setCheckedItems(_data) }}
@@ -100,9 +100,9 @@ export default function Recursos() {
 
             <div className='mt-3 filter-options d-flex gap-3'>
                {[
-                  { t: 'Agencia', i: faThumbTack },
-                  { t: 'Comisaria', i: faUserNurse },
-                  { t: 'Numero de carta', i: faFile },
+                  { t: 'Agencia', i: iconPin },
+                  { t: 'Comisaria', i: iconComisario },
+                  { t: 'Numero de carta', i: iconDocumento },
                ].map((data, idx) => <Button key={idx} variant='light' className='card-btn v-center-between gap-2'>
                   <div className='v-center'>
                      <IconElement icon={data.i} />
@@ -121,10 +121,10 @@ export default function Recursos() {
 }
 
 const HARDCODE_DATA = [
-   { tipo: "ambulancia", i: faTruckMedical },
-   { tipo: "bomberos", i: faBusSimple },
-   { tipo: "moto", i: faMotorcycle },
-   { tipo: "cuatriciclo", i: faTruckMonster },
+   { tipo: "ambulancia", i: iconAmbulancia },
+   { tipo: "bomberos", i: iconBomberos },
+   { tipo: "moto", i: iconMoto },
+   { tipo: "cuatriciclo", i: iconCuatriciclo },
 ]
 
 const HARDCODE_TABLE = (P: { title: string, nav: any }) => <>

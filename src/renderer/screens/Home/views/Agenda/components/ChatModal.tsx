@@ -2,6 +2,7 @@ import { faPhone, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import IconElement from "renderer/components/IconElement/IconElement";
 import { Button } from "renderer/components";
 import Chat from "renderer/components/Chat/Chat";
+import { iconPhone, iconTimes } from "renderer/store/icons.index";
 
 export default function ChatModal(P: { visible: boolean, onClose: () => void }) {
    return (
@@ -19,7 +20,7 @@ export default function ChatModal(P: { visible: boolean, onClose: () => void }) 
          <div className="position-relative">
             <div style={{ position: 'absolute', top: 7, right: 7, zIndex: 1 }}>
                <Button variant='icon' onClick={P.onClose}>
-                  <IconElement icon={faTimesCircle} style={{ fontSize: 14 }} />
+                  <IconElement icon={iconTimes} style={{ fontSize: 14 }} />
                </Button>
             </div>
          </div>
@@ -27,7 +28,7 @@ export default function ChatModal(P: { visible: boolean, onClose: () => void }) 
          <div className="position-relative">
             <div style={{ position: 'absolute', top: 28, right: 32, zIndex: 1 }}>
                <Button variant='icon' className="p-1">
-                  <IconElement icon={faPhone} style={{ fontSize: 24 }} />
+                  <IconElement icon={iconPhone} style={{ fontSize: 24 }} />
                </Button>
             </div>
          </div>
