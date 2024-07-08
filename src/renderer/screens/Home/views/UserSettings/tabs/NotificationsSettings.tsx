@@ -1,8 +1,11 @@
-import { faClock } from "@fortawesome/free-regular-svg-icons";
 import { faPaperclip } from "@fortawesome/free-solid-svg-icons";
 import IconElement from "renderer/components/IconElement/IconElement";
 import { Form } from "react-bootstrap";
 import { Button } from "renderer/components";
+import Clock1 from "resources/public/config/tiempo-carta-01.svg"
+import Clock2 from "resources/public/config/tiempo-carta-02.svg"
+import Clock3 from "resources/public/config/tiempo-carta-03.svg"
+
 
 export default function NotificationsSettings() {
    const selectFile = () => {
@@ -54,9 +57,9 @@ export default function NotificationsSettings() {
 
          <p className="my-4">Tiempo de duración de la carta</p>
          <div className="v-center-evenly gap-3">
-            <ClockItem />
-            <ClockItem />
-            <ClockItem />
+            <ClockItem img={Clock1} title="Tiempo 1" />
+            <ClockItem img={Clock2} title="Tiempo 2" />
+            <ClockItem img={Clock3} title="Tiempo 3" />
          </div>
 
          <div style={{ margin: '7rem auto' }} className="v-center gap-3">
@@ -71,9 +74,9 @@ export default function NotificationsSettings() {
    )
 }
 
-const ClockItem = () => {
+const ClockItem = ({img, title} : any) => {
    return <div className="v-center gap-2 flex-1 w-100">
-      <IconElement icon={faClock} className="fs-32" />
+      <img src={img} className="fs-32" title={title} />
       <div className="card-input py-1 px-3  w-100">
          <p>00.00.00 a 00.00.00</p>
       </div>

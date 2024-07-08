@@ -1,4 +1,4 @@
-import { faChevronLeft, faChevronRight, faCloud, faDesktop, faHashtag, faPencil, faTimesCircle, faTrash, faWindowMaximize } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import IconElement from "renderer/components/IconElement/IconElement";
 import { useContext, useState } from "react";
 import { Form, Modal, Table } from "react-bootstrap";
@@ -7,7 +7,7 @@ import { Button } from "renderer/components";
 import TextInput from "renderer/components/TextInput/TextInput";
 import DeleteConfirmation from "renderer/modals/DeleteConfirmation";
 import { ModalContext } from "renderer/screens/Home/HomeScreen";
-import { iconDescargar } from "renderer/store/icons.index";
+import { iconBorrar, iconDescargar, iconEditar, iconPantalla, iconTerminal, iconTimes } from "renderer/store/icons.index";
 
 
 export default function IPSSettings() {
@@ -86,17 +86,17 @@ export default function IPSSettings() {
                      <div className='v-center-evenly'>
                         <Button
                            variant='flat'
-                           className='w-auto no-shadows'
+                           className='w-auto no-shadows p-1'
                            onClick={() => { null }}
                         >
-                           <IconElement icon={faPencil} />
+                           <IconElement icon={iconEditar} />
                         </Button>
                         <Button
                            variant='flat'
-                           className='w-auto no-shadows'
+                           className='w-auto no-shadows p-1'
                            onClick={() => { removeNews(0) }}
                         >
-                           <IconElement icon={faTrash} />
+                           <IconElement icon={iconBorrar} />
                         </Button>
                      </div>
                   </td>
@@ -135,16 +135,16 @@ export default function IPSSettings() {
          <Modal show={show} onHide={handleClose}>
             <Modal.Header>
                <Button onClick={handleClose} variant='icon'>
-                  <IconElement style={{ padding: 12 }} icon={faTimesCircle} />
+                  <IconElement icon={iconTimes} />
                </Button>
             </Modal.Header>
             <Modal.Body className='text-center center-col pb-0'>
                <h2 style={{ fontWeight: 'bold' }} className='w-50 mb-5'> Nueva IP </h2>
                <Form.Group className="mb-3">
-                  <TextInput wrapperclassname="card-input--g" icon={faWindowMaximize} placeholder='Numero IP' />
+                  <TextInput wrapperclassname="card-input--g" icon={iconTerminal} placeholder='Numero IP' />
                </Form.Group>
                <Form.Group className="mb-3">
-                  <TextInput wrapperclassname="card-input--g" icon={faDesktop} placeholder='Puesto 1' />
+                  <TextInput wrapperclassname="card-input--g" icon={iconPantalla} placeholder='Puesto 1' />
                </Form.Group>
             </Modal.Body>
             <Modal.Footer className='center-col mb-5'>

@@ -1,9 +1,8 @@
-import { faBell, faClock } from "@fortawesome/free-regular-svg-icons";
-import { faCloud, faEarthAmericas, faWindowMaximize } from "@fortawesome/free-solid-svg-icons";
+import { faClock } from "@fortawesome/free-regular-svg-icons";
+import { faEarthAmericas } from "@fortawesome/free-solid-svg-icons";
 import IconElement from "renderer/components/IconElement/IconElement";
 import { Col, Form, Nav, Row, Tab } from "react-bootstrap";
 import CardBox from "renderer/components/CardBox/CardBox";
-import CartaInversa from "./tabs/CartaInversa";
 import CartaLlamda from "./tabs/CartaLlamda";
 import { Button } from "renderer/components";
 import DropDown from "renderer/components/DropDown/DropDown";

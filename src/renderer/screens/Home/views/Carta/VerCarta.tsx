@@ -1,4 +1,4 @@
-import { faBoxArchive, faBusSimple, faCircleInfo, faFilePdf, faHashtag, faMotorcycle, faPersonMilitaryPointing, faReceipt, faShield, faThumbtack, faTriangleExclamation, faTruckMedical, faUserInjured } from "@fortawesome/free-solid-svg-icons";
+import { faBoxArchive, faBusSimple, faCircleInfo, faFilePdf, faHashtag, faInfoCircle, faMotorcycle, faPaperclip, faPersonMilitaryPointing, faReceipt, faShield, faThumbtack, faTriangleExclamation, faTruckMedical, faUserInjured } from "@fortawesome/free-solid-svg-icons";
 import IconElement from "renderer/components/IconElement/IconElement";
 import { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
@@ -7,6 +7,10 @@ import { Button } from "renderer/components";
 import CardBox from "renderer/components/CardBox/CardBox";
 import InboxTable from "./components/InboxTable";
 import { faBookmark, faCalendar, faTimesCircle } from "@fortawesome/free-regular-svg-icons";
+import PdfImage from "resources/public/pdf.png"
+import { iconAmbulancia, iconBomberos, iconMoto } from "renderer/store/icons.index";
+import DropDown from "renderer/components/DropDown/DropDown";
+
 
 export default function VerCarta() {
    const navigate = useNavigate()
@@ -131,19 +135,14 @@ export default function VerCarta() {
                         Agregar recursos
                      </Button>
                   </div>
-                  <div className="v-center-between gap-4">
-                     <div className="w-100 py-2 box-ambulancia v-center gap-3">
-                        <IconElement icon={faTruckMedical} />
-                        Ambulancia (3)
-                     </div>
-                     <div className="w-100 py-2 box-bomberos v-center gap-3">
-                        <IconElement icon={faBusSimple} />
-                        Bomberos (2)
-                     </div>
-                     <div className="w-100 py-2 box-moto v-center gap-3">
-                        <IconElement icon={faMotorcycle} />
-                        Moto (3)
-                     </div>
+                  <div className="v-center-normal gap-4 flex-wrap">
+                     {[
+                        { css: 'box-ambulancia', icon: iconAmbulancia, label: 'Ambulancia', quantity: 3 },
+                        { css: 'box-bomberos', icon: iconBomberos, label: 'Bomberos', quantity: 2 },
+                        { css: 'box-moto', icon: iconMoto, label: 'Moto', quantity: 5 },
+                     ].map(
+                        (d, idx) => <RecursoAsigando key={idx} data={d} />
+                     )}
                   </div>
                </CardBox>
             </Col>
@@ -168,13 +167,14 @@ export default function VerCarta() {
                         <p className="cardTitle m-0">Archivos adjuntos</p>
                         <div className="circle-number">6</div>
                      </div>
-                     <Button variant="link" className="">
+                     <Button variant="link" className="v-center gap-1">
+                        <IconElement icon={faPaperclip} />
                         Agregar archivos
                      </Button>
                   </div>
                   <div className="v-center-normal gap-3">
                      {Array.from({ length: 6 }).map((d, i) => <div key={i} className="file-chip">
-                        <IconElement icon={faFilePdf} />
+                        <img src={PdfImage} alt="" height={25} />
                         <p title="Lorem ipsum dolor, sit amet consectetur adipisicing.">
                            Lorem ipsum dolor, sit amet consectetur adipisicing.
                         </p>
@@ -227,6 +227,32 @@ export default function VerCarta() {
    )
 }
 
+const RecursoAsigando = ({ data }: any) => {
+
+   useEffect(() => {
+      // console.log(data);
+
+   }, [])
+
+   return <DropDown
+      className={`py-2 v-center gap-3 ${data.css}`}
+      ddOption={{ right: 'auto', left: 0, width: '14rem' }}
+      dropdownParent={<>
+         <IconElement icon={data.icon} />
+         {`${data.label} (${data.quantity})`}
+      </>}
+   >
+      <div className="my-2 mb-0 v-center-normal gap-1">
+         <IconElement icon={faInfoCircle} style={{ fontSize: 14 }} />
+         <p style={{ fontSize: 14 }}>{`${data.label}`}</p>
+      </div>
+      {Array.from({ length: data.quantity }).map(
+         (_, idx) => <div key={idx}>
+            <small>Lorem - ipsum dolor.</small>
+         </div>
+      )}
+   </DropDown>
+}
 
 
 const CartaPropiedad = ({ icon, label, content }: any) => {

@@ -174,3 +174,6 @@ export const iconCalendar: MyIcon = _Calendar
 
 import _Comisario from "resources/public/icons/comisario.svg"
 export const iconComisario: MyIcon = _Comisario
+
+import _Terminal from "resources/public/icons/terminal.svg"
+export const iconTerminal: MyIcon = _Terminal

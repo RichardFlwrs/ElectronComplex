@@ -10,8 +10,9 @@ type Button = {
     withCloseBtn?: boolean,
     classContainer?: string,
     ddOption?: {
-        top?: number,
-        right?: number,
+        top?: string | number,
+        right?: string | number,
+        left?: string | number,
         width?: string | number
     }
 } & PropsWithChildren<React.ButtonHTMLAttributes<HTMLButtonElement>>
@@ -21,6 +22,7 @@ export default function DropDown(P: Button) {
     const [ddPosition, setddPosition] = useState({
         top: P.ddOption?.top || 0,
         right: P.ddOption?.right || 0,
+        left: P.ddOption?.left || 0,
         width: P.ddOption?.width || '12rem',
     })
     const PARENT_ID = P.parentId || 'dd-parent-button'
@@ -30,7 +32,7 @@ export default function DropDown(P: Button) {
     const toggleListOpen = () => {
         setlistOpen(!listOpen)
         setTimeout(() => {
-            if (!listOpen){
+            if (!listOpen) {
                 document.getElementById('dd-close-btn')?.focus()
                 // setConfiguration()
             }
@@ -56,6 +58,7 @@ export default function DropDown(P: Button) {
             setddPosition({
                 top: P.ddOption?.top || el.offsetHeight,
                 right: P.ddOption?.right || 0,
+                left: P.ddOption?.left || 'auto',
                 width: P.ddOption?.width || el.offsetWidth,
             })
         }
