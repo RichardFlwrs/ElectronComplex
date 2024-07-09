@@ -1,23 +1,11 @@
 import {
-   faBookmark,
    faBox,
-   faBusSimple,
-   faCalendar,
    faChevronDown,
    faChevronLeft,
    faChevronRight,
-   faCloud,
    faEye,
-   faFile,
-   faLocationDot,
-   faMotorcycle,
    faShop,
-   faSliders,
-   faThumbTack,
-   faTruckMedical,
-   faTruckMonster,
-   faUserNurse
-} from '@fortawesome/free-solid-svg-icons'
+   faSliders} from '@fortawesome/free-solid-svg-icons'
 import IconElement from 'renderer/components/IconElement/IconElement'
 import { useState } from 'react'
 import { Form, Table } from 'react-bootstrap'

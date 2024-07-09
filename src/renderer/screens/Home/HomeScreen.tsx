@@ -24,6 +24,7 @@ import VerCarta from './views/Carta/VerCarta'
 import CartaHisotrial from './views/Carta/CartaHisotrial'
 import Camaras from './views/Mapa/Camaras'
 import NuevaCamara from './views/Mapa/NuevaCamara'
+import VerRecursosCarta from './views/Carta/VerRecursosCarta'
 
 export const ModalContext = createContext({
    isOpen: false,
@@ -96,6 +97,7 @@ const RouteList = () => {
       <Route path='carta' element={<Carta />} />
       <Route path='carta/ver/:id' element={<VerCarta />} />
       <Route path='carta/historial/:id' element={<CartaHisotrial />} />
+      <Route path='carta/recursos/ver/:id' element={<VerRecursosCarta />} />
       {/* Zonas mapa */}
       <Route path='zonas-mapa' element={<Mapa />} />
       <Route path='zonas-mapa/camaras' element={<Camaras />} />

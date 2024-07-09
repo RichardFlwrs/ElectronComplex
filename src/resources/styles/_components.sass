@@ -43,6 +43,16 @@
             background: $darkGray
 
 // CARD BOX
+
+.card-bottomBorder
+   border-bottom: 1px solid $cardBorder
+.card-topBorder
+   border-top: 1px solid $cardBorder
+.card-leftBorder
+   border-left: 1px solid $cardBorder
+.card-rightBorder
+   border-right: 1px solid $cardBorder
+
 .card-box-style
    background: white
    border: 1px solid $cardBorder
@@ -168,6 +178,7 @@ table.table
       background: transparent
       padding: 15px
       font-weight: 400
+      font-size: 1.1rem
 
    thead th
       &:first-child
@@ -190,6 +201,7 @@ table.table
          font-weight: 300
          color: $darkGray
          vertical-align: middle
+         font-size: 1.1rem
 
       tr:last-child td
          border-bottom: 1px solid transparent
@@ -257,3 +269,20 @@ nav.t-paginator
 .contact-card
    @extend .v-center-between
    border-bottom: 1px solid $cardBorder
+
+// Colors
+
+.bg-ambulancia
+   background-color: $bgAmbulancia
+.bg-bomberos
+   background-color: $bgBombero
+.bg-caminantes
+   background-color: $bgCaminantes
+.bg-cuatriciclo
+   background-color: $bgCuatriciclo
+.bg-cientifica
+   background-color: $bgCientifica
+.bg-policial
+   background-color: $bgPolicial
+.bg-transito
+   background-color: $bgTransito

@@ -1,4 +1,4 @@
-import { faBoxArchive, faBusSimple, faCircleInfo, faFilePdf, faHashtag, faInfoCircle, faMotorcycle, faPaperclip, faPersonMilitaryPointing, faReceipt, faShield, faThumbtack, faTriangleExclamation, faTruckMedical, faUserInjured } from "@fortawesome/free-solid-svg-icons";
+import { faBoxArchive, faHashtag, faInfoCircle, faPaperclip, faShield, faThumbtack, faTriangleExclamation, faUserInjured } from "@fortawesome/free-solid-svg-icons";
 import IconElement from "renderer/components/IconElement/IconElement";
 import { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
@@ -8,8 +8,13 @@ import CardBox from "renderer/components/CardBox/CardBox";
 import InboxTable from "./components/InboxTable";
 import { faBookmark, faCalendar, faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 import PdfImage from "resources/public/pdf.png"
-import { iconAmbulancia, iconBomberos, iconMoto } from "renderer/store/icons.index";
+import TipoDelitoImg from "resources/public/carta/carta-tipo-de-delito.svg"
+import FechaHoraImg from "resources/public/carta/carta-fecha-y-hora.svg"
+import AgenciaImg from "resources/public/carta/carta-agencia.svg"
+import EstadoImg from "resources/public/carta/carta-estado.svg"
+import { iconAmbulancia, iconBomberos, iconCajaCerrada, iconComisario, iconEscudoAlerta, iconMoto, iconTicket, iconVictima } from "renderer/store/icons.index";
 import DropDown from "renderer/components/DropDown/DropDown";
+
 
 
 export default function VerCarta() {
@@ -67,7 +72,7 @@ export default function VerCarta() {
             <Col xl={12} className="d-flex gap-3">
                <CardBox className="flex-1 p-3">
                   <div className="v-center-normal gap-2">
-                     <IconElement icon={faTriangleExclamation} className="circle-icon" />
+                     <img width={50} src={TipoDelitoImg} alt="" />
                      <p className="cardTitle bolder m-0">Tipo de delito</p>
                   </div>
                   <p className="my-2">Lorem ipsum</p>
@@ -75,7 +80,7 @@ export default function VerCarta() {
 
                <CardBox className="flex-1 p-3">
                   <div className="v-center-normal gap-2">
-                     <IconElement icon={faCalendar} className="circle-icon" />
+                     <img width={50} src={FechaHoraImg} alt="" />
                      <p className="cardTitle bolder m-0">Fecha y hora</p>
                   </div>
                   <p className="my-2">22.05.2023 | 16:30:34</p>
@@ -83,7 +88,7 @@ export default function VerCarta() {
 
                <CardBox className="flex-1 p-3">
                   <div className="v-center-normal gap-2">
-                     <IconElement icon={faThumbtack} className="circle-icon" />
+                     <img width={50} src={AgenciaImg} alt="" />
                      <p className="cardTitle bolder m-0">Agencia</p>
                   </div>
                   <p className="my-2">Circunscripcion 1</p>
@@ -91,7 +96,7 @@ export default function VerCarta() {
 
                <CardBox className="flex-1 p-3">
                   <div className="v-center-normal gap-2">
-                     <IconElement icon={faBookmark} className="circle-icon" />
+                     <img width={50} src={EstadoImg} alt="" />
                      <p className="cardTitle bolder m-0">Estado</p>
                   </div>
                   <p className="my-2">Abierta</p>
@@ -102,18 +107,18 @@ export default function VerCarta() {
                   {[
                      [
                         {
-                           icon: faShield, lbl: 'Prioridad', content: <div className="v-center">
+                           icon: iconEscudoAlerta, lbl: 'Prioridad', content: <div className="v-center">
                               <div className="circle-status-red"></div>
                               <p>Alta</p>
                            </div>
                         },
-                        { icon: faReceipt, lbl: 'Ani', content: '234506' },
-                        { icon: faPersonMilitaryPointing, lbl: 'Comisaria', content: 'Lorem ipsum dolor' },
+                        { icon: iconTicket, lbl: 'Ani', content: '234506' },
+                        { icon: iconComisario, lbl: 'Comisaria', content: 'Lorem ipsum dolor' },
                      ],
                      [
-                        { icon: faUserInjured, lbl: 'N de victimas', content: '3' },
+                        { icon: iconVictima, lbl: 'N de victimas', content: '3' },
                         { icon: faHashtag, lbl: 'ID', content: '30.245.592' },
-                        { icon: faBoxArchive, lbl: 'Subtipos', content: 'Lorem ipsum' },
+                        { icon: iconCajaCerrada, lbl: 'Subtipos', content: 'Lorem ipsum' },
                      ]
                   ].map((section, idx) => <div
                      key={idx}
@@ -131,7 +136,7 @@ export default function VerCarta() {
                <CardBox className="p-3">
                   <div className="v-center-between mb-3">
                      <p className="cardTitle m-0">Recursos Asignados</p>
-                     <Button variant="link" className="">
+                     <Button variant="link" className="" onClick={() => navigate('/home/carta/recursos/ver/1')}>
                         Agregar recursos
                      </Button>
                   </div>
@@ -143,7 +148,7 @@ export default function VerCarta() {
                      ].map(
                         (d, idx) => <RecursoAsigando key={idx} data={d} />
                      )}
-                  </div>
+                  </div>   
                </CardBox>
             </Col>
             <Col xl={6}>
@@ -259,10 +264,9 @@ const CartaPropiedad = ({ icon, label, content }: any) => {
    return <div className="flex-1 v-center gap-1">
       <IconElement icon={icon} />
       <p className="bolder">{label}:</p>
-      <div
-         style={{
-            width: 'max-content',
-         }}
-      >{content}</div>
+      {typeof content == "string"
+         ? <p style={{ width: 'max-content' }} >{content}</p>
+         : content
+      }
    </div>
 }

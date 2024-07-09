@@ -175,5 +175,14 @@ export const iconCalendar: MyIcon = _Calendar
 import _Comisario from "resources/public/icons/comisario.svg"
 export const iconComisario: MyIcon = _Comisario
 
+import _Victima from "resources/public/icons/victima.svg"
+export const iconVictima: MyIcon = _Victima
+
+import _EscudoAlerta from "resources/public/icons/escudo-alerta.svg"
+export const iconEscudoAlerta: MyIcon = _EscudoAlerta
+
+import _CajaCerrada from "resources/public/icons/caja-cerrada.svg"
+export const iconCajaCerrada: MyIcon = _CajaCerrada
+
 import _Terminal from "resources/public/icons/terminal.svg"
 export const iconTerminal: MyIcon = _Terminal
