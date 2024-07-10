@@ -15,7 +15,7 @@ body, html, app
   background-size: cover
   background-position: 160px 125px
   scroll-behavior: smooth
-  user-select: none
+  // user-select: none
   overflow: hidden
   animation: fadeIn 1s forwards
   -webkit-app-region: no-drag
@@ -28,6 +28,9 @@ body, html, app
   a.nav-link:focus
     // border: 1px solid rgb(53 53 64 / 58%)
     box-shadow: 0 0px 4px 1px rgb(53 53 64 / 58%) !important
+
+  label
+    cursor: pointer
 
   .btn-link
     color: $darkGray
@@ -48,6 +51,7 @@ body, html, app
   .form-check-input
     background-color: transparent
     border: 2px solid $cardBorder
+    cursor: pointer
 
     &:focus
       border-color: $darkGray

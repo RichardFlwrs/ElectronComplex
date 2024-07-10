@@ -25,6 +25,7 @@ import CartaHisotrial from './views/Carta/CartaHisotrial'
 import Camaras from './views/Mapa/Camaras'
 import NuevaCamara from './views/Mapa/NuevaCamara'
 import VerRecursosCarta from './views/Carta/VerRecursosCarta'
+import PttCatalog from './views/PTT/PttCatalog'
 
 export const ModalContext = createContext({
    isOpen: false,
@@ -61,7 +62,7 @@ export default function HomeScreen() {
       <ModalProvider>
          <MainLayout>
             <NotificationCard />
-            <RouteList/>
+            <RouteList />
          </MainLayout>
       </ModalProvider>
    )
@@ -102,5 +103,7 @@ const RouteList = () => {
       <Route path='zonas-mapa' element={<Mapa />} />
       <Route path='zonas-mapa/camaras' element={<Camaras />} />
       <Route path='zonas-mapa/camaras/nueva' element={<NuevaCamara />} />
+      {/* Push to Talk (PTT) */}
+      <Route path='ptt' element={<PttCatalog />} />
    </Routes>
 }

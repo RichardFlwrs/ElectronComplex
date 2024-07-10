@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, useEffect, useRef, useState } from 'react'
-import { Button } from '../Button/Button'
+import { Button, Variant as ButtonType } from '../Button/Button'
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 import IconElement from '../IconElement/IconElement'
 
@@ -9,6 +9,7 @@ type Button = {
     headerTitle?: string,
     withCloseBtn?: boolean,
     classContainer?: string,
+    buttonVariant?: ButtonType,
     ddOption?: {
         top?: string | number,
         right?: string | number,
@@ -82,7 +83,7 @@ export default function DropDown(P: Button) {
     return (
         <div ref={wrapperRef} className={`position-relative ${P.classContainer}`}>
             <Button
-                variant='flat'
+                variant={ P.buttonVariant || 'flat'}
                 className={combinedClassNames}
                 onClick={toggleListOpen}
                 id={PARENT_ID}

@@ -4,7 +4,7 @@ import styles from './styles.module.sass'
 import { Button as BtnBootstrap } from 'react-bootstrap'
 import { useClickAnimation } from 'renderer/utils/ClickAnimation'
 
-type Variant = 'primary' | 'light' | 'danger' | 'link' | 'flat' | 'icon'
+export type Variant = 'primary' | 'light' | 'danger' | 'link' | 'flat' | 'icon'
 
 type Button = {
   variant?: Variant

@@ -11,6 +11,7 @@ import TextInput from '../TextInput/TextInput';
 import IconElement from '../IconElement/IconElement';
 import { iconCog, iconDescargar, iconMap, iconPaperSearching, iconPerfilAlt } from 'renderer/store/icons.index';
 import UserSettingsDropDown from './components/UserSettingsDropDown';
+import PTT_Button from './components/PTT_Button';
 
 const iterateElements = (array: HTMLCollectionOf<Element>, func: (e: Element) => void) => {
    for (let index = 0; index < array.length; index++) {
@@ -64,6 +65,10 @@ export function NavBar() {
          <Navbar expand="lg" className="bg-body-tertiary px-3">
             <Navbar.Toggle aria-controls="main-navbar-nav" />
             <Navbar.Collapse id="main-navbar-nav">
+               {/* 
+               *        Navegacion
+               *           Supervisor, Noticias, etc...
+               */}
                <Nav className="me-auto">
                   <NavDropdown title="Supervisor" id="nav-supervisor">
                      <NavDropdown.Item onClick={handleShow} >Auditoria</NavDropdown.Item>
@@ -93,7 +98,12 @@ export function NavBar() {
                   <Nav.Link onClick={() => navigate('/home/filtros-multiples')} id='nav-filtros' >Filtros multiples</Nav.Link>
                </Nav>
 
+               {/* 
+               *        Acciones
+               *           PTT | Mapa | etc
+               */}
                <div className='v-center navbar-options'>
+                  <PTT_Button/>
                   <Button onClick={() => navigate('/home/carta')} variant='light' className='v-center round'>
                      <IconElement icon={iconPaperSearching} />
                      <p>Carta</p>
@@ -105,10 +115,7 @@ export function NavBar() {
                   <Button variant='light' onClick={() => navigate('/home/user-settings')}>
                      <IconElement icon={iconCog} />
                   </Button>
-                  <UserSettingsDropDown/>
-                  {/* <Button variant='light' onClick={() => navigate('/')}>
-                     <IconElement icon={iconPerfilAlt} />
-                  </Button> */}
+                  <UserSettingsDropDown />
                </div>
             </Navbar.Collapse>
          </Navbar>

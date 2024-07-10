@@ -270,6 +270,18 @@ nav.t-paginator
    @extend .v-center-between
    border-bottom: 1px solid $cardBorder
 
+.list-tem
+   @extend .v-center-normal
+   @extend .card-bottomBorder
+   gap: 10px
+   padding-top: 7px
+   padding-bottom: 7px
+   &:last-child
+      border-bottom: none
+
+   &.withHover:hover
+      background-color: $bg
+
 // Colors
 
 .bg-ambulancia
