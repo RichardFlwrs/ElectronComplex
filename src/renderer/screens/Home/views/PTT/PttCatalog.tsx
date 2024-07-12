@@ -12,7 +12,10 @@ export default function PttCatalog() {
     const [recordsArray, setRecordsArray] = useState<any[]>([])
 
     const addNewRecord = (record: any) => {
-        setRecordsArray(oldArray => [...oldArray, record])
+        const ms = record.split(":")[3]     // milisenconds
+
+        if (parseInt(ms) > 10)
+            setRecordsArray(oldArray => [...oldArray, record])
     }
 
     return (
@@ -46,13 +49,13 @@ const PTT_Action = (P: { onTimerEnds: Function }) => {
     const [colorTxt, setColorTxt] = useState(initColor)
 
     const running = (data: string) => {
-        setRecord(data); 
+        setRecord(data);
         setColorTxt("red");
     }
     const whenTimerEnds = (data: any) => {
         // send timer to parent
         P.onTimerEnds(data)
-        
+
         // re-setting timer
         setRecord(initTimer)
         setColorTxt(initColor)
